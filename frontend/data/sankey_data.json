@@ -1,0 +1,6312 @@
+{
+  "all": {
+    "nodes": [
+      {
+        "name": "Darkness - lighting unknown",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Darkness - lights lit",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Darkness - lights unlit",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Darkness - no lighting",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Daylight",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Fatal",
+        "itemStyle": {
+          "color": "#ffa726"
+        }
+      },
+      {
+        "name": "Serious",
+        "itemStyle": {
+          "color": "#ffa726"
+        }
+      },
+      {
+        "name": "Slight",
+        "itemStyle": {
+          "color": "#ffa726"
+        }
+      },
+      {
+        "name": "Agricultural vehicle",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Bus or coach (17 or more pass seats)",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Car",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Data missing or out of range",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Electric motorcycle",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Goods 7.5 tonnes mgw and over",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Goods over 3.5t. and under 7.5t",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Goods vehicle - unknown weight",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Minibus (8 - 16 passenger seats)",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Mobility scooter",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle - unknown cc",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle 125cc and under",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle 50cc and under",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle over 125cc and up to 500cc",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle over 500cc",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Other vehicle",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Pedal cycle",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Ridden horse",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Taxi/Private hire car",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Tram",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Van / Goods 3.5 tonnes mgw or under",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      }
+    ],
+    "links": [
+      {
+        "source": "Darkness - lighting unknown",
+        "target": "Fatal",
+        "value": 243
+      },
+      {
+        "source": "Darkness - lighting unknown",
+        "target": "Serious",
+        "value": 2486
+      },
+      {
+        "source": "Darkness - lighting unknown",
+        "target": "Slight",
+        "value": 16590
+      },
+      {
+        "source": "Darkness - lights lit",
+        "target": "Fatal",
+        "value": 4786
+      },
+      {
+        "source": "Darkness - lights lit",
+        "target": "Serious",
+        "value": 52051
+      },
+      {
+        "source": "Darkness - lights lit",
+        "target": "Slight",
+        "value": 292891
+      },
+      {
+        "source": "Darkness - lights unlit",
+        "target": "Fatal",
+        "value": 157
+      },
+      {
+        "source": "Darkness - lights unlit",
+        "target": "Serious",
+        "value": 1241
+      },
+      {
+        "source": "Darkness - lights unlit",
+        "target": "Slight",
+        "value": 6787
+      },
+      {
+        "source": "Darkness - no lighting",
+        "target": "Fatal",
+        "value": 4315
+      },
+      {
+        "source": "Darkness - no lighting",
+        "target": "Serious",
+        "value": 19279
+      },
+      {
+        "source": "Darkness - no lighting",
+        "target": "Slight",
+        "value": 75353
+      },
+      {
+        "source": "Daylight",
+        "target": "Fatal",
+        "value": 13497
+      },
+      {
+        "source": "Daylight",
+        "target": "Serious",
+        "value": 167023
+      },
+      {
+        "source": "Daylight",
+        "target": "Slight",
+        "value": 1123954
+      },
+      {
+        "source": "Fatal",
+        "target": "Agricultural vehicle",
+        "value": 279
+      },
+      {
+        "source": "Fatal",
+        "target": "Bus or coach (17 or more pass seats)",
+        "value": 924
+      },
+      {
+        "source": "Fatal",
+        "target": "Car",
+        "value": 25685
+      },
+      {
+        "source": "Fatal",
+        "target": "Data missing or out of range",
+        "value": 7
+      },
+      {
+        "source": "Fatal",
+        "target": "Goods 7.5 tonnes mgw and over",
+        "value": 3203
+      },
+      {
+        "source": "Fatal",
+        "target": "Goods over 3.5t. and under 7.5t",
+        "value": 599
+      },
+      {
+        "source": "Fatal",
+        "target": "Goods vehicle - unknown weight",
+        "value": 16
+      },
+      {
+        "source": "Fatal",
+        "target": "Minibus (8 - 16 passenger seats)",
+        "value": 171
+      },
+      {
+        "source": "Fatal",
+        "target": "Mobility scooter",
+        "value": 23
+      },
+      {
+        "source": "Fatal",
+        "target": "Motorcycle - unknown cc",
+        "value": 7
+      },
+      {
+        "source": "Fatal",
+        "target": "Motorcycle 125cc and under",
+        "value": 704
+      },
+      {
+        "source": "Fatal",
+        "target": "Motorcycle 50cc and under",
+        "value": 162
+      },
+      {
+        "source": "Fatal",
+        "target": "Motorcycle over 125cc and up to 500cc",
+        "value": 550
+      },
+      {
+        "source": "Fatal",
+        "target": "Motorcycle over 500cc",
+        "value": 3940
+      },
+      {
+        "source": "Fatal",
+        "target": "Other vehicle",
+        "value": 490
+      },
+      {
+        "source": "Fatal",
+        "target": "Pedal cycle",
+        "value": 1424
+      },
+      {
+        "source": "Fatal",
+        "target": "Ridden horse",
+        "value": 25
+      },
+      {
+        "source": "Fatal",
+        "target": "Taxi/Private hire car",
+        "value": 505
+      },
+      {
+        "source": "Fatal",
+        "target": "Tram",
+        "value": 9
+      },
+      {
+        "source": "Fatal",
+        "target": "Van / Goods 3.5 tonnes mgw or under",
+        "value": 2259
+      },
+      {
+        "source": "Serious",
+        "target": "Agricultural vehicle",
+        "value": 1367
+      },
+      {
+        "source": "Serious",
+        "target": "Bus or coach (17 or more pass seats)",
+        "value": 9476
+      },
+      {
+        "source": "Serious",
+        "target": "Car",
+        "value": 258153
+      },
+      {
+        "source": "Serious",
+        "target": "Data missing or out of range",
+        "value": 42
+      },
+      {
+        "source": "Serious",
+        "target": "Electric motorcycle",
+        "value": 9
+      },
+      {
+        "source": "Serious",
+        "target": "Goods 7.5 tonnes mgw and over",
+        "value": 10053
+      },
+      {
+        "source": "Serious",
+        "target": "Goods over 3.5t. and under 7.5t",
+        "value": 3133
+      },
+      {
+        "source": "Serious",
+        "target": "Goods vehicle - unknown weight",
+        "value": 126
+      },
+      {
+        "source": "Serious",
+        "target": "Minibus (8 - 16 passenger seats)",
+        "value": 1183
+      },
+      {
+        "source": "Serious",
+        "target": "Mobility scooter",
+        "value": 142
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle - unknown cc",
+        "value": 161
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle 125cc and under",
+        "value": 16904
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle 50cc and under",
+        "value": 6816
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle over 125cc and up to 500cc",
+        "value": 7446
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle over 500cc",
+        "value": 30720
+      },
+      {
+        "source": "Serious",
+        "target": "Other vehicle",
+        "value": 3659
+      },
+      {
+        "source": "Serious",
+        "target": "Pedal cycle",
+        "value": 32670
+      },
+      {
+        "source": "Serious",
+        "target": "Ridden horse",
+        "value": 293
+      },
+      {
+        "source": "Serious",
+        "target": "Taxi/Private hire car",
+        "value": 6766
+      },
+      {
+        "source": "Serious",
+        "target": "Tram",
+        "value": 48
+      },
+      {
+        "source": "Serious",
+        "target": "Van / Goods 3.5 tonnes mgw or under",
+        "value": 18319
+      },
+      {
+        "source": "Slight",
+        "target": "Agricultural vehicle",
+        "value": 5162
+      },
+      {
+        "source": "Slight",
+        "target": "Bus or coach (17 or more pass seats)",
+        "value": 71869
+      },
+      {
+        "source": "Slight",
+        "target": "Car",
+        "value": 2104317
+      },
+      {
+        "source": "Slight",
+        "target": "Data missing or out of range",
+        "value": 482
+      },
+      {
+        "source": "Slight",
+        "target": "Electric motorcycle",
+        "value": 19
+      },
+      {
+        "source": "Slight",
+        "target": "Goods 7.5 tonnes mgw and over",
+        "value": 54468
+      },
+      {
+        "source": "Slight",
+        "target": "Goods over 3.5t. and under 7.5t",
+        "value": 20543
+      },
+      {
+        "source": "Slight",
+        "target": "Goods vehicle - unknown weight",
+        "value": 860
+      },
+      {
+        "source": "Slight",
+        "target": "Minibus (8 - 16 passenger seats)",
+        "value": 7531
+      },
+      {
+        "source": "Slight",
+        "target": "Mobility scooter",
+        "value": 516
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle - unknown cc",
+        "value": 393
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle 125cc and under",
+        "value": 61778
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle 50cc and under",
+        "value": 32483
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle over 125cc and up to 500cc",
+        "value": 19877
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle over 500cc",
+        "value": 59298
+      },
+      {
+        "source": "Slight",
+        "target": "Other vehicle",
+        "value": 21442
+      },
+      {
+        "source": "Slight",
+        "target": "Pedal cycle",
+        "value": 169429
+      },
+      {
+        "source": "Slight",
+        "target": "Ridden horse",
+        "value": 1086
+      },
+      {
+        "source": "Slight",
+        "target": "Taxi/Private hire car",
+        "value": 50558
+      },
+      {
+        "source": "Slight",
+        "target": "Tram",
+        "value": 211
+      },
+      {
+        "source": "Slight",
+        "target": "Van / Goods 3.5 tonnes mgw or under",
+        "value": 131480
+      }
+    ]
+  },
+  "2005": {
+    "nodes": [
+      {
+        "name": "Darkness - lighting unknown",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Darkness - lights lit",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Darkness - lights unlit",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Darkness - no lighting",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Daylight",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Fatal",
+        "itemStyle": {
+          "color": "#ffa726"
+        }
+      },
+      {
+        "name": "Serious",
+        "itemStyle": {
+          "color": "#ffa726"
+        }
+      },
+      {
+        "name": "Slight",
+        "itemStyle": {
+          "color": "#ffa726"
+        }
+      },
+      {
+        "name": "Agricultural vehicle",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Bus or coach (17 or more pass seats)",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Car",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Data missing or out of range",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Electric motorcycle",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Goods 7.5 tonnes mgw and over",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Goods over 3.5t. and under 7.5t",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Goods vehicle - unknown weight",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Minibus (8 - 16 passenger seats)",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Mobility scooter",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle - unknown cc",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle 125cc and under",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle 50cc and under",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle over 125cc and up to 500cc",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle over 500cc",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Other vehicle",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Pedal cycle",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Ridden horse",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Taxi/Private hire car",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Tram",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Van / Goods 3.5 tonnes mgw or under",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      }
+    ],
+    "links": [
+      {
+        "source": "Darkness - lighting unknown",
+        "target": "Fatal",
+        "value": 37
+      },
+      {
+        "source": "Darkness - lighting unknown",
+        "target": "Serious",
+        "value": 168
+      },
+      {
+        "source": "Darkness - lighting unknown",
+        "target": "Slight",
+        "value": 1319
+      },
+      {
+        "source": "Darkness - lights lit",
+        "target": "Fatal",
+        "value": 621
+      },
+      {
+        "source": "Darkness - lights lit",
+        "target": "Serious",
+        "value": 5700
+      },
+      {
+        "source": "Darkness - lights lit",
+        "target": "Slight",
+        "value": 33496
+      },
+      {
+        "source": "Darkness - lights unlit",
+        "target": "Fatal",
+        "value": 21
+      },
+      {
+        "source": "Darkness - lights unlit",
+        "target": "Serious",
+        "value": 142
+      },
+      {
+        "source": "Darkness - lights unlit",
+        "target": "Slight",
+        "value": 886
+      },
+      {
+        "source": "Darkness - no lighting",
+        "target": "Fatal",
+        "value": 566
+      },
+      {
+        "source": "Darkness - no lighting",
+        "target": "Serious",
+        "value": 2267
+      },
+      {
+        "source": "Darkness - no lighting",
+        "target": "Slight",
+        "value": 9091
+      },
+      {
+        "source": "Daylight",
+        "target": "Fatal",
+        "value": 1668
+      },
+      {
+        "source": "Daylight",
+        "target": "Serious",
+        "value": 16752
+      },
+      {
+        "source": "Daylight",
+        "target": "Slight",
+        "value": 126001
+      },
+      {
+        "source": "Fatal",
+        "target": "Agricultural vehicle",
+        "value": 35
+      },
+      {
+        "source": "Fatal",
+        "target": "Bus or coach (17 or more pass seats)",
+        "value": 108
+      },
+      {
+        "source": "Fatal",
+        "target": "Car",
+        "value": 3389
+      },
+      {
+        "source": "Fatal",
+        "target": "Data missing or out of range",
+        "value": 2
+      },
+      {
+        "source": "Fatal",
+        "target": "Goods 7.5 tonnes mgw and over",
+        "value": 432
+      },
+      {
+        "source": "Fatal",
+        "target": "Goods over 3.5t. and under 7.5t",
+        "value": 88
+      },
+      {
+        "source": "Fatal",
+        "target": "Minibus (8 - 16 passenger seats)",
+        "value": 23
+      },
+      {
+        "source": "Fatal",
+        "target": "Motorcycle 125cc and under",
+        "value": 68
+      },
+      {
+        "source": "Fatal",
+        "target": "Motorcycle 50cc and under",
+        "value": 22
+      },
+      {
+        "source": "Fatal",
+        "target": "Motorcycle over 125cc and up to 500cc",
+        "value": 69
+      },
+      {
+        "source": "Fatal",
+        "target": "Motorcycle over 500cc",
+        "value": 461
+      },
+      {
+        "source": "Fatal",
+        "target": "Other vehicle",
+        "value": 33
+      },
+      {
+        "source": "Fatal",
+        "target": "Pedal cycle",
+        "value": 158
+      },
+      {
+        "source": "Fatal",
+        "target": "Ridden horse",
+        "value": 1
+      },
+      {
+        "source": "Fatal",
+        "target": "Taxi/Private hire car",
+        "value": 53
+      },
+      {
+        "source": "Fatal",
+        "target": "Tram",
+        "value": 1
+      },
+      {
+        "source": "Fatal",
+        "target": "Van / Goods 3.5 tonnes mgw or under",
+        "value": 261
+      },
+      {
+        "source": "Serious",
+        "target": "Agricultural vehicle",
+        "value": 134
+      },
+      {
+        "source": "Serious",
+        "target": "Bus or coach (17 or more pass seats)",
+        "value": 1023
+      },
+      {
+        "source": "Serious",
+        "target": "Car",
+        "value": 27916
+      },
+      {
+        "source": "Serious",
+        "target": "Data missing or out of range",
+        "value": 5
+      },
+      {
+        "source": "Serious",
+        "target": "Goods 7.5 tonnes mgw and over",
+        "value": 1293
+      },
+      {
+        "source": "Serious",
+        "target": "Goods over 3.5t. and under 7.5t",
+        "value": 355
+      },
+      {
+        "source": "Serious",
+        "target": "Minibus (8 - 16 passenger seats)",
+        "value": 149
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle 125cc and under",
+        "value": 1500
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle 50cc and under",
+        "value": 858
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle over 125cc and up to 500cc",
+        "value": 641
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle over 500cc",
+        "value": 3235
+      },
+      {
+        "source": "Serious",
+        "target": "Other vehicle",
+        "value": 278
+      },
+      {
+        "source": "Serious",
+        "target": "Pedal cycle",
+        "value": 2339
+      },
+      {
+        "source": "Serious",
+        "target": "Ridden horse",
+        "value": 25
+      },
+      {
+        "source": "Serious",
+        "target": "Taxi/Private hire car",
+        "value": 599
+      },
+      {
+        "source": "Serious",
+        "target": "Tram",
+        "value": 7
+      },
+      {
+        "source": "Serious",
+        "target": "Van / Goods 3.5 tonnes mgw or under",
+        "value": 1819
+      },
+      {
+        "source": "Slight",
+        "target": "Agricultural vehicle",
+        "value": 590
+      },
+      {
+        "source": "Slight",
+        "target": "Bus or coach (17 or more pass seats)",
+        "value": 8857
+      },
+      {
+        "source": "Slight",
+        "target": "Car",
+        "value": 243825
+      },
+      {
+        "source": "Slight",
+        "target": "Data missing or out of range",
+        "value": 92
+      },
+      {
+        "source": "Slight",
+        "target": "Goods 7.5 tonnes mgw and over",
+        "value": 7320
+      },
+      {
+        "source": "Slight",
+        "target": "Goods over 3.5t. and under 7.5t",
+        "value": 2632
+      },
+      {
+        "source": "Slight",
+        "target": "Minibus (8 - 16 passenger seats)",
+        "value": 1055
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle 125cc and under",
+        "value": 5517
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle 50cc and under",
+        "value": 4309
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle over 125cc and up to 500cc",
+        "value": 1961
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle over 500cc",
+        "value": 7229
+      },
+      {
+        "source": "Slight",
+        "target": "Other vehicle",
+        "value": 1983
+      },
+      {
+        "source": "Slight",
+        "target": "Pedal cycle",
+        "value": 14542
+      },
+      {
+        "source": "Slight",
+        "target": "Ridden horse",
+        "value": 115
+      },
+      {
+        "source": "Slight",
+        "target": "Taxi/Private hire car",
+        "value": 4801
+      },
+      {
+        "source": "Slight",
+        "target": "Tram",
+        "value": 30
+      },
+      {
+        "source": "Slight",
+        "target": "Van / Goods 3.5 tonnes mgw or under",
+        "value": 13998
+      }
+    ]
+  },
+  "2006": {
+    "nodes": [
+      {
+        "name": "Darkness - lighting unknown",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Darkness - lights lit",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Darkness - lights unlit",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Darkness - no lighting",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Daylight",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Fatal",
+        "itemStyle": {
+          "color": "#ffa726"
+        }
+      },
+      {
+        "name": "Serious",
+        "itemStyle": {
+          "color": "#ffa726"
+        }
+      },
+      {
+        "name": "Slight",
+        "itemStyle": {
+          "color": "#ffa726"
+        }
+      },
+      {
+        "name": "Agricultural vehicle",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Bus or coach (17 or more pass seats)",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Car",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Data missing or out of range",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Electric motorcycle",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Goods 7.5 tonnes mgw and over",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Goods over 3.5t. and under 7.5t",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Goods vehicle - unknown weight",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Minibus (8 - 16 passenger seats)",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Mobility scooter",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle - unknown cc",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle 125cc and under",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle 50cc and under",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle over 125cc and up to 500cc",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle over 500cc",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Other vehicle",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Pedal cycle",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Ridden horse",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Taxi/Private hire car",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Tram",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Van / Goods 3.5 tonnes mgw or under",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      }
+    ],
+    "links": [
+      {
+        "source": "Darkness - lighting unknown",
+        "target": "Fatal",
+        "value": 18
+      },
+      {
+        "source": "Darkness - lighting unknown",
+        "target": "Serious",
+        "value": 150
+      },
+      {
+        "source": "Darkness - lighting unknown",
+        "target": "Slight",
+        "value": 1196
+      },
+      {
+        "source": "Darkness - lights lit",
+        "target": "Fatal",
+        "value": 663
+      },
+      {
+        "source": "Darkness - lights lit",
+        "target": "Serious",
+        "value": 5945
+      },
+      {
+        "source": "Darkness - lights lit",
+        "target": "Slight",
+        "value": 32212
+      },
+      {
+        "source": "Darkness - lights unlit",
+        "target": "Fatal",
+        "value": 15
+      },
+      {
+        "source": "Darkness - lights unlit",
+        "target": "Serious",
+        "value": 111
+      },
+      {
+        "source": "Darkness - lights unlit",
+        "target": "Slight",
+        "value": 598
+      },
+      {
+        "source": "Darkness - no lighting",
+        "target": "Fatal",
+        "value": 563
+      },
+      {
+        "source": "Darkness - no lighting",
+        "target": "Serious",
+        "value": 2132
+      },
+      {
+        "source": "Darkness - no lighting",
+        "target": "Slight",
+        "value": 8739
+      },
+      {
+        "source": "Daylight",
+        "target": "Fatal",
+        "value": 1667
+      },
+      {
+        "source": "Daylight",
+        "target": "Serious",
+        "value": 16608
+      },
+      {
+        "source": "Daylight",
+        "target": "Slight",
+        "value": 118544
+      },
+      {
+        "source": "Fatal",
+        "target": "Agricultural vehicle",
+        "value": 26
+      },
+      {
+        "source": "Fatal",
+        "target": "Bus or coach (17 or more pass seats)",
+        "value": 118
+      },
+      {
+        "source": "Fatal",
+        "target": "Car",
+        "value": 3389
+      },
+      {
+        "source": "Fatal",
+        "target": "Goods 7.5 tonnes mgw and over",
+        "value": 375
+      },
+      {
+        "source": "Fatal",
+        "target": "Goods over 3.5t. and under 7.5t",
+        "value": 83
+      },
+      {
+        "source": "Fatal",
+        "target": "Minibus (8 - 16 passenger seats)",
+        "value": 31
+      },
+      {
+        "source": "Fatal",
+        "target": "Motorcycle 125cc and under",
+        "value": 73
+      },
+      {
+        "source": "Fatal",
+        "target": "Motorcycle 50cc and under",
+        "value": 29
+      },
+      {
+        "source": "Fatal",
+        "target": "Motorcycle over 125cc and up to 500cc",
+        "value": 75
+      },
+      {
+        "source": "Fatal",
+        "target": "Motorcycle over 500cc",
+        "value": 490
+      },
+      {
+        "source": "Fatal",
+        "target": "Other vehicle",
+        "value": 58
+      },
+      {
+        "source": "Fatal",
+        "target": "Pedal cycle",
+        "value": 163
+      },
+      {
+        "source": "Fatal",
+        "target": "Ridden horse",
+        "value": 5
+      },
+      {
+        "source": "Fatal",
+        "target": "Taxi/Private hire car",
+        "value": 63
+      },
+      {
+        "source": "Fatal",
+        "target": "Tram",
+        "value": 1
+      },
+      {
+        "source": "Fatal",
+        "target": "Van / Goods 3.5 tonnes mgw or under",
+        "value": 274
+      },
+      {
+        "source": "Serious",
+        "target": "Agricultural vehicle",
+        "value": 154
+      },
+      {
+        "source": "Serious",
+        "target": "Bus or coach (17 or more pass seats)",
+        "value": 1041
+      },
+      {
+        "source": "Serious",
+        "target": "Car",
+        "value": 27624
+      },
+      {
+        "source": "Serious",
+        "target": "Data missing or out of range",
+        "value": 6
+      },
+      {
+        "source": "Serious",
+        "target": "Goods 7.5 tonnes mgw and over",
+        "value": 1219
+      },
+      {
+        "source": "Serious",
+        "target": "Goods over 3.5t. and under 7.5t",
+        "value": 394
+      },
+      {
+        "source": "Serious",
+        "target": "Minibus (8 - 16 passenger seats)",
+        "value": 126
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle 125cc and under",
+        "value": 1468
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle 50cc and under",
+        "value": 829
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle over 125cc and up to 500cc",
+        "value": 660
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle over 500cc",
+        "value": 3239
+      },
+      {
+        "source": "Serious",
+        "target": "Other vehicle",
+        "value": 329
+      },
+      {
+        "source": "Serious",
+        "target": "Pedal cycle",
+        "value": 2421
+      },
+      {
+        "source": "Serious",
+        "target": "Ridden horse",
+        "value": 28
+      },
+      {
+        "source": "Serious",
+        "target": "Taxi/Private hire car",
+        "value": 659
+      },
+      {
+        "source": "Serious",
+        "target": "Tram",
+        "value": 10
+      },
+      {
+        "source": "Serious",
+        "target": "Van / Goods 3.5 tonnes mgw or under",
+        "value": 1818
+      },
+      {
+        "source": "Slight",
+        "target": "Agricultural vehicle",
+        "value": 526
+      },
+      {
+        "source": "Slight",
+        "target": "Bus or coach (17 or more pass seats)",
+        "value": 7974
+      },
+      {
+        "source": "Slight",
+        "target": "Car",
+        "value": 230446
+      },
+      {
+        "source": "Slight",
+        "target": "Data missing or out of range",
+        "value": 40
+      },
+      {
+        "source": "Slight",
+        "target": "Goods 7.5 tonnes mgw and over",
+        "value": 6816
+      },
+      {
+        "source": "Slight",
+        "target": "Goods over 3.5t. and under 7.5t",
+        "value": 2449
+      },
+      {
+        "source": "Slight",
+        "target": "Minibus (8 - 16 passenger seats)",
+        "value": 869
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle 125cc and under",
+        "value": 5163
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle 50cc and under",
+        "value": 3955
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle over 125cc and up to 500cc",
+        "value": 1692
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle over 500cc",
+        "value": 6650
+      },
+      {
+        "source": "Slight",
+        "target": "Other vehicle",
+        "value": 1777
+      },
+      {
+        "source": "Slight",
+        "target": "Pedal cycle",
+        "value": 14027
+      },
+      {
+        "source": "Slight",
+        "target": "Ridden horse",
+        "value": 97
+      },
+      {
+        "source": "Slight",
+        "target": "Taxi/Private hire car",
+        "value": 4784
+      },
+      {
+        "source": "Slight",
+        "target": "Tram",
+        "value": 15
+      },
+      {
+        "source": "Slight",
+        "target": "Van / Goods 3.5 tonnes mgw or under",
+        "value": 13501
+      }
+    ]
+  },
+  "2007": {
+    "nodes": [
+      {
+        "name": "Darkness - lighting unknown",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Darkness - lights lit",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Darkness - lights unlit",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Darkness - no lighting",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Daylight",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Fatal",
+        "itemStyle": {
+          "color": "#ffa726"
+        }
+      },
+      {
+        "name": "Serious",
+        "itemStyle": {
+          "color": "#ffa726"
+        }
+      },
+      {
+        "name": "Slight",
+        "itemStyle": {
+          "color": "#ffa726"
+        }
+      },
+      {
+        "name": "Agricultural vehicle",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Bus or coach (17 or more pass seats)",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Car",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Data missing or out of range",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Electric motorcycle",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Goods 7.5 tonnes mgw and over",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Goods over 3.5t. and under 7.5t",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Goods vehicle - unknown weight",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Minibus (8 - 16 passenger seats)",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Mobility scooter",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle - unknown cc",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle 125cc and under",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle 50cc and under",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle over 125cc and up to 500cc",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle over 500cc",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Other vehicle",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Pedal cycle",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Ridden horse",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Taxi/Private hire car",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Tram",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Van / Goods 3.5 tonnes mgw or under",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      }
+    ],
+    "links": [
+      {
+        "source": "Darkness - lighting unknown",
+        "target": "Fatal",
+        "value": 20
+      },
+      {
+        "source": "Darkness - lighting unknown",
+        "target": "Serious",
+        "value": 215
+      },
+      {
+        "source": "Darkness - lighting unknown",
+        "target": "Slight",
+        "value": 1533
+      },
+      {
+        "source": "Darkness - lights lit",
+        "target": "Fatal",
+        "value": 559
+      },
+      {
+        "source": "Darkness - lights lit",
+        "target": "Serious",
+        "value": 5460
+      },
+      {
+        "source": "Darkness - lights lit",
+        "target": "Slight",
+        "value": 29750
+      },
+      {
+        "source": "Darkness - lights unlit",
+        "target": "Fatal",
+        "value": 14
+      },
+      {
+        "source": "Darkness - lights unlit",
+        "target": "Serious",
+        "value": 104
+      },
+      {
+        "source": "Darkness - lights unlit",
+        "target": "Slight",
+        "value": 576
+      },
+      {
+        "source": "Darkness - no lighting",
+        "target": "Fatal",
+        "value": 512
+      },
+      {
+        "source": "Darkness - no lighting",
+        "target": "Serious",
+        "value": 2096
+      },
+      {
+        "source": "Darkness - no lighting",
+        "target": "Slight",
+        "value": 8234
+      },
+      {
+        "source": "Daylight",
+        "target": "Fatal",
+        "value": 1609
+      },
+      {
+        "source": "Daylight",
+        "target": "Serious",
+        "value": 16447
+      },
+      {
+        "source": "Daylight",
+        "target": "Slight",
+        "value": 114986
+      },
+      {
+        "source": "Fatal",
+        "target": "Agricultural vehicle",
+        "value": 35
+      },
+      {
+        "source": "Fatal",
+        "target": "Bus or coach (17 or more pass seats)",
+        "value": 120
+      },
+      {
+        "source": "Fatal",
+        "target": "Car",
+        "value": 3075
+      },
+      {
+        "source": "Fatal",
+        "target": "Data missing or out of range",
+        "value": 1
+      },
+      {
+        "source": "Fatal",
+        "target": "Goods 7.5 tonnes mgw and over",
+        "value": 384
+      },
+      {
+        "source": "Fatal",
+        "target": "Goods over 3.5t. and under 7.5t",
+        "value": 77
+      },
+      {
+        "source": "Fatal",
+        "target": "Minibus (8 - 16 passenger seats)",
+        "value": 14
+      },
+      {
+        "source": "Fatal",
+        "target": "Motorcycle 125cc and under",
+        "value": 68
+      },
+      {
+        "source": "Fatal",
+        "target": "Motorcycle 50cc and under",
+        "value": 22
+      },
+      {
+        "source": "Fatal",
+        "target": "Motorcycle over 125cc and up to 500cc",
+        "value": 86
+      },
+      {
+        "source": "Fatal",
+        "target": "Motorcycle over 500cc",
+        "value": 500
+      },
+      {
+        "source": "Fatal",
+        "target": "Other vehicle",
+        "value": 42
+      },
+      {
+        "source": "Fatal",
+        "target": "Pedal cycle",
+        "value": 146
+      },
+      {
+        "source": "Fatal",
+        "target": "Taxi/Private hire car",
+        "value": 52
+      },
+      {
+        "source": "Fatal",
+        "target": "Tram",
+        "value": 2
+      },
+      {
+        "source": "Fatal",
+        "target": "Van / Goods 3.5 tonnes mgw or under",
+        "value": 306
+      },
+      {
+        "source": "Serious",
+        "target": "Agricultural vehicle",
+        "value": 131
+      },
+      {
+        "source": "Serious",
+        "target": "Bus or coach (17 or more pass seats)",
+        "value": 1018
+      },
+      {
+        "source": "Serious",
+        "target": "Car",
+        "value": 26365
+      },
+      {
+        "source": "Serious",
+        "target": "Data missing or out of range",
+        "value": 5
+      },
+      {
+        "source": "Serious",
+        "target": "Goods 7.5 tonnes mgw and over",
+        "value": 1142
+      },
+      {
+        "source": "Serious",
+        "target": "Goods over 3.5t. and under 7.5t",
+        "value": 348
+      },
+      {
+        "source": "Serious",
+        "target": "Minibus (8 - 16 passenger seats)",
+        "value": 139
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle 125cc and under",
+        "value": 1459
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle 50cc and under",
+        "value": 870
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle over 125cc and up to 500cc",
+        "value": 840
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle over 500cc",
+        "value": 3242
+      },
+      {
+        "source": "Serious",
+        "target": "Other vehicle",
+        "value": 431
+      },
+      {
+        "source": "Serious",
+        "target": "Pedal cycle",
+        "value": 2552
+      },
+      {
+        "source": "Serious",
+        "target": "Ridden horse",
+        "value": 25
+      },
+      {
+        "source": "Serious",
+        "target": "Taxi/Private hire car",
+        "value": 657
+      },
+      {
+        "source": "Serious",
+        "target": "Tram",
+        "value": 4
+      },
+      {
+        "source": "Serious",
+        "target": "Van / Goods 3.5 tonnes mgw or under",
+        "value": 1781
+      },
+      {
+        "source": "Slight",
+        "target": "Agricultural vehicle",
+        "value": 591
+      },
+      {
+        "source": "Slight",
+        "target": "Bus or coach (17 or more pass seats)",
+        "value": 7421
+      },
+      {
+        "source": "Slight",
+        "target": "Car",
+        "value": 220202
+      },
+      {
+        "source": "Slight",
+        "target": "Data missing or out of range",
+        "value": 40
+      },
+      {
+        "source": "Slight",
+        "target": "Goods 7.5 tonnes mgw and over",
+        "value": 6343
+      },
+      {
+        "source": "Slight",
+        "target": "Goods over 3.5t. and under 7.5t",
+        "value": 2394
+      },
+      {
+        "source": "Slight",
+        "target": "Minibus (8 - 16 passenger seats)",
+        "value": 853
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle 125cc and under",
+        "value": 4908
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle 50cc and under",
+        "value": 3845
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle over 125cc and up to 500cc",
+        "value": 2160
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle over 500cc",
+        "value": 6381
+      },
+      {
+        "source": "Slight",
+        "target": "Other vehicle",
+        "value": 2772
+      },
+      {
+        "source": "Slight",
+        "target": "Pedal cycle",
+        "value": 13909
+      },
+      {
+        "source": "Slight",
+        "target": "Ridden horse",
+        "value": 122
+      },
+      {
+        "source": "Slight",
+        "target": "Taxi/Private hire car",
+        "value": 4534
+      },
+      {
+        "source": "Slight",
+        "target": "Tram",
+        "value": 19
+      },
+      {
+        "source": "Slight",
+        "target": "Van / Goods 3.5 tonnes mgw or under",
+        "value": 12533
+      }
+    ]
+  },
+  "2008": {
+    "nodes": [
+      {
+        "name": "Darkness - lighting unknown",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Darkness - lights lit",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Darkness - lights unlit",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Darkness - no lighting",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Daylight",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Fatal",
+        "itemStyle": {
+          "color": "#ffa726"
+        }
+      },
+      {
+        "name": "Serious",
+        "itemStyle": {
+          "color": "#ffa726"
+        }
+      },
+      {
+        "name": "Slight",
+        "itemStyle": {
+          "color": "#ffa726"
+        }
+      },
+      {
+        "name": "Agricultural vehicle",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Bus or coach (17 or more pass seats)",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Car",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Data missing or out of range",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Electric motorcycle",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Goods 7.5 tonnes mgw and over",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Goods over 3.5t. and under 7.5t",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Goods vehicle - unknown weight",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Minibus (8 - 16 passenger seats)",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Mobility scooter",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle - unknown cc",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle 125cc and under",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle 50cc and under",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle over 125cc and up to 500cc",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle over 500cc",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Other vehicle",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Pedal cycle",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Ridden horse",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Taxi/Private hire car",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Tram",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Van / Goods 3.5 tonnes mgw or under",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      }
+    ],
+    "links": [
+      {
+        "source": "Darkness - lighting unknown",
+        "target": "Fatal",
+        "value": 21
+      },
+      {
+        "source": "Darkness - lighting unknown",
+        "target": "Serious",
+        "value": 222
+      },
+      {
+        "source": "Darkness - lighting unknown",
+        "target": "Slight",
+        "value": 1549
+      },
+      {
+        "source": "Darkness - lights lit",
+        "target": "Fatal",
+        "value": 535
+      },
+      {
+        "source": "Darkness - lights lit",
+        "target": "Serious",
+        "value": 5146
+      },
+      {
+        "source": "Darkness - lights lit",
+        "target": "Slight",
+        "value": 27792
+      },
+      {
+        "source": "Darkness - lights unlit",
+        "target": "Fatal",
+        "value": 16
+      },
+      {
+        "source": "Darkness - lights unlit",
+        "target": "Serious",
+        "value": 110
+      },
+      {
+        "source": "Darkness - lights unlit",
+        "target": "Slight",
+        "value": 581
+      },
+      {
+        "source": "Darkness - no lighting",
+        "target": "Fatal",
+        "value": 451
+      },
+      {
+        "source": "Darkness - no lighting",
+        "target": "Serious",
+        "value": 2000
+      },
+      {
+        "source": "Darkness - no lighting",
+        "target": "Slight",
+        "value": 7616
+      },
+      {
+        "source": "Daylight",
+        "target": "Fatal",
+        "value": 1318
+      },
+      {
+        "source": "Daylight",
+        "target": "Serious",
+        "value": 15643
+      },
+      {
+        "source": "Daylight",
+        "target": "Slight",
+        "value": 107591
+      },
+      {
+        "source": "Fatal",
+        "target": "Agricultural vehicle",
+        "value": 22
+      },
+      {
+        "source": "Fatal",
+        "target": "Bus or coach (17 or more pass seats)",
+        "value": 98
+      },
+      {
+        "source": "Fatal",
+        "target": "Car",
+        "value": 2661
+      },
+      {
+        "source": "Fatal",
+        "target": "Data missing or out of range",
+        "value": 2
+      },
+      {
+        "source": "Fatal",
+        "target": "Goods 7.5 tonnes mgw and over",
+        "value": 305
+      },
+      {
+        "source": "Fatal",
+        "target": "Goods over 3.5t. and under 7.5t",
+        "value": 74
+      },
+      {
+        "source": "Fatal",
+        "target": "Minibus (8 - 16 passenger seats)",
+        "value": 13
+      },
+      {
+        "source": "Fatal",
+        "target": "Motorcycle 125cc and under",
+        "value": 75
+      },
+      {
+        "source": "Fatal",
+        "target": "Motorcycle 50cc and under",
+        "value": 22
+      },
+      {
+        "source": "Fatal",
+        "target": "Motorcycle over 125cc and up to 500cc",
+        "value": 62
+      },
+      {
+        "source": "Fatal",
+        "target": "Motorcycle over 500cc",
+        "value": 380
+      },
+      {
+        "source": "Fatal",
+        "target": "Other vehicle",
+        "value": 75
+      },
+      {
+        "source": "Fatal",
+        "target": "Pedal cycle",
+        "value": 127
+      },
+      {
+        "source": "Fatal",
+        "target": "Ridden horse",
+        "value": 2
+      },
+      {
+        "source": "Fatal",
+        "target": "Taxi/Private hire car",
+        "value": 50
+      },
+      {
+        "source": "Fatal",
+        "target": "Tram",
+        "value": 1
+      },
+      {
+        "source": "Fatal",
+        "target": "Van / Goods 3.5 tonnes mgw or under",
+        "value": 202
+      },
+      {
+        "source": "Serious",
+        "target": "Agricultural vehicle",
+        "value": 135
+      },
+      {
+        "source": "Serious",
+        "target": "Bus or coach (17 or more pass seats)",
+        "value": 992
+      },
+      {
+        "source": "Serious",
+        "target": "Car",
+        "value": 24907
+      },
+      {
+        "source": "Serious",
+        "target": "Data missing or out of range",
+        "value": 7
+      },
+      {
+        "source": "Serious",
+        "target": "Goods 7.5 tonnes mgw and over",
+        "value": 978
+      },
+      {
+        "source": "Serious",
+        "target": "Goods over 3.5t. and under 7.5t",
+        "value": 282
+      },
+      {
+        "source": "Serious",
+        "target": "Minibus (8 - 16 passenger seats)",
+        "value": 131
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle 125cc and under",
+        "value": 1399
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle 50cc and under",
+        "value": 698
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle over 125cc and up to 500cc",
+        "value": 818
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle over 500cc",
+        "value": 2935
+      },
+      {
+        "source": "Serious",
+        "target": "Other vehicle",
+        "value": 465
+      },
+      {
+        "source": "Serious",
+        "target": "Pedal cycle",
+        "value": 2600
+      },
+      {
+        "source": "Serious",
+        "target": "Ridden horse",
+        "value": 22
+      },
+      {
+        "source": "Serious",
+        "target": "Taxi/Private hire car",
+        "value": 641
+      },
+      {
+        "source": "Serious",
+        "target": "Tram",
+        "value": 6
+      },
+      {
+        "source": "Serious",
+        "target": "Van / Goods 3.5 tonnes mgw or under",
+        "value": 1620
+      },
+      {
+        "source": "Slight",
+        "target": "Agricultural vehicle",
+        "value": 487
+      },
+      {
+        "source": "Slight",
+        "target": "Bus or coach (17 or more pass seats)",
+        "value": 7285
+      },
+      {
+        "source": "Slight",
+        "target": "Car",
+        "value": 203284
+      },
+      {
+        "source": "Slight",
+        "target": "Data missing or out of range",
+        "value": 76
+      },
+      {
+        "source": "Slight",
+        "target": "Goods 7.5 tonnes mgw and over",
+        "value": 5324
+      },
+      {
+        "source": "Slight",
+        "target": "Goods over 3.5t. and under 7.5t",
+        "value": 2077
+      },
+      {
+        "source": "Slight",
+        "target": "Minibus (8 - 16 passenger seats)",
+        "value": 783
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle 125cc and under",
+        "value": 4840
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle 50cc and under",
+        "value": 3527
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle over 125cc and up to 500cc",
+        "value": 2087
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle over 500cc",
+        "value": 5584
+      },
+      {
+        "source": "Slight",
+        "target": "Other vehicle",
+        "value": 3015
+      },
+      {
+        "source": "Slight",
+        "target": "Pedal cycle",
+        "value": 14070
+      },
+      {
+        "source": "Slight",
+        "target": "Ridden horse",
+        "value": 90
+      },
+      {
+        "source": "Slight",
+        "target": "Taxi/Private hire car",
+        "value": 4453
+      },
+      {
+        "source": "Slight",
+        "target": "Tram",
+        "value": 16
+      },
+      {
+        "source": "Slight",
+        "target": "Van / Goods 3.5 tonnes mgw or under",
+        "value": 11799
+      }
+    ]
+  },
+  "2009": {
+    "nodes": [
+      {
+        "name": "Darkness - lighting unknown",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Darkness - lights lit",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Darkness - lights unlit",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Darkness - no lighting",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Daylight",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Fatal",
+        "itemStyle": {
+          "color": "#ffa726"
+        }
+      },
+      {
+        "name": "Serious",
+        "itemStyle": {
+          "color": "#ffa726"
+        }
+      },
+      {
+        "name": "Slight",
+        "itemStyle": {
+          "color": "#ffa726"
+        }
+      },
+      {
+        "name": "Agricultural vehicle",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Bus or coach (17 or more pass seats)",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Car",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Data missing or out of range",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Electric motorcycle",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Goods 7.5 tonnes mgw and over",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Goods over 3.5t. and under 7.5t",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Goods vehicle - unknown weight",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Minibus (8 - 16 passenger seats)",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Mobility scooter",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle - unknown cc",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle 125cc and under",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle 50cc and under",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle over 125cc and up to 500cc",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle over 500cc",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Other vehicle",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Pedal cycle",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Ridden horse",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Taxi/Private hire car",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Tram",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Van / Goods 3.5 tonnes mgw or under",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      }
+    ],
+    "links": [
+      {
+        "source": "Darkness - lighting unknown",
+        "target": "Fatal",
+        "value": 19
+      },
+      {
+        "source": "Darkness - lighting unknown",
+        "target": "Serious",
+        "value": 186
+      },
+      {
+        "source": "Darkness - lighting unknown",
+        "target": "Slight",
+        "value": 1402
+      },
+      {
+        "source": "Darkness - lights lit",
+        "target": "Fatal",
+        "value": 475
+      },
+      {
+        "source": "Darkness - lights lit",
+        "target": "Serious",
+        "value": 4701
+      },
+      {
+        "source": "Darkness - lights lit",
+        "target": "Slight",
+        "value": 27373
+      },
+      {
+        "source": "Darkness - lights unlit",
+        "target": "Fatal",
+        "value": 9
+      },
+      {
+        "source": "Darkness - lights unlit",
+        "target": "Serious",
+        "value": 93
+      },
+      {
+        "source": "Darkness - lights unlit",
+        "target": "Slight",
+        "value": 552
+      },
+      {
+        "source": "Darkness - no lighting",
+        "target": "Fatal",
+        "value": 369
+      },
+      {
+        "source": "Darkness - no lighting",
+        "target": "Serious",
+        "value": 1775
+      },
+      {
+        "source": "Darkness - no lighting",
+        "target": "Slight",
+        "value": 7082
+      },
+      {
+        "source": "Daylight",
+        "target": "Fatal",
+        "value": 1185
+      },
+      {
+        "source": "Daylight",
+        "target": "Serious",
+        "value": 15242
+      },
+      {
+        "source": "Daylight",
+        "target": "Slight",
+        "value": 103091
+      },
+      {
+        "source": "Fatal",
+        "target": "Agricultural vehicle",
+        "value": 17
+      },
+      {
+        "source": "Fatal",
+        "target": "Bus or coach (17 or more pass seats)",
+        "value": 85
+      },
+      {
+        "source": "Fatal",
+        "target": "Car",
+        "value": 2292
+      },
+      {
+        "source": "Fatal",
+        "target": "Goods 7.5 tonnes mgw and over",
+        "value": 249
+      },
+      {
+        "source": "Fatal",
+        "target": "Goods over 3.5t. and under 7.5t",
+        "value": 35
+      },
+      {
+        "source": "Fatal",
+        "target": "Minibus (8 - 16 passenger seats)",
+        "value": 14
+      },
+      {
+        "source": "Fatal",
+        "target": "Motorcycle 125cc and under",
+        "value": 53
+      },
+      {
+        "source": "Fatal",
+        "target": "Motorcycle 50cc and under",
+        "value": 19
+      },
+      {
+        "source": "Fatal",
+        "target": "Motorcycle over 125cc and up to 500cc",
+        "value": 41
+      },
+      {
+        "source": "Fatal",
+        "target": "Motorcycle over 500cc",
+        "value": 399
+      },
+      {
+        "source": "Fatal",
+        "target": "Other vehicle",
+        "value": 52
+      },
+      {
+        "source": "Fatal",
+        "target": "Pedal cycle",
+        "value": 111
+      },
+      {
+        "source": "Fatal",
+        "target": "Ridden horse",
+        "value": 1
+      },
+      {
+        "source": "Fatal",
+        "target": "Taxi/Private hire car",
+        "value": 34
+      },
+      {
+        "source": "Fatal",
+        "target": "Van / Goods 3.5 tonnes mgw or under",
+        "value": 185
+      },
+      {
+        "source": "Serious",
+        "target": "Agricultural vehicle",
+        "value": 114
+      },
+      {
+        "source": "Serious",
+        "target": "Bus or coach (17 or more pass seats)",
+        "value": 877
+      },
+      {
+        "source": "Serious",
+        "target": "Car",
+        "value": 23668
+      },
+      {
+        "source": "Serious",
+        "target": "Data missing or out of range",
+        "value": 2
+      },
+      {
+        "source": "Serious",
+        "target": "Goods 7.5 tonnes mgw and over",
+        "value": 870
+      },
+      {
+        "source": "Serious",
+        "target": "Goods over 3.5t. and under 7.5t",
+        "value": 234
+      },
+      {
+        "source": "Serious",
+        "target": "Minibus (8 - 16 passenger seats)",
+        "value": 110
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle 125cc and under",
+        "value": 1346
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle 50cc and under",
+        "value": 632
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle over 125cc and up to 500cc",
+        "value": 680
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle over 500cc",
+        "value": 2935
+      },
+      {
+        "source": "Serious",
+        "target": "Other vehicle",
+        "value": 411
+      },
+      {
+        "source": "Serious",
+        "target": "Pedal cycle",
+        "value": 2764
+      },
+      {
+        "source": "Serious",
+        "target": "Ridden horse",
+        "value": 22
+      },
+      {
+        "source": "Serious",
+        "target": "Taxi/Private hire car",
+        "value": 613
+      },
+      {
+        "source": "Serious",
+        "target": "Tram",
+        "value": 8
+      },
+      {
+        "source": "Serious",
+        "target": "Van / Goods 3.5 tonnes mgw or under",
+        "value": 1560
+      },
+      {
+        "source": "Slight",
+        "target": "Agricultural vehicle",
+        "value": 449
+      },
+      {
+        "source": "Slight",
+        "target": "Bus or coach (17 or more pass seats)",
+        "value": 6869
+      },
+      {
+        "source": "Slight",
+        "target": "Car",
+        "value": 195324
+      },
+      {
+        "source": "Slight",
+        "target": "Data missing or out of range",
+        "value": 44
+      },
+      {
+        "source": "Slight",
+        "target": "Goods 7.5 tonnes mgw and over",
+        "value": 4441
+      },
+      {
+        "source": "Slight",
+        "target": "Goods over 3.5t. and under 7.5t",
+        "value": 1658
+      },
+      {
+        "source": "Slight",
+        "target": "Minibus (8 - 16 passenger seats)",
+        "value": 673
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle 125cc and under",
+        "value": 4906
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle 50cc and under",
+        "value": 2978
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle over 125cc and up to 500cc",
+        "value": 1900
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle over 500cc",
+        "value": 5701
+      },
+      {
+        "source": "Slight",
+        "target": "Other vehicle",
+        "value": 2492
+      },
+      {
+        "source": "Slight",
+        "target": "Pedal cycle",
+        "value": 14724
+      },
+      {
+        "source": "Slight",
+        "target": "Ridden horse",
+        "value": 85
+      },
+      {
+        "source": "Slight",
+        "target": "Taxi/Private hire car",
+        "value": 4516
+      },
+      {
+        "source": "Slight",
+        "target": "Tram",
+        "value": 25
+      },
+      {
+        "source": "Slight",
+        "target": "Van / Goods 3.5 tonnes mgw or under",
+        "value": 11469
+      }
+    ]
+  },
+  "2010": {
+    "nodes": [
+      {
+        "name": "Darkness - lighting unknown",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Darkness - lights lit",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Darkness - lights unlit",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Darkness - no lighting",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Daylight",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Fatal",
+        "itemStyle": {
+          "color": "#ffa726"
+        }
+      },
+      {
+        "name": "Serious",
+        "itemStyle": {
+          "color": "#ffa726"
+        }
+      },
+      {
+        "name": "Slight",
+        "itemStyle": {
+          "color": "#ffa726"
+        }
+      },
+      {
+        "name": "Agricultural vehicle",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Bus or coach (17 or more pass seats)",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Car",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Data missing or out of range",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Electric motorcycle",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Goods 7.5 tonnes mgw and over",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Goods over 3.5t. and under 7.5t",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Goods vehicle - unknown weight",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Minibus (8 - 16 passenger seats)",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Mobility scooter",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle - unknown cc",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle 125cc and under",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle 50cc and under",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle over 125cc and up to 500cc",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle over 500cc",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Other vehicle",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Pedal cycle",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Ridden horse",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Taxi/Private hire car",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Tram",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Van / Goods 3.5 tonnes mgw or under",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      }
+    ],
+    "links": [
+      {
+        "source": "Darkness - lighting unknown",
+        "target": "Fatal",
+        "value": 9
+      },
+      {
+        "source": "Darkness - lighting unknown",
+        "target": "Serious",
+        "value": 175
+      },
+      {
+        "source": "Darkness - lighting unknown",
+        "target": "Slight",
+        "value": 1171
+      },
+      {
+        "source": "Darkness - lights lit",
+        "target": "Fatal",
+        "value": 314
+      },
+      {
+        "source": "Darkness - lights lit",
+        "target": "Serious",
+        "value": 4089
+      },
+      {
+        "source": "Darkness - lights lit",
+        "target": "Slight",
+        "value": 24693
+      },
+      {
+        "source": "Darkness - lights unlit",
+        "target": "Fatal",
+        "value": 6
+      },
+      {
+        "source": "Darkness - lights unlit",
+        "target": "Serious",
+        "value": 67
+      },
+      {
+        "source": "Darkness - lights unlit",
+        "target": "Slight",
+        "value": 477
+      },
+      {
+        "source": "Darkness - no lighting",
+        "target": "Fatal",
+        "value": 322
+      },
+      {
+        "source": "Darkness - no lighting",
+        "target": "Serious",
+        "value": 1492
+      },
+      {
+        "source": "Darkness - no lighting",
+        "target": "Slight",
+        "value": 6318
+      },
+      {
+        "source": "Daylight",
+        "target": "Fatal",
+        "value": 1080
+      },
+      {
+        "source": "Daylight",
+        "target": "Serious",
+        "value": 14617
+      },
+      {
+        "source": "Daylight",
+        "target": "Slight",
+        "value": 99584
+      },
+      {
+        "source": "Fatal",
+        "target": "Agricultural vehicle",
+        "value": 21
+      },
+      {
+        "source": "Fatal",
+        "target": "Bus or coach (17 or more pass seats)",
+        "value": 60
+      },
+      {
+        "source": "Fatal",
+        "target": "Car",
+        "value": 1882
+      },
+      {
+        "source": "Fatal",
+        "target": "Goods 7.5 tonnes mgw and over",
+        "value": 266
+      },
+      {
+        "source": "Fatal",
+        "target": "Goods over 3.5t. and under 7.5t",
+        "value": 37
+      },
+      {
+        "source": "Fatal",
+        "target": "Minibus (8 - 16 passenger seats)",
+        "value": 22
+      },
+      {
+        "source": "Fatal",
+        "target": "Motorcycle 125cc and under",
+        "value": 55
+      },
+      {
+        "source": "Fatal",
+        "target": "Motorcycle 50cc and under",
+        "value": 9
+      },
+      {
+        "source": "Fatal",
+        "target": "Motorcycle over 125cc and up to 500cc",
+        "value": 42
+      },
+      {
+        "source": "Fatal",
+        "target": "Motorcycle over 500cc",
+        "value": 340
+      },
+      {
+        "source": "Fatal",
+        "target": "Other vehicle",
+        "value": 48
+      },
+      {
+        "source": "Fatal",
+        "target": "Pedal cycle",
+        "value": 119
+      },
+      {
+        "source": "Fatal",
+        "target": "Ridden horse",
+        "value": 3
+      },
+      {
+        "source": "Fatal",
+        "target": "Taxi/Private hire car",
+        "value": 40
+      },
+      {
+        "source": "Fatal",
+        "target": "Van / Goods 3.5 tonnes mgw or under",
+        "value": 175
+      },
+      {
+        "source": "Serious",
+        "target": "Agricultural vehicle",
+        "value": 112
+      },
+      {
+        "source": "Serious",
+        "target": "Bus or coach (17 or more pass seats)",
+        "value": 870
+      },
+      {
+        "source": "Serious",
+        "target": "Car",
+        "value": 21667
+      },
+      {
+        "source": "Serious",
+        "target": "Data missing or out of range",
+        "value": 3
+      },
+      {
+        "source": "Serious",
+        "target": "Goods 7.5 tonnes mgw and over",
+        "value": 810
+      },
+      {
+        "source": "Serious",
+        "target": "Goods over 3.5t. and under 7.5t",
+        "value": 259
+      },
+      {
+        "source": "Serious",
+        "target": "Minibus (8 - 16 passenger seats)",
+        "value": 69
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle 125cc and under",
+        "value": 1261
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle 50cc and under",
+        "value": 531
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle over 125cc and up to 500cc",
+        "value": 637
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle over 500cc",
+        "value": 2571
+      },
+      {
+        "source": "Serious",
+        "target": "Other vehicle",
+        "value": 356
+      },
+      {
+        "source": "Serious",
+        "target": "Pedal cycle",
+        "value": 2843
+      },
+      {
+        "source": "Serious",
+        "target": "Ridden horse",
+        "value": 36
+      },
+      {
+        "source": "Serious",
+        "target": "Taxi/Private hire car",
+        "value": 556
+      },
+      {
+        "source": "Serious",
+        "target": "Tram",
+        "value": 3
+      },
+      {
+        "source": "Serious",
+        "target": "Van / Goods 3.5 tonnes mgw or under",
+        "value": 1534
+      },
+      {
+        "source": "Slight",
+        "target": "Agricultural vehicle",
+        "value": 467
+      },
+      {
+        "source": "Slight",
+        "target": "Bus or coach (17 or more pass seats)",
+        "value": 6532
+      },
+      {
+        "source": "Slight",
+        "target": "Car",
+        "value": 183194
+      },
+      {
+        "source": "Slight",
+        "target": "Data missing or out of range",
+        "value": 35
+      },
+      {
+        "source": "Slight",
+        "target": "Goods 7.5 tonnes mgw and over",
+        "value": 4540
+      },
+      {
+        "source": "Slight",
+        "target": "Goods over 3.5t. and under 7.5t",
+        "value": 1703
+      },
+      {
+        "source": "Slight",
+        "target": "Minibus (8 - 16 passenger seats)",
+        "value": 660
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle 125cc and under",
+        "value": 4834
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle 50cc and under",
+        "value": 2663
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle over 125cc and up to 500cc",
+        "value": 1699
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle over 500cc",
+        "value": 4892
+      },
+      {
+        "source": "Slight",
+        "target": "Other vehicle",
+        "value": 2227
+      },
+      {
+        "source": "Slight",
+        "target": "Pedal cycle",
+        "value": 14849
+      },
+      {
+        "source": "Slight",
+        "target": "Ridden horse",
+        "value": 96
+      },
+      {
+        "source": "Slight",
+        "target": "Taxi/Private hire car",
+        "value": 4595
+      },
+      {
+        "source": "Slight",
+        "target": "Tram",
+        "value": 21
+      },
+      {
+        "source": "Slight",
+        "target": "Van / Goods 3.5 tonnes mgw or under",
+        "value": 11157
+      }
+    ]
+  },
+  "2011": {
+    "nodes": [
+      {
+        "name": "Darkness - lighting unknown",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Darkness - lights lit",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Darkness - lights unlit",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Darkness - no lighting",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Daylight",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Fatal",
+        "itemStyle": {
+          "color": "#ffa726"
+        }
+      },
+      {
+        "name": "Serious",
+        "itemStyle": {
+          "color": "#ffa726"
+        }
+      },
+      {
+        "name": "Slight",
+        "itemStyle": {
+          "color": "#ffa726"
+        }
+      },
+      {
+        "name": "Agricultural vehicle",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Bus or coach (17 or more pass seats)",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Car",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Data missing or out of range",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Electric motorcycle",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Goods 7.5 tonnes mgw and over",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Goods over 3.5t. and under 7.5t",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Goods vehicle - unknown weight",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Minibus (8 - 16 passenger seats)",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Mobility scooter",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle - unknown cc",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle 125cc and under",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle 50cc and under",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle over 125cc and up to 500cc",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle over 500cc",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Other vehicle",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Pedal cycle",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Ridden horse",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Taxi/Private hire car",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Tram",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Van / Goods 3.5 tonnes mgw or under",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      }
+    ],
+    "links": [
+      {
+        "source": "Darkness - lighting unknown",
+        "target": "Fatal",
+        "value": 32
+      },
+      {
+        "source": "Darkness - lighting unknown",
+        "target": "Serious",
+        "value": 214
+      },
+      {
+        "source": "Darkness - lighting unknown",
+        "target": "Slight",
+        "value": 1403
+      },
+      {
+        "source": "Darkness - lights lit",
+        "target": "Fatal",
+        "value": 348
+      },
+      {
+        "source": "Darkness - lights lit",
+        "target": "Serious",
+        "value": 4332
+      },
+      {
+        "source": "Darkness - lights lit",
+        "target": "Slight",
+        "value": 24451
+      },
+      {
+        "source": "Darkness - lights unlit",
+        "target": "Fatal",
+        "value": 11
+      },
+      {
+        "source": "Darkness - lights unlit",
+        "target": "Serious",
+        "value": 104
+      },
+      {
+        "source": "Darkness - lights unlit",
+        "target": "Slight",
+        "value": 560
+      },
+      {
+        "source": "Darkness - no lighting",
+        "target": "Fatal",
+        "value": 352
+      },
+      {
+        "source": "Darkness - no lighting",
+        "target": "Serious",
+        "value": 1534
+      },
+      {
+        "source": "Darkness - no lighting",
+        "target": "Slight",
+        "value": 6116
+      },
+      {
+        "source": "Daylight",
+        "target": "Fatal",
+        "value": 1054
+      },
+      {
+        "source": "Daylight",
+        "target": "Serious",
+        "value": 14802
+      },
+      {
+        "source": "Daylight",
+        "target": "Slight",
+        "value": 96161
+      },
+      {
+        "source": "Fatal",
+        "target": "Agricultural vehicle",
+        "value": 21
+      },
+      {
+        "source": "Fatal",
+        "target": "Bus or coach (17 or more pass seats)",
+        "value": 71
+      },
+      {
+        "source": "Fatal",
+        "target": "Car",
+        "value": 1992
+      },
+      {
+        "source": "Fatal",
+        "target": "Goods 7.5 tonnes mgw and over",
+        "value": 238
+      },
+      {
+        "source": "Fatal",
+        "target": "Goods over 3.5t. and under 7.5t",
+        "value": 34
+      },
+      {
+        "source": "Fatal",
+        "target": "Minibus (8 - 16 passenger seats)",
+        "value": 18
+      },
+      {
+        "source": "Fatal",
+        "target": "Motorcycle 125cc and under",
+        "value": 60
+      },
+      {
+        "source": "Fatal",
+        "target": "Motorcycle 50cc and under",
+        "value": 9
+      },
+      {
+        "source": "Fatal",
+        "target": "Motorcycle over 125cc and up to 500cc",
+        "value": 45
+      },
+      {
+        "source": "Fatal",
+        "target": "Motorcycle over 500cc",
+        "value": 297
+      },
+      {
+        "source": "Fatal",
+        "target": "Other vehicle",
+        "value": 55
+      },
+      {
+        "source": "Fatal",
+        "target": "Pedal cycle",
+        "value": 119
+      },
+      {
+        "source": "Fatal",
+        "target": "Ridden horse",
+        "value": 5
+      },
+      {
+        "source": "Fatal",
+        "target": "Taxi/Private hire car",
+        "value": 57
+      },
+      {
+        "source": "Fatal",
+        "target": "Tram",
+        "value": 3
+      },
+      {
+        "source": "Fatal",
+        "target": "Van / Goods 3.5 tonnes mgw or under",
+        "value": 197
+      },
+      {
+        "source": "Serious",
+        "target": "Agricultural vehicle",
+        "value": 111
+      },
+      {
+        "source": "Serious",
+        "target": "Bus or coach (17 or more pass seats)",
+        "value": 801
+      },
+      {
+        "source": "Serious",
+        "target": "Car",
+        "value": 21738
+      },
+      {
+        "source": "Serious",
+        "target": "Data missing or out of range",
+        "value": 2
+      },
+      {
+        "source": "Serious",
+        "target": "Goods 7.5 tonnes mgw and over",
+        "value": 784
+      },
+      {
+        "source": "Serious",
+        "target": "Goods over 3.5t. and under 7.5t",
+        "value": 227
+      },
+      {
+        "source": "Serious",
+        "target": "Minibus (8 - 16 passenger seats)",
+        "value": 97
+      },
+      {
+        "source": "Serious",
+        "target": "Mobility scooter",
+        "value": 6
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle 125cc and under",
+        "value": 1559
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle 50cc and under",
+        "value": 567
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle over 125cc and up to 500cc",
+        "value": 677
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle over 500cc",
+        "value": 2706
+      },
+      {
+        "source": "Serious",
+        "target": "Other vehicle",
+        "value": 368
+      },
+      {
+        "source": "Serious",
+        "target": "Pedal cycle",
+        "value": 3292
+      },
+      {
+        "source": "Serious",
+        "target": "Ridden horse",
+        "value": 31
+      },
+      {
+        "source": "Serious",
+        "target": "Taxi/Private hire car",
+        "value": 609
+      },
+      {
+        "source": "Serious",
+        "target": "Tram",
+        "value": 2
+      },
+      {
+        "source": "Serious",
+        "target": "Van / Goods 3.5 tonnes mgw or under",
+        "value": 1536
+      },
+      {
+        "source": "Slight",
+        "target": "Agricultural vehicle",
+        "value": 389
+      },
+      {
+        "source": "Slight",
+        "target": "Bus or coach (17 or more pass seats)",
+        "value": 6351
+      },
+      {
+        "source": "Slight",
+        "target": "Car",
+        "value": 175156
+      },
+      {
+        "source": "Slight",
+        "target": "Data missing or out of range",
+        "value": 20
+      },
+      {
+        "source": "Slight",
+        "target": "Goods 7.5 tonnes mgw and over",
+        "value": 4220
+      },
+      {
+        "source": "Slight",
+        "target": "Goods over 3.5t. and under 7.5t",
+        "value": 1623
+      },
+      {
+        "source": "Slight",
+        "target": "Minibus (8 - 16 passenger seats)",
+        "value": 627
+      },
+      {
+        "source": "Slight",
+        "target": "Mobility scooter",
+        "value": 4
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle - unknown cc",
+        "value": 4
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle 125cc and under",
+        "value": 5575
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle 50cc and under",
+        "value": 2788
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle over 125cc and up to 500cc",
+        "value": 1747
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle over 500cc",
+        "value": 5025
+      },
+      {
+        "source": "Slight",
+        "target": "Other vehicle",
+        "value": 2110
+      },
+      {
+        "source": "Slight",
+        "target": "Pedal cycle",
+        "value": 16472
+      },
+      {
+        "source": "Slight",
+        "target": "Ridden horse",
+        "value": 113
+      },
+      {
+        "source": "Slight",
+        "target": "Taxi/Private hire car",
+        "value": 4426
+      },
+      {
+        "source": "Slight",
+        "target": "Tram",
+        "value": 18
+      },
+      {
+        "source": "Slight",
+        "target": "Van / Goods 3.5 tonnes mgw or under",
+        "value": 11153
+      }
+    ]
+  },
+  "2012": {
+    "nodes": [
+      {
+        "name": "Darkness - lighting unknown",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Darkness - lights lit",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Darkness - lights unlit",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Darkness - no lighting",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Daylight",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Fatal",
+        "itemStyle": {
+          "color": "#ffa726"
+        }
+      },
+      {
+        "name": "Serious",
+        "itemStyle": {
+          "color": "#ffa726"
+        }
+      },
+      {
+        "name": "Slight",
+        "itemStyle": {
+          "color": "#ffa726"
+        }
+      },
+      {
+        "name": "Agricultural vehicle",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Bus or coach (17 or more pass seats)",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Car",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Data missing or out of range",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Electric motorcycle",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Goods 7.5 tonnes mgw and over",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Goods over 3.5t. and under 7.5t",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Goods vehicle - unknown weight",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Minibus (8 - 16 passenger seats)",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Mobility scooter",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle - unknown cc",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle 125cc and under",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle 50cc and under",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle over 125cc and up to 500cc",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle over 500cc",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Other vehicle",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Pedal cycle",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Ridden horse",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Taxi/Private hire car",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Tram",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Van / Goods 3.5 tonnes mgw or under",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      }
+    ],
+    "links": [
+      {
+        "source": "Darkness - lighting unknown",
+        "target": "Fatal",
+        "value": 19
+      },
+      {
+        "source": "Darkness - lighting unknown",
+        "target": "Serious",
+        "value": 379
+      },
+      {
+        "source": "Darkness - lighting unknown",
+        "target": "Slight",
+        "value": 2195
+      },
+      {
+        "source": "Darkness - lights lit",
+        "target": "Fatal",
+        "value": 314
+      },
+      {
+        "source": "Darkness - lights lit",
+        "target": "Serious",
+        "value": 4454
+      },
+      {
+        "source": "Darkness - lights lit",
+        "target": "Slight",
+        "value": 23399
+      },
+      {
+        "source": "Darkness - lights unlit",
+        "target": "Fatal",
+        "value": 11
+      },
+      {
+        "source": "Darkness - lights unlit",
+        "target": "Serious",
+        "value": 105
+      },
+      {
+        "source": "Darkness - lights unlit",
+        "target": "Slight",
+        "value": 645
+      },
+      {
+        "source": "Darkness - no lighting",
+        "target": "Fatal",
+        "value": 307
+      },
+      {
+        "source": "Darkness - no lighting",
+        "target": "Serious",
+        "value": 1500
+      },
+      {
+        "source": "Darkness - no lighting",
+        "target": "Slight",
+        "value": 5761
+      },
+      {
+        "source": "Daylight",
+        "target": "Fatal",
+        "value": 986
+      },
+      {
+        "source": "Daylight",
+        "target": "Serious",
+        "value": 14463
+      },
+      {
+        "source": "Daylight",
+        "target": "Slight",
+        "value": 91033
+      },
+      {
+        "source": "Fatal",
+        "target": "Agricultural vehicle",
+        "value": 23
+      },
+      {
+        "source": "Fatal",
+        "target": "Bus or coach (17 or more pass seats)",
+        "value": 70
+      },
+      {
+        "source": "Fatal",
+        "target": "Car",
+        "value": 1722
+      },
+      {
+        "source": "Fatal",
+        "target": "Goods 7.5 tonnes mgw and over",
+        "value": 248
+      },
+      {
+        "source": "Fatal",
+        "target": "Goods over 3.5t. and under 7.5t",
+        "value": 44
+      },
+      {
+        "source": "Fatal",
+        "target": "Minibus (8 - 16 passenger seats)",
+        "value": 10
+      },
+      {
+        "source": "Fatal",
+        "target": "Mobility scooter",
+        "value": 1
+      },
+      {
+        "source": "Fatal",
+        "target": "Motorcycle 125cc and under",
+        "value": 51
+      },
+      {
+        "source": "Fatal",
+        "target": "Motorcycle 50cc and under",
+        "value": 13
+      },
+      {
+        "source": "Fatal",
+        "target": "Motorcycle over 125cc and up to 500cc",
+        "value": 34
+      },
+      {
+        "source": "Fatal",
+        "target": "Motorcycle over 500cc",
+        "value": 265
+      },
+      {
+        "source": "Fatal",
+        "target": "Other vehicle",
+        "value": 26
+      },
+      {
+        "source": "Fatal",
+        "target": "Pedal cycle",
+        "value": 125
+      },
+      {
+        "source": "Fatal",
+        "target": "Ridden horse",
+        "value": 5
+      },
+      {
+        "source": "Fatal",
+        "target": "Taxi/Private hire car",
+        "value": 43
+      },
+      {
+        "source": "Fatal",
+        "target": "Van / Goods 3.5 tonnes mgw or under",
+        "value": 170
+      },
+      {
+        "source": "Serious",
+        "target": "Agricultural vehicle",
+        "value": 126
+      },
+      {
+        "source": "Serious",
+        "target": "Bus or coach (17 or more pass seats)",
+        "value": 802
+      },
+      {
+        "source": "Serious",
+        "target": "Car",
+        "value": 21692
+      },
+      {
+        "source": "Serious",
+        "target": "Goods 7.5 tonnes mgw and over",
+        "value": 733
+      },
+      {
+        "source": "Serious",
+        "target": "Goods over 3.5t. and under 7.5t",
+        "value": 276
+      },
+      {
+        "source": "Serious",
+        "target": "Minibus (8 - 16 passenger seats)",
+        "value": 102
+      },
+      {
+        "source": "Serious",
+        "target": "Mobility scooter",
+        "value": 17
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle - unknown cc",
+        "value": 6
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle 125cc and under",
+        "value": 1580
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle 50cc and under",
+        "value": 551
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle over 125cc and up to 500cc",
+        "value": 694
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle over 500cc",
+        "value": 2434
+      },
+      {
+        "source": "Serious",
+        "target": "Other vehicle",
+        "value": 329
+      },
+      {
+        "source": "Serious",
+        "target": "Pedal cycle",
+        "value": 3404
+      },
+      {
+        "source": "Serious",
+        "target": "Ridden horse",
+        "value": 26
+      },
+      {
+        "source": "Serious",
+        "target": "Taxi/Private hire car",
+        "value": 620
+      },
+      {
+        "source": "Serious",
+        "target": "Tram",
+        "value": 1
+      },
+      {
+        "source": "Serious",
+        "target": "Van / Goods 3.5 tonnes mgw or under",
+        "value": 1623
+      },
+      {
+        "source": "Slight",
+        "target": "Agricultural vehicle",
+        "value": 451
+      },
+      {
+        "source": "Slight",
+        "target": "Bus or coach (17 or more pass seats)",
+        "value": 5446
+      },
+      {
+        "source": "Slight",
+        "target": "Car",
+        "value": 168190
+      },
+      {
+        "source": "Slight",
+        "target": "Data missing or out of range",
+        "value": 36
+      },
+      {
+        "source": "Slight",
+        "target": "Goods 7.5 tonnes mgw and over",
+        "value": 3946
+      },
+      {
+        "source": "Slight",
+        "target": "Goods over 3.5t. and under 7.5t",
+        "value": 1473
+      },
+      {
+        "source": "Slight",
+        "target": "Goods vehicle - unknown weight",
+        "value": 15
+      },
+      {
+        "source": "Slight",
+        "target": "Minibus (8 - 16 passenger seats)",
+        "value": 625
+      },
+      {
+        "source": "Slight",
+        "target": "Mobility scooter",
+        "value": 66
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle - unknown cc",
+        "value": 15
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle 125cc and under",
+        "value": 5838
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle 50cc and under",
+        "value": 2448
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle over 125cc and up to 500cc",
+        "value": 1771
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle over 500cc",
+        "value": 4471
+      },
+      {
+        "source": "Slight",
+        "target": "Other vehicle",
+        "value": 1757
+      },
+      {
+        "source": "Slight",
+        "target": "Pedal cycle",
+        "value": 16179
+      },
+      {
+        "source": "Slight",
+        "target": "Ridden horse",
+        "value": 104
+      },
+      {
+        "source": "Slight",
+        "target": "Taxi/Private hire car",
+        "value": 4384
+      },
+      {
+        "source": "Slight",
+        "target": "Tram",
+        "value": 14
+      },
+      {
+        "source": "Slight",
+        "target": "Van / Goods 3.5 tonnes mgw or under",
+        "value": 10782
+      }
+    ]
+  },
+  "2013": {
+    "nodes": [
+      {
+        "name": "Darkness - lighting unknown",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Darkness - lights lit",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Darkness - lights unlit",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Darkness - no lighting",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Daylight",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Fatal",
+        "itemStyle": {
+          "color": "#ffa726"
+        }
+      },
+      {
+        "name": "Serious",
+        "itemStyle": {
+          "color": "#ffa726"
+        }
+      },
+      {
+        "name": "Slight",
+        "itemStyle": {
+          "color": "#ffa726"
+        }
+      },
+      {
+        "name": "Agricultural vehicle",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Bus or coach (17 or more pass seats)",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Car",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Data missing or out of range",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Electric motorcycle",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Goods 7.5 tonnes mgw and over",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Goods over 3.5t. and under 7.5t",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Goods vehicle - unknown weight",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Minibus (8 - 16 passenger seats)",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Mobility scooter",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle - unknown cc",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle 125cc and under",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle 50cc and under",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle over 125cc and up to 500cc",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle over 500cc",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Other vehicle",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Pedal cycle",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Ridden horse",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Taxi/Private hire car",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Tram",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Van / Goods 3.5 tonnes mgw or under",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      }
+    ],
+    "links": [
+      {
+        "source": "Darkness - lighting unknown",
+        "target": "Fatal",
+        "value": 16
+      },
+      {
+        "source": "Darkness - lighting unknown",
+        "target": "Serious",
+        "value": 281
+      },
+      {
+        "source": "Darkness - lighting unknown",
+        "target": "Slight",
+        "value": 1719
+      },
+      {
+        "source": "Darkness - lights lit",
+        "target": "Fatal",
+        "value": 305
+      },
+      {
+        "source": "Darkness - lights lit",
+        "target": "Serious",
+        "value": 3950
+      },
+      {
+        "source": "Darkness - lights lit",
+        "target": "Slight",
+        "value": 22651
+      },
+      {
+        "source": "Darkness - lights unlit",
+        "target": "Fatal",
+        "value": 16
+      },
+      {
+        "source": "Darkness - lights unlit",
+        "target": "Serious",
+        "value": 133
+      },
+      {
+        "source": "Darkness - lights unlit",
+        "target": "Slight",
+        "value": 631
+      },
+      {
+        "source": "Darkness - no lighting",
+        "target": "Fatal",
+        "value": 289
+      },
+      {
+        "source": "Darkness - no lighting",
+        "target": "Serious",
+        "value": 1443
+      },
+      {
+        "source": "Darkness - no lighting",
+        "target": "Slight",
+        "value": 5563
+      },
+      {
+        "source": "Daylight",
+        "target": "Fatal",
+        "value": 982
+      },
+      {
+        "source": "Daylight",
+        "target": "Serious",
+        "value": 13817
+      },
+      {
+        "source": "Daylight",
+        "target": "Slight",
+        "value": 86864
+      },
+      {
+        "source": "Fatal",
+        "target": "Agricultural vehicle",
+        "value": 24
+      },
+      {
+        "source": "Fatal",
+        "target": "Bus or coach (17 or more pass seats)",
+        "value": 69
+      },
+      {
+        "source": "Fatal",
+        "target": "Car",
+        "value": 1760
+      },
+      {
+        "source": "Fatal",
+        "target": "Data missing or out of range",
+        "value": 1
+      },
+      {
+        "source": "Fatal",
+        "target": "Goods 7.5 tonnes mgw and over",
+        "value": 225
+      },
+      {
+        "source": "Fatal",
+        "target": "Goods over 3.5t. and under 7.5t",
+        "value": 45
+      },
+      {
+        "source": "Fatal",
+        "target": "Goods vehicle - unknown weight",
+        "value": 1
+      },
+      {
+        "source": "Fatal",
+        "target": "Minibus (8 - 16 passenger seats)",
+        "value": 12
+      },
+      {
+        "source": "Fatal",
+        "target": "Mobility scooter",
+        "value": 5
+      },
+      {
+        "source": "Fatal",
+        "target": "Motorcycle 125cc and under",
+        "value": 55
+      },
+      {
+        "source": "Fatal",
+        "target": "Motorcycle 50cc and under",
+        "value": 3
+      },
+      {
+        "source": "Fatal",
+        "target": "Motorcycle over 125cc and up to 500cc",
+        "value": 33
+      },
+      {
+        "source": "Fatal",
+        "target": "Motorcycle over 500cc",
+        "value": 265
+      },
+      {
+        "source": "Fatal",
+        "target": "Other vehicle",
+        "value": 34
+      },
+      {
+        "source": "Fatal",
+        "target": "Pedal cycle",
+        "value": 121
+      },
+      {
+        "source": "Fatal",
+        "target": "Ridden horse",
+        "value": 2
+      },
+      {
+        "source": "Fatal",
+        "target": "Taxi/Private hire car",
+        "value": 38
+      },
+      {
+        "source": "Fatal",
+        "target": "Van / Goods 3.5 tonnes mgw or under",
+        "value": 153
+      },
+      {
+        "source": "Serious",
+        "target": "Agricultural vehicle",
+        "value": 123
+      },
+      {
+        "source": "Serious",
+        "target": "Bus or coach (17 or more pass seats)",
+        "value": 698
+      },
+      {
+        "source": "Serious",
+        "target": "Car",
+        "value": 20249
+      },
+      {
+        "source": "Serious",
+        "target": "Data missing or out of range",
+        "value": 1
+      },
+      {
+        "source": "Serious",
+        "target": "Electric motorcycle",
+        "value": 2
+      },
+      {
+        "source": "Serious",
+        "target": "Goods 7.5 tonnes mgw and over",
+        "value": 760
+      },
+      {
+        "source": "Serious",
+        "target": "Goods over 3.5t. and under 7.5t",
+        "value": 247
+      },
+      {
+        "source": "Serious",
+        "target": "Goods vehicle - unknown weight",
+        "value": 11
+      },
+      {
+        "source": "Serious",
+        "target": "Minibus (8 - 16 passenger seats)",
+        "value": 98
+      },
+      {
+        "source": "Serious",
+        "target": "Mobility scooter",
+        "value": 26
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle - unknown cc",
+        "value": 17
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle 125cc and under",
+        "value": 1594
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle 50cc and under",
+        "value": 468
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle over 125cc and up to 500cc",
+        "value": 605
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle over 500cc",
+        "value": 2443
+      },
+      {
+        "source": "Serious",
+        "target": "Other vehicle",
+        "value": 254
+      },
+      {
+        "source": "Serious",
+        "target": "Pedal cycle",
+        "value": 3350
+      },
+      {
+        "source": "Serious",
+        "target": "Ridden horse",
+        "value": 30
+      },
+      {
+        "source": "Serious",
+        "target": "Taxi/Private hire car",
+        "value": 645
+      },
+      {
+        "source": "Serious",
+        "target": "Tram",
+        "value": 2
+      },
+      {
+        "source": "Serious",
+        "target": "Van / Goods 3.5 tonnes mgw or under",
+        "value": 1551
+      },
+      {
+        "source": "Slight",
+        "target": "Agricultural vehicle",
+        "value": 411
+      },
+      {
+        "source": "Slight",
+        "target": "Bus or coach (17 or more pass seats)",
+        "value": 5129
+      },
+      {
+        "source": "Slight",
+        "target": "Car",
+        "value": 158104
+      },
+      {
+        "source": "Slight",
+        "target": "Data missing or out of range",
+        "value": 38
+      },
+      {
+        "source": "Slight",
+        "target": "Electric motorcycle",
+        "value": 5
+      },
+      {
+        "source": "Slight",
+        "target": "Goods 7.5 tonnes mgw and over",
+        "value": 3761
+      },
+      {
+        "source": "Slight",
+        "target": "Goods over 3.5t. and under 7.5t",
+        "value": 1486
+      },
+      {
+        "source": "Slight",
+        "target": "Goods vehicle - unknown weight",
+        "value": 94
+      },
+      {
+        "source": "Slight",
+        "target": "Minibus (8 - 16 passenger seats)",
+        "value": 485
+      },
+      {
+        "source": "Slight",
+        "target": "Mobility scooter",
+        "value": 125
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle - unknown cc",
+        "value": 38
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle 125cc and under",
+        "value": 5944
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle 50cc and under",
+        "value": 2061
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle over 125cc and up to 500cc",
+        "value": 1578
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle over 500cc",
+        "value": 4427
+      },
+      {
+        "source": "Slight",
+        "target": "Other vehicle",
+        "value": 1168
+      },
+      {
+        "source": "Slight",
+        "target": "Pedal cycle",
+        "value": 16578
+      },
+      {
+        "source": "Slight",
+        "target": "Ridden horse",
+        "value": 83
+      },
+      {
+        "source": "Slight",
+        "target": "Taxi/Private hire car",
+        "value": 4378
+      },
+      {
+        "source": "Slight",
+        "target": "Tram",
+        "value": 18
+      },
+      {
+        "source": "Slight",
+        "target": "Van / Goods 3.5 tonnes mgw or under",
+        "value": 10982
+      }
+    ]
+  },
+  "2014": {
+    "nodes": [
+      {
+        "name": "Darkness - lighting unknown",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Darkness - lights lit",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Darkness - lights unlit",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Darkness - no lighting",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Daylight",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Fatal",
+        "itemStyle": {
+          "color": "#ffa726"
+        }
+      },
+      {
+        "name": "Serious",
+        "itemStyle": {
+          "color": "#ffa726"
+        }
+      },
+      {
+        "name": "Slight",
+        "itemStyle": {
+          "color": "#ffa726"
+        }
+      },
+      {
+        "name": "Agricultural vehicle",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Bus or coach (17 or more pass seats)",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Car",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Data missing or out of range",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Electric motorcycle",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Goods 7.5 tonnes mgw and over",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Goods over 3.5t. and under 7.5t",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Goods vehicle - unknown weight",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Minibus (8 - 16 passenger seats)",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Mobility scooter",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle - unknown cc",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle 125cc and under",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle 50cc and under",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle over 125cc and up to 500cc",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle over 500cc",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Other vehicle",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Pedal cycle",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Ridden horse",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Taxi/Private hire car",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Tram",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Van / Goods 3.5 tonnes mgw or under",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      }
+    ],
+    "links": [
+      {
+        "source": "Darkness - lighting unknown",
+        "target": "Fatal",
+        "value": 17
+      },
+      {
+        "source": "Darkness - lighting unknown",
+        "target": "Serious",
+        "value": 221
+      },
+      {
+        "source": "Darkness - lighting unknown",
+        "target": "Slight",
+        "value": 1493
+      },
+      {
+        "source": "Darkness - lights lit",
+        "target": "Fatal",
+        "value": 362
+      },
+      {
+        "source": "Darkness - lights lit",
+        "target": "Serious",
+        "value": 4188
+      },
+      {
+        "source": "Darkness - lights lit",
+        "target": "Slight",
+        "value": 23899
+      },
+      {
+        "source": "Darkness - lights unlit",
+        "target": "Fatal",
+        "value": 23
+      },
+      {
+        "source": "Darkness - lights unlit",
+        "target": "Serious",
+        "value": 135
+      },
+      {
+        "source": "Darkness - lights unlit",
+        "target": "Slight",
+        "value": 714
+      },
+      {
+        "source": "Darkness - no lighting",
+        "target": "Fatal",
+        "value": 276
+      },
+      {
+        "source": "Darkness - no lighting",
+        "target": "Serious",
+        "value": 1517
+      },
+      {
+        "source": "Darkness - no lighting",
+        "target": "Slight",
+        "value": 5406
+      },
+      {
+        "source": "Daylight",
+        "target": "Fatal",
+        "value": 980
+      },
+      {
+        "source": "Daylight",
+        "target": "Serious",
+        "value": 14615
+      },
+      {
+        "source": "Daylight",
+        "target": "Slight",
+        "value": 92476
+      },
+      {
+        "source": "Fatal",
+        "target": "Agricultural vehicle",
+        "value": 32
+      },
+      {
+        "source": "Fatal",
+        "target": "Bus or coach (17 or more pass seats)",
+        "value": 61
+      },
+      {
+        "source": "Fatal",
+        "target": "Car",
+        "value": 1789
+      },
+      {
+        "source": "Fatal",
+        "target": "Goods 7.5 tonnes mgw and over",
+        "value": 227
+      },
+      {
+        "source": "Fatal",
+        "target": "Goods over 3.5t. and under 7.5t",
+        "value": 38
+      },
+      {
+        "source": "Fatal",
+        "target": "Goods vehicle - unknown weight",
+        "value": 4
+      },
+      {
+        "source": "Fatal",
+        "target": "Minibus (8 - 16 passenger seats)",
+        "value": 6
+      },
+      {
+        "source": "Fatal",
+        "target": "Mobility scooter",
+        "value": 9
+      },
+      {
+        "source": "Fatal",
+        "target": "Motorcycle - unknown cc",
+        "value": 3
+      },
+      {
+        "source": "Fatal",
+        "target": "Motorcycle 125cc and under",
+        "value": 63
+      },
+      {
+        "source": "Fatal",
+        "target": "Motorcycle 50cc and under",
+        "value": 6
+      },
+      {
+        "source": "Fatal",
+        "target": "Motorcycle over 125cc and up to 500cc",
+        "value": 25
+      },
+      {
+        "source": "Fatal",
+        "target": "Motorcycle over 500cc",
+        "value": 278
+      },
+      {
+        "source": "Fatal",
+        "target": "Other vehicle",
+        "value": 32
+      },
+      {
+        "source": "Fatal",
+        "target": "Pedal cycle",
+        "value": 122
+      },
+      {
+        "source": "Fatal",
+        "target": "Ridden horse",
+        "value": 1
+      },
+      {
+        "source": "Fatal",
+        "target": "Taxi/Private hire car",
+        "value": 36
+      },
+      {
+        "source": "Fatal",
+        "target": "Tram",
+        "value": 1
+      },
+      {
+        "source": "Fatal",
+        "target": "Van / Goods 3.5 tonnes mgw or under",
+        "value": 169
+      },
+      {
+        "source": "Serious",
+        "target": "Agricultural vehicle",
+        "value": 111
+      },
+      {
+        "source": "Serious",
+        "target": "Bus or coach (17 or more pass seats)",
+        "value": 716
+      },
+      {
+        "source": "Serious",
+        "target": "Car",
+        "value": 21376
+      },
+      {
+        "source": "Serious",
+        "target": "Data missing or out of range",
+        "value": 2
+      },
+      {
+        "source": "Serious",
+        "target": "Electric motorcycle",
+        "value": 2
+      },
+      {
+        "source": "Serious",
+        "target": "Goods 7.5 tonnes mgw and over",
+        "value": 706
+      },
+      {
+        "source": "Serious",
+        "target": "Goods over 3.5t. and under 7.5t",
+        "value": 276
+      },
+      {
+        "source": "Serious",
+        "target": "Goods vehicle - unknown weight",
+        "value": 38
+      },
+      {
+        "source": "Serious",
+        "target": "Minibus (8 - 16 passenger seats)",
+        "value": 87
+      },
+      {
+        "source": "Serious",
+        "target": "Mobility scooter",
+        "value": 46
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle - unknown cc",
+        "value": 62
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle 125cc and under",
+        "value": 1879
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle 50cc and under",
+        "value": 440
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle over 125cc and up to 500cc",
+        "value": 593
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle over 500cc",
+        "value": 2582
+      },
+      {
+        "source": "Serious",
+        "target": "Other vehicle",
+        "value": 223
+      },
+      {
+        "source": "Serious",
+        "target": "Pedal cycle",
+        "value": 3653
+      },
+      {
+        "source": "Serious",
+        "target": "Ridden horse",
+        "value": 30
+      },
+      {
+        "source": "Serious",
+        "target": "Taxi/Private hire car",
+        "value": 602
+      },
+      {
+        "source": "Serious",
+        "target": "Tram",
+        "value": 3
+      },
+      {
+        "source": "Serious",
+        "target": "Van / Goods 3.5 tonnes mgw or under",
+        "value": 1741
+      },
+      {
+        "source": "Slight",
+        "target": "Agricultural vehicle",
+        "value": 436
+      },
+      {
+        "source": "Slight",
+        "target": "Bus or coach (17 or more pass seats)",
+        "value": 5326
+      },
+      {
+        "source": "Slight",
+        "target": "Car",
+        "value": 166323
+      },
+      {
+        "source": "Slight",
+        "target": "Data missing or out of range",
+        "value": 13
+      },
+      {
+        "source": "Slight",
+        "target": "Electric motorcycle",
+        "value": 10
+      },
+      {
+        "source": "Slight",
+        "target": "Goods 7.5 tonnes mgw and over",
+        "value": 4007
+      },
+      {
+        "source": "Slight",
+        "target": "Goods over 3.5t. and under 7.5t",
+        "value": 1619
+      },
+      {
+        "source": "Slight",
+        "target": "Goods vehicle - unknown weight",
+        "value": 224
+      },
+      {
+        "source": "Slight",
+        "target": "Minibus (8 - 16 passenger seats)",
+        "value": 486
+      },
+      {
+        "source": "Slight",
+        "target": "Mobility scooter",
+        "value": 154
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle - unknown cc",
+        "value": 141
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle 125cc and under",
+        "value": 6961
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle 50cc and under",
+        "value": 2052
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle over 125cc and up to 500cc",
+        "value": 1734
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle over 500cc",
+        "value": 4547
+      },
+      {
+        "source": "Slight",
+        "target": "Other vehicle",
+        "value": 1105
+      },
+      {
+        "source": "Slight",
+        "target": "Pedal cycle",
+        "value": 18204
+      },
+      {
+        "source": "Slight",
+        "target": "Ridden horse",
+        "value": 92
+      },
+      {
+        "source": "Slight",
+        "target": "Taxi/Private hire car",
+        "value": 4871
+      },
+      {
+        "source": "Slight",
+        "target": "Tram",
+        "value": 19
+      },
+      {
+        "source": "Slight",
+        "target": "Van / Goods 3.5 tonnes mgw or under",
+        "value": 12133
+      }
+    ]
+  },
+  "2015": {
+    "nodes": [
+      {
+        "name": "Darkness - lighting unknown",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Darkness - lights lit",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Darkness - lights unlit",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Darkness - no lighting",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Daylight",
+        "itemStyle": {
+          "color": "#5b8def"
+        }
+      },
+      {
+        "name": "Fatal",
+        "itemStyle": {
+          "color": "#ffa726"
+        }
+      },
+      {
+        "name": "Serious",
+        "itemStyle": {
+          "color": "#ffa726"
+        }
+      },
+      {
+        "name": "Slight",
+        "itemStyle": {
+          "color": "#ffa726"
+        }
+      },
+      {
+        "name": "Agricultural vehicle",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Bus or coach (17 or more pass seats)",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Car",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Data missing or out of range",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Electric motorcycle",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Goods 7.5 tonnes mgw and over",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Goods over 3.5t. and under 7.5t",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Goods vehicle - unknown weight",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Minibus (8 - 16 passenger seats)",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Mobility scooter",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle - unknown cc",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle 125cc and under",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle 50cc and under",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle over 125cc and up to 500cc",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Motorcycle over 500cc",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Other vehicle",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Pedal cycle",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Ridden horse",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Taxi/Private hire car",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Tram",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      },
+      {
+        "name": "Van / Goods 3.5 tonnes mgw or under",
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      }
+    ],
+    "links": [
+      {
+        "source": "Darkness - lighting unknown",
+        "target": "Fatal",
+        "value": 35
+      },
+      {
+        "source": "Darkness - lighting unknown",
+        "target": "Serious",
+        "value": 275
+      },
+      {
+        "source": "Darkness - lighting unknown",
+        "target": "Slight",
+        "value": 1610
+      },
+      {
+        "source": "Darkness - lights lit",
+        "target": "Fatal",
+        "value": 290
+      },
+      {
+        "source": "Darkness - lights lit",
+        "target": "Serious",
+        "value": 4086
+      },
+      {
+        "source": "Darkness - lights lit",
+        "target": "Slight",
+        "value": 23175
+      },
+      {
+        "source": "Darkness - lights unlit",
+        "target": "Fatal",
+        "value": 15
+      },
+      {
+        "source": "Darkness - lights unlit",
+        "target": "Serious",
+        "value": 137
+      },
+      {
+        "source": "Darkness - lights unlit",
+        "target": "Slight",
+        "value": 567
+      },
+      {
+        "source": "Darkness - no lighting",
+        "target": "Fatal",
+        "value": 308
+      },
+      {
+        "source": "Darkness - no lighting",
+        "target": "Serious",
+        "value": 1523
+      },
+      {
+        "source": "Darkness - no lighting",
+        "target": "Slight",
+        "value": 5427
+      },
+      {
+        "source": "Daylight",
+        "target": "Fatal",
+        "value": 968
+      },
+      {
+        "source": "Daylight",
+        "target": "Serious",
+        "value": 14017
+      },
+      {
+        "source": "Daylight",
+        "target": "Slight",
+        "value": 87623
+      },
+      {
+        "source": "Fatal",
+        "target": "Agricultural vehicle",
+        "value": 23
+      },
+      {
+        "source": "Fatal",
+        "target": "Bus or coach (17 or more pass seats)",
+        "value": 64
+      },
+      {
+        "source": "Fatal",
+        "target": "Car",
+        "value": 1734
+      },
+      {
+        "source": "Fatal",
+        "target": "Data missing or out of range",
+        "value": 1
+      },
+      {
+        "source": "Fatal",
+        "target": "Goods 7.5 tonnes mgw and over",
+        "value": 254
+      },
+      {
+        "source": "Fatal",
+        "target": "Goods over 3.5t. and under 7.5t",
+        "value": 44
+      },
+      {
+        "source": "Fatal",
+        "target": "Goods vehicle - unknown weight",
+        "value": 11
+      },
+      {
+        "source": "Fatal",
+        "target": "Minibus (8 - 16 passenger seats)",
+        "value": 8
+      },
+      {
+        "source": "Fatal",
+        "target": "Mobility scooter",
+        "value": 8
+      },
+      {
+        "source": "Fatal",
+        "target": "Motorcycle - unknown cc",
+        "value": 4
+      },
+      {
+        "source": "Fatal",
+        "target": "Motorcycle 125cc and under",
+        "value": 83
+      },
+      {
+        "source": "Fatal",
+        "target": "Motorcycle 50cc and under",
+        "value": 8
+      },
+      {
+        "source": "Fatal",
+        "target": "Motorcycle over 125cc and up to 500cc",
+        "value": 38
+      },
+      {
+        "source": "Fatal",
+        "target": "Motorcycle over 500cc",
+        "value": 265
+      },
+      {
+        "source": "Fatal",
+        "target": "Other vehicle",
+        "value": 35
+      },
+      {
+        "source": "Fatal",
+        "target": "Pedal cycle",
+        "value": 113
+      },
+      {
+        "source": "Fatal",
+        "target": "Taxi/Private hire car",
+        "value": 39
+      },
+      {
+        "source": "Fatal",
+        "target": "Van / Goods 3.5 tonnes mgw or under",
+        "value": 167
+      },
+      {
+        "source": "Serious",
+        "target": "Agricultural vehicle",
+        "value": 116
+      },
+      {
+        "source": "Serious",
+        "target": "Bus or coach (17 or more pass seats)",
+        "value": 638
+      },
+      {
+        "source": "Serious",
+        "target": "Car",
+        "value": 20951
+      },
+      {
+        "source": "Serious",
+        "target": "Data missing or out of range",
+        "value": 9
+      },
+      {
+        "source": "Serious",
+        "target": "Electric motorcycle",
+        "value": 5
+      },
+      {
+        "source": "Serious",
+        "target": "Goods 7.5 tonnes mgw and over",
+        "value": 758
+      },
+      {
+        "source": "Serious",
+        "target": "Goods over 3.5t. and under 7.5t",
+        "value": 235
+      },
+      {
+        "source": "Serious",
+        "target": "Goods vehicle - unknown weight",
+        "value": 77
+      },
+      {
+        "source": "Serious",
+        "target": "Minibus (8 - 16 passenger seats)",
+        "value": 75
+      },
+      {
+        "source": "Serious",
+        "target": "Mobility scooter",
+        "value": 47
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle - unknown cc",
+        "value": 76
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle 125cc and under",
+        "value": 1859
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle 50cc and under",
+        "value": 372
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle over 125cc and up to 500cc",
+        "value": 601
+      },
+      {
+        "source": "Serious",
+        "target": "Motorcycle over 500cc",
+        "value": 2398
+      },
+      {
+        "source": "Serious",
+        "target": "Other vehicle",
+        "value": 215
+      },
+      {
+        "source": "Serious",
+        "target": "Pedal cycle",
+        "value": 3452
+      },
+      {
+        "source": "Serious",
+        "target": "Ridden horse",
+        "value": 18
+      },
+      {
+        "source": "Serious",
+        "target": "Taxi/Private hire car",
+        "value": 565
+      },
+      {
+        "source": "Serious",
+        "target": "Tram",
+        "value": 2
+      },
+      {
+        "source": "Serious",
+        "target": "Van / Goods 3.5 tonnes mgw or under",
+        "value": 1736
+      },
+      {
+        "source": "Slight",
+        "target": "Agricultural vehicle",
+        "value": 365
+      },
+      {
+        "source": "Slight",
+        "target": "Bus or coach (17 or more pass seats)",
+        "value": 4679
+      },
+      {
+        "source": "Slight",
+        "target": "Car",
+        "value": 160269
+      },
+      {
+        "source": "Slight",
+        "target": "Data missing or out of range",
+        "value": 48
+      },
+      {
+        "source": "Slight",
+        "target": "Electric motorcycle",
+        "value": 4
+      },
+      {
+        "source": "Slight",
+        "target": "Goods 7.5 tonnes mgw and over",
+        "value": 3750
+      },
+      {
+        "source": "Slight",
+        "target": "Goods over 3.5t. and under 7.5t",
+        "value": 1429
+      },
+      {
+        "source": "Slight",
+        "target": "Goods vehicle - unknown weight",
+        "value": 527
+      },
+      {
+        "source": "Slight",
+        "target": "Minibus (8 - 16 passenger seats)",
+        "value": 415
+      },
+      {
+        "source": "Slight",
+        "target": "Mobility scooter",
+        "value": 167
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle - unknown cc",
+        "value": 195
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle 125cc and under",
+        "value": 7292
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle 50cc and under",
+        "value": 1857
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle over 125cc and up to 500cc",
+        "value": 1548
+      },
+      {
+        "source": "Slight",
+        "target": "Motorcycle over 500cc",
+        "value": 4391
+      },
+      {
+        "source": "Slight",
+        "target": "Other vehicle",
+        "value": 1036
+      },
+      {
+        "source": "Slight",
+        "target": "Pedal cycle",
+        "value": 15875
+      },
+      {
+        "source": "Slight",
+        "target": "Ridden horse",
+        "value": 89
+      },
+      {
+        "source": "Slight",
+        "target": "Taxi/Private hire car",
+        "value": 4816
+      },
+      {
+        "source": "Slight",
+        "target": "Tram",
+        "value": 16
+      },
+      {
+        "source": "Slight",
+        "target": "Van / Goods 3.5 tonnes mgw or under",
+        "value": 11973
+      }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "severity_label": "Slight",
+    "count": 1515575,
+    "percentage": 85.11
+  },
+  {
+    "severity_label": "Serious",
+    "count": 242080,
+    "percentage": 13.6
+  },
+  {
+    "severity_label": "Fatal",
+    "count": 22998,
+    "percentage": 1.29
+  }
+]

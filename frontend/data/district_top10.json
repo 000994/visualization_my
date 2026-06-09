@@ -1,0 +1,42 @@
+[
+  {
+    "district_label": "Birmingham",
+    "count": 34151
+  },
+  {
+    "district_label": "Leeds",
+    "count": 23697
+  },
+  {
+    "district_label": "Westminster",
+    "count": 16542
+  },
+  {
+    "district_label": "Manchester",
+    "count": 16345
+  },
+  {
+    "district_label": "Glasgow City",
+    "count": 16204
+  },
+  {
+    "district_label": "Bradford",
+    "count": 15982
+  },
+  {
+    "district_label": "Liverpool",
+    "count": 15306
+  },
+  {
+    "district_label": "Sheffield",
+    "count": 15069
+  },
+  {
+    "district_label": "Edinburgh, City of",
+    "count": 13724
+  },
+  {
+    "district_label": "Bristol, City of",
+    "count": 12801
+  }
+]

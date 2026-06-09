@@ -1,0 +1,30 @@
+[
+  {
+    "day_label": "Sunday",
+    "count": 195326
+  },
+  {
+    "day_label": "Monday",
+    "count": 253270
+  },
+  {
+    "day_label": "Tuesday",
+    "count": 266706
+  },
+  {
+    "day_label": "Wednesday",
+    "count": 268390
+  },
+  {
+    "day_label": "Thursday",
+    "count": 267494
+  },
+  {
+    "day_label": "Friday",
+    "count": 291359
+  },
+  {
+    "day_label": "Saturday",
+    "count": 238108
+  }
+]

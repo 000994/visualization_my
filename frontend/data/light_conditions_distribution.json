@@ -1,0 +1,22 @@
+[
+  {
+    "light_label": "Daylight",
+    "count": 1304474
+  },
+  {
+    "light_label": "Darkness - lights lit",
+    "count": 349728
+  },
+  {
+    "light_label": "Darkness - no lighting",
+    "count": 98947
+  },
+  {
+    "light_label": "Darkness - lighting unknown",
+    "count": 19319
+  },
+  {
+    "light_label": "Darkness - lights unlit",
+    "count": 8185
+  }
+]

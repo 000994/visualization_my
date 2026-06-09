@@ -1,0 +1,2229 @@
+{
+  "yearly_trend": [
+    {
+      "year": 2005,
+      "count": 198735
+    },
+    {
+      "year": 2006,
+      "count": 189161
+    },
+    {
+      "year": 2007,
+      "count": 182115
+    },
+    {
+      "year": 2008,
+      "count": 170591
+    },
+    {
+      "year": 2009,
+      "count": 163554
+    },
+    {
+      "year": 2010,
+      "count": 154414
+    },
+    {
+      "year": 2011,
+      "count": 151474
+    },
+    {
+      "year": 2012,
+      "count": 145571
+    },
+    {
+      "year": 2013,
+      "count": 138660
+    },
+    {
+      "year": 2014,
+      "count": 146322
+    },
+    {
+      "year": 2015,
+      "count": 140056
+    }
+  ],
+  "yearly_severity_trend": [
+    {
+      "year": 2005,
+      "severity_label": "Fatal",
+      "count": 2913
+    },
+    {
+      "year": 2005,
+      "severity_label": "Serious",
+      "count": 25029
+    },
+    {
+      "year": 2005,
+      "severity_label": "Slight",
+      "count": 170793
+    },
+    {
+      "year": 2006,
+      "severity_label": "Fatal",
+      "count": 2926
+    },
+    {
+      "year": 2006,
+      "severity_label": "Serious",
+      "count": 24946
+    },
+    {
+      "year": 2006,
+      "severity_label": "Slight",
+      "count": 161289
+    },
+    {
+      "year": 2007,
+      "severity_label": "Fatal",
+      "count": 2714
+    },
+    {
+      "year": 2007,
+      "severity_label": "Serious",
+      "count": 24322
+    },
+    {
+      "year": 2007,
+      "severity_label": "Slight",
+      "count": 155079
+    },
+    {
+      "year": 2008,
+      "severity_label": "Fatal",
+      "count": 2341
+    },
+    {
+      "year": 2008,
+      "severity_label": "Serious",
+      "count": 23121
+    },
+    {
+      "year": 2008,
+      "severity_label": "Slight",
+      "count": 145129
+    },
+    {
+      "year": 2009,
+      "severity_label": "Fatal",
+      "count": 2057
+    },
+    {
+      "year": 2009,
+      "severity_label": "Serious",
+      "count": 21997
+    },
+    {
+      "year": 2009,
+      "severity_label": "Slight",
+      "count": 139500
+    },
+    {
+      "year": 2010,
+      "severity_label": "Fatal",
+      "count": 1731
+    },
+    {
+      "year": 2010,
+      "severity_label": "Serious",
+      "count": 20440
+    },
+    {
+      "year": 2010,
+      "severity_label": "Slight",
+      "count": 132243
+    },
+    {
+      "year": 2011,
+      "severity_label": "Fatal",
+      "count": 1797
+    },
+    {
+      "year": 2011,
+      "severity_label": "Serious",
+      "count": 20986
+    },
+    {
+      "year": 2011,
+      "severity_label": "Slight",
+      "count": 128691
+    },
+    {
+      "year": 2012,
+      "severity_label": "Fatal",
+      "count": 1637
+    },
+    {
+      "year": 2012,
+      "severity_label": "Serious",
+      "count": 20901
+    },
+    {
+      "year": 2012,
+      "severity_label": "Slight",
+      "count": 123033
+    },
+    {
+      "year": 2013,
+      "severity_label": "Fatal",
+      "count": 1608
+    },
+    {
+      "year": 2013,
+      "severity_label": "Serious",
+      "count": 19624
+    },
+    {
+      "year": 2013,
+      "severity_label": "Slight",
+      "count": 117428
+    },
+    {
+      "year": 2014,
+      "severity_label": "Fatal",
+      "count": 1658
+    },
+    {
+      "year": 2014,
+      "severity_label": "Serious",
+      "count": 20676
+    },
+    {
+      "year": 2014,
+      "severity_label": "Slight",
+      "count": 123988
+    },
+    {
+      "year": 2015,
+      "severity_label": "Fatal",
+      "count": 1616
+    },
+    {
+      "year": 2015,
+      "severity_label": "Serious",
+      "count": 20038
+    },
+    {
+      "year": 2015,
+      "severity_label": "Slight",
+      "count": 118402
+    }
+  ],
+  "hourly_distribution": [
+    {
+      "hour": 0.0,
+      "count": 27173
+    },
+    {
+      "hour": 1.0,
+      "count": 19937
+    },
+    {
+      "hour": 2.0,
+      "count": 15991
+    },
+    {
+      "hour": 3.0,
+      "count": 12829
+    },
+    {
+      "hour": 4.0,
+      "count": 9886
+    },
+    {
+      "hour": 5.0,
+      "count": 14374
+    },
+    {
+      "hour": 6.0,
+      "count": 31071
+    },
+    {
+      "hour": 7.0,
+      "count": 74730
+    },
+    {
+      "hour": 8.0,
+      "count": 130305
+    },
+    {
+      "hour": 9.0,
+      "count": 88401
+    },
+    {
+      "hour": 10.0,
+      "count": 80265
+    },
+    {
+      "hour": 11.0,
+      "count": 92265
+    },
+    {
+      "hour": 12.0,
+      "count": 105110
+    },
+    {
+      "hour": 13.0,
+      "count": 107812
+    },
+    {
+      "hour": 14.0,
+      "count": 108058
+    },
+    {
+      "hour": 15.0,
+      "count": 137506
+    },
+    {
+      "hour": 16.0,
+      "count": 144519
+    },
+    {
+      "hour": 17.0,
+      "count": 158132
+    },
+    {
+      "hour": 18.0,
+      "count": 123274
+    },
+    {
+      "hour": 19.0,
+      "count": 92119
+    },
+    {
+      "hour": 20.0,
+      "count": 67761
+    },
+    {
+      "hour": 21.0,
+      "count": 54148
+    },
+    {
+      "hour": 22.0,
+      "count": 47199
+    },
+    {
+      "hour": 23.0,
+      "count": 37637
+    }
+  ],
+  "daily_distribution": [
+    {
+      "day_label": "Sunday",
+      "count": 195326
+    },
+    {
+      "day_label": "Monday",
+      "count": 253270
+    },
+    {
+      "day_label": "Tuesday",
+      "count": 266706
+    },
+    {
+      "day_label": "Wednesday",
+      "count": 268390
+    },
+    {
+      "day_label": "Thursday",
+      "count": 267494
+    },
+    {
+      "day_label": "Friday",
+      "count": 291359
+    },
+    {
+      "day_label": "Saturday",
+      "count": 238108
+    }
+  ],
+  "road_type_distribution": [
+    {
+      "road_label": "Single carriageway",
+      "count": 1332384
+    },
+    {
+      "road_label": "Dual carriageway",
+      "count": 262950
+    },
+    {
+      "road_label": "Roundabout",
+      "count": 119472
+    },
+    {
+      "road_label": "One way street",
+      "count": 36755
+    },
+    {
+      "road_label": "Slip road",
+      "count": 18647
+    },
+    {
+      "road_label": "Unknown",
+      "count": 10445
+    }
+  ],
+  "light_conditions_distribution": [
+    {
+      "light_label": "Daylight",
+      "count": 1304474
+    },
+    {
+      "light_label": "Darkness - lights lit",
+      "count": 349728
+    },
+    {
+      "light_label": "Darkness - no lighting",
+      "count": 98947
+    },
+    {
+      "light_label": "Darkness - lighting unknown",
+      "count": 19319
+    },
+    {
+      "light_label": "Darkness - lights unlit",
+      "count": 8185
+    }
+  ],
+  "vehicle_type_distribution": [
+    {
+      "vehicle_label": "Car",
+      "count": 2388155
+    },
+    {
+      "vehicle_label": "Pedal cycle",
+      "count": 203523
+    },
+    {
+      "vehicle_label": "Van / Goods 3.5 tonnes mgw or under",
+      "count": 152058
+    },
+    {
+      "vehicle_label": "Motorcycle over 500cc",
+      "count": 93958
+    },
+    {
+      "vehicle_label": "Bus or coach (17 or more pass seats)",
+      "count": 82269
+    },
+    {
+      "vehicle_label": "Motorcycle 125cc and under",
+      "count": 79386
+    },
+    {
+      "vehicle_label": "Goods 7.5 tonnes mgw and over",
+      "count": 67724
+    },
+    {
+      "vehicle_label": "Taxi/Private hire car",
+      "count": 57829
+    },
+    {
+      "vehicle_label": "Motorcycle 50cc and under",
+      "count": 39461
+    },
+    {
+      "vehicle_label": "Motorcycle over 125cc and up to 500cc",
+      "count": 27873
+    },
+    {
+      "vehicle_label": "Other vehicle",
+      "count": 25591
+    },
+    {
+      "vehicle_label": "Goods over 3.5t. and under 7.5t",
+      "count": 24275
+    },
+    {
+      "vehicle_label": "Minibus (8 - 16 passenger seats)",
+      "count": 8885
+    },
+    {
+      "vehicle_label": "Agricultural vehicle",
+      "count": 6808
+    },
+    {
+      "vehicle_label": "Ridden horse",
+      "count": 1404
+    },
+    {
+      "vehicle_label": "Goods vehicle - unknown weight",
+      "count": 1002
+    },
+    {
+      "vehicle_label": "Mobility scooter",
+      "count": 681
+    },
+    {
+      "vehicle_label": "Motorcycle - unknown cc",
+      "count": 561
+    },
+    {
+      "vehicle_label": "Data missing or out of range",
+      "count": 531
+    },
+    {
+      "vehicle_label": "Tram",
+      "count": 268
+    },
+    {
+      "vehicle_label": "Electric motorcycle",
+      "count": 28
+    }
+  ],
+  "severity_distribution": [
+    {
+      "severity_label": "Slight",
+      "count": 1515575,
+      "percentage": 85.11
+    },
+    {
+      "severity_label": "Serious",
+      "count": 242080,
+      "percentage": 13.6
+    },
+    {
+      "severity_label": "Fatal",
+      "count": 22998,
+      "percentage": 1.29
+    }
+  ],
+  "urban_rural_distribution": [
+    {
+      "urban_rural_label": "Urban",
+      "count": 1146421,
+      "percentage": 64.38
+    },
+    {
+      "urban_rural_label": "Rural",
+      "count": 634089,
+      "percentage": 35.61
+    },
+    {
+      "urban_rural_label": "Unallocated",
+      "count": 143,
+      "percentage": 0.01
+    }
+  ],
+  "district_top10": [
+    {
+      "district_label": "Birmingham",
+      "count": 34151
+    },
+    {
+      "district_label": "Leeds",
+      "count": 23697
+    },
+    {
+      "district_label": "Westminster",
+      "count": 16542
+    },
+    {
+      "district_label": "Manchester",
+      "count": 16345
+    },
+    {
+      "district_label": "Glasgow City",
+      "count": 16204
+    },
+    {
+      "district_label": "Bradford",
+      "count": 15982
+    },
+    {
+      "district_label": "Liverpool",
+      "count": 15306
+    },
+    {
+      "district_label": "Sheffield",
+      "count": 15069
+    },
+    {
+      "district_label": "Edinburgh, City of",
+      "count": 13724
+    },
+    {
+      "district_label": "Bristol, City of",
+      "count": 12801
+    }
+  ],
+  "district_all": [
+    {
+      "district_label": "Birmingham",
+      "count": 34151
+    },
+    {
+      "district_label": "Leeds",
+      "count": 23697
+    },
+    {
+      "district_label": "Westminster",
+      "count": 16542
+    },
+    {
+      "district_label": "Manchester",
+      "count": 16345
+    },
+    {
+      "district_label": "Glasgow City",
+      "count": 16204
+    },
+    {
+      "district_label": "Bradford",
+      "count": 15982
+    },
+    {
+      "district_label": "Liverpool",
+      "count": 15306
+    },
+    {
+      "district_label": "Sheffield",
+      "count": 15069
+    },
+    {
+      "district_label": "Edinburgh, City of",
+      "count": 13724
+    },
+    {
+      "district_label": "Bristol, City of",
+      "count": 12801
+    },
+    {
+      "district_label": "Lambeth",
+      "count": 12342
+    },
+    {
+      "district_label": "Kirklees",
+      "count": 11923
+    },
+    {
+      "district_label": "Barnet",
+      "count": 11745
+    },
+    {
+      "district_label": "Leicester",
+      "count": 10759
+    },
+    {
+      "district_label": "Southwark",
+      "count": 10711
+    },
+    {
+      "district_label": "Doncaster",
+      "count": 10613
+    },
+    {
+      "district_label": "Nottingham",
+      "count": 10610
+    },
+    {
+      "district_label": "Croydon",
+      "count": 10496
+    },
+    {
+      "district_label": "Ealing",
+      "count": 10351
+    },
+    {
+      "district_label": "Tower Hamlets",
+      "count": 9887
+    },
+    {
+      "district_label": "Brighton and Hove",
+      "count": 9812
+    },
+    {
+      "district_label": "Wandsworth",
+      "count": 9724
+    },
+    {
+      "district_label": "Lewisham",
+      "count": 9198
+    },
+    {
+      "district_label": "Cornwall",
+      "count": 9114
+    },
+    {
+      "district_label": "Camden",
+      "count": 9105
+    },
+    {
+      "district_label": "Hackney",
+      "count": 9089
+    },
+    {
+      "district_label": "Newcastle upon Tyne",
+      "count": 9072
+    },
+    {
+      "district_label": "East Riding of Yorkshire",
+      "count": 8994
+    },
+    {
+      "district_label": "Cardiff",
+      "count": 8881
+    },
+    {
+      "district_label": "Enfield",
+      "count": 8826
+    },
+    {
+      "district_label": "Brent",
+      "count": 8785
+    },
+    {
+      "district_label": "Newham",
+      "count": 8741
+    },
+    {
+      "district_label": "Wakefield",
+      "count": 8691
+    },
+    {
+      "district_label": "Hounslow",
+      "count": 8601
+    },
+    {
+      "district_label": "Kingston upon Hull, City of",
+      "count": 8568
+    },
+    {
+      "district_label": "Sandwell",
+      "count": 8425
+    },
+    {
+      "district_label": "Stoke-on-Trent",
+      "count": 8354
+    },
+    {
+      "district_label": "Hillingdon",
+      "count": 8317
+    },
+    {
+      "district_label": "Haringey",
+      "count": 8283
+    },
+    {
+      "district_label": "Islington",
+      "count": 8143
+    },
+    {
+      "district_label": "Milton Keynes",
+      "count": 8073
+    },
+    {
+      "district_label": "Coventry",
+      "count": 7973
+    },
+    {
+      "district_label": "Derby",
+      "count": 7961
+    },
+    {
+      "district_label": "Plymouth",
+      "count": 7951
+    },
+    {
+      "district_label": "Bromley",
+      "count": 7913
+    },
+    {
+      "district_label": "Rotherham",
+      "count": 7859
+    },
+    {
+      "district_label": "Peterborough",
+      "count": 7715
+    },
+    {
+      "district_label": "Greenwich",
+      "count": 7682
+    },
+    {
+      "district_label": "Kensington and Chelsea",
+      "count": 7675
+    },
+    {
+      "district_label": "Redbridge",
+      "count": 7667
+    },
+    {
+      "district_label": "Wirral",
+      "count": 7374
+    },
+    {
+      "district_label": "Waltham Forest",
+      "count": 7353
+    },
+    {
+      "district_label": "Sunderland",
+      "count": 7347
+    },
+    {
+      "district_label": "Warrington",
+      "count": 7333
+    },
+    {
+      "district_label": "County Durham",
+      "count": 7209
+    },
+    {
+      "district_label": "Southampton",
+      "count": 7179
+    },
+    {
+      "district_label": "Bolton",
+      "count": 7160
+    },
+    {
+      "district_label": "Hammersmith and Fulham",
+      "count": 7087
+    },
+    {
+      "district_label": "Cheshire East",
+      "count": 7087
+    },
+    {
+      "district_label": "Portsmouth",
+      "count": 7003
+    },
+    {
+      "district_label": "Havering",
+      "count": 6978
+    },
+    {
+      "district_label": "Medway",
+      "count": 6946
+    },
+    {
+      "district_label": "Wiltshire",
+      "count": 6942
+    },
+    {
+      "district_label": "Swansea",
+      "count": 6912
+    },
+    {
+      "district_label": "Guildford",
+      "count": 6901
+    },
+    {
+      "district_label": "North Lanarkshire",
+      "count": 6693
+    },
+    {
+      "district_label": "Dudley",
+      "count": 6648
+    },
+    {
+      "district_label": "Barnsley",
+      "count": 6546
+    },
+    {
+      "district_label": "South Gloucestershire",
+      "count": 6485
+    },
+    {
+      "district_label": "Sefton",
+      "count": 6450
+    },
+    {
+      "district_label": "Gateshead",
+      "count": 6447
+    },
+    {
+      "district_label": "Walsall",
+      "count": 6349
+    },
+    {
+      "district_label": "Wolverhampton",
+      "count": 6338
+    },
+    {
+      "district_label": "South Lanarkshire",
+      "count": 6306
+    },
+    {
+      "district_label": "Preston",
+      "count": 6218
+    },
+    {
+      "district_label": "Wigan",
+      "count": 6204
+    },
+    {
+      "district_label": "Bournemouth",
+      "count": 6145
+    },
+    {
+      "district_label": "Aberdeenshire",
+      "count": 5950
+    },
+    {
+      "district_label": "Cheshire West and Chester",
+      "count": 5872
+    },
+    {
+      "district_label": "Fife",
+      "count": 5830
+    },
+    {
+      "district_label": "Salford",
+      "count": 5824
+    },
+    {
+      "district_label": "North Lincolnshire",
+      "count": 5782
+    },
+    {
+      "district_label": "Highland",
+      "count": 5772
+    },
+    {
+      "district_label": "Carmarthenshire",
+      "count": 5595
+    },
+    {
+      "district_label": "Maidstone",
+      "count": 5562
+    },
+    {
+      "district_label": "North East Lincolnshire",
+      "count": 5552
+    },
+    {
+      "district_label": "East Lindsey",
+      "count": 5542
+    },
+    {
+      "district_label": "Calderdale",
+      "count": 5542
+    },
+    {
+      "district_label": "Stockport",
+      "count": 5522
+    },
+    {
+      "district_label": "Huntingdonshire",
+      "count": 5495
+    },
+    {
+      "district_label": "Rhondda, Cynon, Taff",
+      "count": 5483
+    },
+    {
+      "district_label": "New Forest",
+      "count": 5424
+    },
+    {
+      "district_label": "Reigate and Banstead",
+      "count": 5412
+    },
+    {
+      "district_label": "Oldham",
+      "count": 5347
+    },
+    {
+      "district_label": "Herefordshire, County of",
+      "count": 5318
+    },
+    {
+      "district_label": "Harrogate",
+      "count": 5314
+    },
+    {
+      "district_label": "Northumberland",
+      "count": 5283
+    },
+    {
+      "district_label": "North Tyneside",
+      "count": 5259
+    },
+    {
+      "district_label": "Luton",
+      "count": 5251
+    },
+    {
+      "district_label": "York",
+      "count": 5228
+    },
+    {
+      "district_label": "Bexley",
+      "count": 5216
+    },
+    {
+      "district_label": "North Somerset",
+      "count": 5188
+    },
+    {
+      "district_label": "Barking and Dagenham",
+      "count": 5169
+    },
+    {
+      "district_label": "Swindon",
+      "count": 5138
+    },
+    {
+      "district_label": "Blackpool",
+      "count": 5128
+    },
+    {
+      "district_label": "St. Albans",
+      "count": 5108
+    },
+    {
+      "district_label": "Epping Forest",
+      "count": 5031
+    },
+    {
+      "district_label": "South Cambridgeshire",
+      "count": 5028
+    },
+    {
+      "district_label": "Rochdale",
+      "count": 5015
+    },
+    {
+      "district_label": "Cherwell",
+      "count": 4966
+    },
+    {
+      "district_label": "Wealden",
+      "count": 4957
+    },
+    {
+      "district_label": "Southend-on-Sea",
+      "count": 4947
+    },
+    {
+      "district_label": "Chelmsford",
+      "count": 4911
+    },
+    {
+      "district_label": "Blackburn with Darwen",
+      "count": 4893
+    },
+    {
+      "district_label": "Stafford",
+      "count": 4893
+    },
+    {
+      "district_label": "Aylesbury Vale",
+      "count": 4874
+    },
+    {
+      "district_label": "Slough",
+      "count": 4859
+    },
+    {
+      "district_label": "Powys",
+      "count": 4826
+    },
+    {
+      "district_label": "Merton",
+      "count": 4824
+    },
+    {
+      "district_label": "Lancaster",
+      "count": 4805
+    },
+    {
+      "district_label": "Thurrock",
+      "count": 4790
+    },
+    {
+      "district_label": "Richmond upon Thames",
+      "count": 4756
+    },
+    {
+      "district_label": "Dartford",
+      "count": 4670
+    },
+    {
+      "district_label": "Colchester",
+      "count": 4644
+    },
+    {
+      "district_label": "Basildon",
+      "count": 4638
+    },
+    {
+      "district_label": "Northampton",
+      "count": 4630
+    },
+    {
+      "district_label": "Solihull",
+      "count": 4622
+    },
+    {
+      "district_label": "Bedford",
+      "count": 4613
+    },
+    {
+      "district_label": "Trafford",
+      "count": 4581
+    },
+    {
+      "district_label": "Sutton",
+      "count": 4575
+    },
+    {
+      "district_label": "Harrow",
+      "count": 4568
+    },
+    {
+      "district_label": "Oxford",
+      "count": 4537
+    },
+    {
+      "district_label": "South Somerset",
+      "count": 4519
+    },
+    {
+      "district_label": "Cambridge",
+      "count": 4518
+    },
+    {
+      "district_label": "West Lothian",
+      "count": 4486
+    },
+    {
+      "district_label": "Shropshire",
+      "count": 4468
+    },
+    {
+      "district_label": "Poole",
+      "count": 4430
+    },
+    {
+      "district_label": "Bury",
+      "count": 4427
+    },
+    {
+      "district_label": "Wycombe",
+      "count": 4418
+    },
+    {
+      "district_label": "Canterbury",
+      "count": 4415
+    },
+    {
+      "district_label": "Thanet",
+      "count": 4414
+    },
+    {
+      "district_label": "Ashford",
+      "count": 4410
+    },
+    {
+      "district_label": "Tameside",
+      "count": 4407
+    },
+    {
+      "district_label": "Tonbridge and Malling",
+      "count": 4385
+    },
+    {
+      "district_label": "Elmbridge",
+      "count": 4353
+    },
+    {
+      "district_label": "Reading",
+      "count": 4338
+    },
+    {
+      "district_label": "Central Bedfordshire",
+      "count": 4331
+    },
+    {
+      "district_label": "St. Helens",
+      "count": 4323
+    },
+    {
+      "district_label": "Bath and North East Somerset",
+      "count": 4302
+    },
+    {
+      "district_label": "Windsor and Maidenhead",
+      "count": 4279
+    },
+    {
+      "district_label": "Runnymede",
+      "count": 4274
+    },
+    {
+      "district_label": "Tandridge",
+      "count": 4263
+    },
+    {
+      "district_label": "Isle of Wight",
+      "count": 4248
+    },
+    {
+      "district_label": "East Staffordshire",
+      "count": 4240
+    },
+    {
+      "district_label": "South Staffordshire",
+      "count": 4232
+    },
+    {
+      "district_label": "West Berkshire",
+      "count": 4208
+    },
+    {
+      "district_label": "Waverley",
+      "count": 4207
+    },
+    {
+      "district_label": "Sevenoaks",
+      "count": 4206
+    },
+    {
+      "district_label": "Swale",
+      "count": 4205
+    },
+    {
+      "district_label": "Winchester",
+      "count": 4182
+    },
+    {
+      "district_label": "Stratford-upon-Avon",
+      "count": 4182
+    },
+    {
+      "district_label": "Flintshire",
+      "count": 4159
+    },
+    {
+      "district_label": "Newark and Sherwood",
+      "count": 4139
+    },
+    {
+      "district_label": "Mid Sussex",
+      "count": 4112
+    },
+    {
+      "district_label": "Norwich",
+      "count": 4103
+    },
+    {
+      "district_label": "South Kesteven",
+      "count": 4096
+    },
+    {
+      "district_label": "Dumfries and Galloway",
+      "count": 4095
+    },
+    {
+      "district_label": "Basingstoke and Deane",
+      "count": 4085
+    },
+    {
+      "district_label": "Warwick",
+      "count": 4082
+    },
+    {
+      "district_label": "Chichester",
+      "count": 4074
+    },
+    {
+      "district_label": "Aberdeen City",
+      "count": 4070
+    },
+    {
+      "district_label": "Teignbridge",
+      "count": 3976
+    },
+    {
+      "district_label": "South Oxfordshire",
+      "count": 3961
+    },
+    {
+      "district_label": "Hertsmere",
+      "count": 3958
+    },
+    {
+      "district_label": "South Ribble",
+      "count": 3920
+    },
+    {
+      "district_label": "Kingston upon Thames",
+      "count": 3912
+    },
+    {
+      "district_label": "King's Lynn and West Norfolk",
+      "count": 3902
+    },
+    {
+      "district_label": "Bassetlaw",
+      "count": 3887
+    },
+    {
+      "district_label": "Renfrewshire",
+      "count": 3800
+    },
+    {
+      "district_label": "Charnwood",
+      "count": 3760
+    },
+    {
+      "district_label": "Knowsley",
+      "count": 3754
+    },
+    {
+      "district_label": "North Kesteven",
+      "count": 3731
+    },
+    {
+      "district_label": "Newcastle-under-Lyme",
+      "count": 3728
+    },
+    {
+      "district_label": "South Lakeland",
+      "count": 3724
+    },
+    {
+      "district_label": "City of London",
+      "count": 3714
+    },
+    {
+      "district_label": "Exeter",
+      "count": 3712
+    },
+    {
+      "district_label": "Stockton-on-Tees",
+      "count": 3709
+    },
+    {
+      "district_label": "Tendring",
+      "count": 3704
+    },
+    {
+      "district_label": "Torbay",
+      "count": 3701
+    },
+    {
+      "district_label": "Braintree",
+      "count": 3701
+    },
+    {
+      "district_label": "Horsham",
+      "count": 3676
+    },
+    {
+      "district_label": "Pembrokeshire",
+      "count": 3653
+    },
+    {
+      "district_label": "Ashfield",
+      "count": 3646
+    },
+    {
+      "district_label": "Spelthorne",
+      "count": 3645
+    },
+    {
+      "district_label": "Eastleigh",
+      "count": 3640
+    },
+    {
+      "district_label": "East Devon",
+      "count": 3633
+    },
+    {
+      "district_label": "Surrey Heath",
+      "count": 3630
+    },
+    {
+      "district_label": "Arun",
+      "count": 3620
+    },
+    {
+      "district_label": "West Lancashire",
+      "count": 3604
+    },
+    {
+      "district_label": "Ipswich",
+      "count": 3600
+    },
+    {
+      "district_label": "Mole Valley",
+      "count": 3597
+    },
+    {
+      "district_label": "Telford and Wrekin",
+      "count": 3593
+    },
+    {
+      "district_label": "Dacorum",
+      "count": 3588
+    },
+    {
+      "district_label": "Perth and Kinross",
+      "count": 3580
+    },
+    {
+      "district_label": "Rugby",
+      "count": 3580
+    },
+    {
+      "district_label": "Neath Port Talbot",
+      "count": 3547
+    },
+    {
+      "district_label": "North Hertfordshire",
+      "count": 3547
+    },
+    {
+      "district_label": "Tunbridge Wells",
+      "count": 3528
+    },
+    {
+      "district_label": "Sedgemoor",
+      "count": 3518
+    },
+    {
+      "district_label": "Welwyn Hatfield",
+      "count": 3506
+    },
+    {
+      "district_label": "South Norfolk",
+      "count": 3500
+    },
+    {
+      "district_label": "Wrexham",
+      "count": 3481
+    },
+    {
+      "district_label": "South Bucks",
+      "count": 3470
+    },
+    {
+      "district_label": "Suffolk Coastal",
+      "count": 3467
+    },
+    {
+      "district_label": "Wokingham",
+      "count": 3459
+    },
+    {
+      "district_label": "West Lindsey",
+      "count": 3453
+    },
+    {
+      "district_label": "Scottish Borders",
+      "count": 3443
+    },
+    {
+      "district_label": "Middlesbrough",
+      "count": 3419
+    },
+    {
+      "district_label": "North Warwickshire",
+      "count": 3419
+    },
+    {
+      "district_label": "Vale of White Horse",
+      "count": 3410
+    },
+    {
+      "district_label": "Chorley",
+      "count": 3406
+    },
+    {
+      "district_label": "Wychavon",
+      "count": 3399
+    },
+    {
+      "district_label": "Lichfield",
+      "count": 3396
+    },
+    {
+      "district_label": "Halton",
+      "count": 3387
+    },
+    {
+      "district_label": "Rushcliffe",
+      "count": 3379
+    },
+    {
+      "district_label": "Test Valley",
+      "count": 3377
+    },
+    {
+      "district_label": "Gwynedd",
+      "count": 3374
+    },
+    {
+      "district_label": "Newport",
+      "count": 3344
+    },
+    {
+      "district_label": "Amber Valley",
+      "count": 3325
+    },
+    {
+      "district_label": "South Tyneside",
+      "count": 3318
+    },
+    {
+      "district_label": "West Dorset",
+      "count": 3309
+    },
+    {
+      "district_label": "East Hertfordshire",
+      "count": 3294
+    },
+    {
+      "district_label": "Breckland",
+      "count": 3282
+    },
+    {
+      "district_label": "Carlisle",
+      "count": 3262
+    },
+    {
+      "district_label": "Mansfield",
+      "count": 3252
+    },
+    {
+      "district_label": "Lincoln",
+      "count": 3243
+    },
+    {
+      "district_label": "Dover",
+      "count": 3239
+    },
+    {
+      "district_label": "Conwy",
+      "count": 3231
+    },
+    {
+      "district_label": "Taunton Deane",
+      "count": 3223
+    },
+    {
+      "district_label": "Woking",
+      "count": 3202
+    },
+    {
+      "district_label": "Waveney",
+      "count": 3200
+    },
+    {
+      "district_label": "Wyre",
+      "count": 3180
+    },
+    {
+      "district_label": "North West Leicestershire",
+      "count": 3176
+    },
+    {
+      "district_label": "Bridgend",
+      "count": 3104
+    },
+    {
+      "district_label": "Fenland",
+      "count": 3103
+    },
+    {
+      "district_label": "Shepway",
+      "count": 3096
+    },
+    {
+      "district_label": "South Holland",
+      "count": 3083
+    },
+    {
+      "district_label": "Broadland",
+      "count": 3079
+    },
+    {
+      "district_label": "Gravesham",
+      "count": 3079
+    },
+    {
+      "district_label": "St. Edmundsbury",
+      "count": 3076
+    },
+    {
+      "district_label": "Rother",
+      "count": 3074
+    },
+    {
+      "district_label": "Hambleton",
+      "count": 3053
+    },
+    {
+      "district_label": "Nuneaton and Bedworth",
+      "count": 3050
+    },
+    {
+      "district_label": "Mendip",
+      "count": 3043
+    },
+    {
+      "district_label": "North East Derbyshire",
+      "count": 3041
+    },
+    {
+      "district_label": "Fareham",
+      "count": 3017
+    },
+    {
+      "district_label": "Scarborough",
+      "count": 3014
+    },
+    {
+      "district_label": "Allerdale",
+      "count": 3009
+    },
+    {
+      "district_label": "Burnley",
+      "count": 3005
+    },
+    {
+      "district_label": "Falkirk",
+      "count": 2979
+    },
+    {
+      "district_label": "Erewash",
+      "count": 2961
+    },
+    {
+      "district_label": "Broxtowe",
+      "count": 2957
+    },
+    {
+      "district_label": "Blaby",
+      "count": 2957
+    },
+    {
+      "district_label": "East Hampshire",
+      "count": 2953
+    },
+    {
+      "district_label": "Denbighshire",
+      "count": 2941
+    },
+    {
+      "district_label": "Crawley",
+      "count": 2924
+    },
+    {
+      "district_label": "Chesterfield",
+      "count": 2923
+    },
+    {
+      "district_label": "Staffordshire Moorlands",
+      "count": 2918
+    },
+    {
+      "district_label": "Darlington",
+      "count": 2918
+    },
+    {
+      "district_label": "Gedling",
+      "count": 2903
+    },
+    {
+      "district_label": "Havant",
+      "count": 2901
+    },
+    {
+      "district_label": "Worthing",
+      "count": 2882
+    },
+    {
+      "district_label": "South Hams",
+      "count": 2863
+    },
+    {
+      "district_label": "Lewes",
+      "count": 2852
+    },
+    {
+      "district_label": "Babergh",
+      "count": 2833
+    },
+    {
+      "district_label": "Derbyshire Dales",
+      "count": 2829
+    },
+    {
+      "district_label": "Argyll and Bute",
+      "count": 2812
+    },
+    {
+      "district_label": "North Devon",
+      "count": 2793
+    },
+    {
+      "district_label": "Hinckley and Bosworth",
+      "count": 2736
+    },
+    {
+      "district_label": "Gloucester",
+      "count": 2726
+    },
+    {
+      "district_label": "Bolsover",
+      "count": 2718
+    },
+    {
+      "district_label": "Eastbourne",
+      "count": 2713
+    },
+    {
+      "district_label": "West Oxfordshire",
+      "count": 2703
+    },
+    {
+      "district_label": "South Derbyshire",
+      "count": 2683
+    },
+    {
+      "district_label": "Cannock Chase",
+      "count": 2677
+    },
+    {
+      "district_label": "The Vale of Glamorgan",
+      "count": 2674
+    },
+    {
+      "district_label": "Caerphilly",
+      "count": 2671
+    },
+    {
+      "district_label": "High Peak",
+      "count": 2630
+    },
+    {
+      "district_label": "Stirling",
+      "count": 2616
+    },
+    {
+      "district_label": "Bracknell Forest",
+      "count": 2612
+    },
+    {
+      "district_label": "Mid Suffolk",
+      "count": 2594
+    },
+    {
+      "district_label": "Hastings",
+      "count": 2592
+    },
+    {
+      "district_label": "Wyre Forest",
+      "count": 2562
+    },
+    {
+      "district_label": "Boston",
+      "count": 2562
+    },
+    {
+      "district_label": "Three Rivers",
+      "count": 2553
+    },
+    {
+      "district_label": "Hyndburn",
+      "count": 2551
+    },
+    {
+      "district_label": "Dundee City",
+      "count": 2550
+    },
+    {
+      "district_label": "East Dorset",
+      "count": 2545
+    },
+    {
+      "district_label": "Redcar and Cleveland",
+      "count": 2537
+    },
+    {
+      "district_label": "Fylde",
+      "count": 2525
+    },
+    {
+      "district_label": "Cotswold",
+      "count": 2513
+    },
+    {
+      "district_label": "Watford",
+      "count": 2499
+    },
+    {
+      "district_label": "North Ayrshire",
+      "count": 2493
+    },
+    {
+      "district_label": "South Ayrshire",
+      "count": 2490
+    },
+    {
+      "district_label": "Harborough",
+      "count": 2476
+    },
+    {
+      "district_label": "Pendle",
+      "count": 2459
+    },
+    {
+      "district_label": "Angus",
+      "count": 2457
+    },
+    {
+      "district_label": "Bromsgrove",
+      "count": 2430
+    },
+    {
+      "district_label": "Ceredigion",
+      "count": 2426
+    },
+    {
+      "district_label": "Selby",
+      "count": 2412
+    },
+    {
+      "district_label": "Broxbourne",
+      "count": 2372
+    },
+    {
+      "district_label": "Brentwood",
+      "count": 2372
+    },
+    {
+      "district_label": "Daventry",
+      "count": 2355
+    },
+    {
+      "district_label": "East Cambridgeshire",
+      "count": 2346
+    },
+    {
+      "district_label": "Macclesfield",
+      "count": 2331
+    },
+    {
+      "district_label": "Stroud",
+      "count": 2329
+    },
+    {
+      "district_label": "Uttlesford",
+      "count": 2323
+    },
+    {
+      "district_label": "East Ayrshire",
+      "count": 2312
+    },
+    {
+      "district_label": "South Northamptonshire",
+      "count": 2309
+    },
+    {
+      "district_label": "Eden",
+      "count": 2286
+    },
+    {
+      "district_label": "North Norfolk",
+      "count": 2277
+    },
+    {
+      "district_label": "Hart",
+      "count": 2258
+    },
+    {
+      "district_label": "Rushmoor",
+      "count": 2254
+    },
+    {
+      "district_label": "Midlothian",
+      "count": 2231
+    },
+    {
+      "district_label": "Malvern Hills",
+      "count": 2183
+    },
+    {
+      "district_label": "Worcester",
+      "count": 2169
+    },
+    {
+      "district_label": "Castle Point",
+      "count": 2164
+    },
+    {
+      "district_label": "Great Yarmouth",
+      "count": 2148
+    },
+    {
+      "district_label": "Tewkesbury",
+      "count": 2143
+    },
+    {
+      "district_label": "Copeland",
+      "count": 2118
+    },
+    {
+      "district_label": "Kettering",
+      "count": 2118
+    },
+    {
+      "district_label": "Stevenage",
+      "count": 2110
+    },
+    {
+      "district_label": "Craven",
+      "count": 2105
+    },
+    {
+      "district_label": "Rossendale",
+      "count": 2099
+    },
+    {
+      "district_label": "Cheltenham",
+      "count": 2087
+    },
+    {
+      "district_label": "Chester",
+      "count": 2052
+    },
+    {
+      "district_label": "Vale Royal",
+      "count": 2044
+    },
+    {
+      "district_label": "Forest Heath",
+      "count": 2034
+    },
+    {
+      "district_label": "East Lothian",
+      "count": 2019
+    },
+    {
+      "district_label": "Mid Devon",
+      "count": 2002
+    },
+    {
+      "district_label": "Richmondshire",
+      "count": 1950
+    },
+    {
+      "district_label": "Epsom and Ewell",
+      "count": 1948
+    },
+    {
+      "district_label": "Chiltern",
+      "count": 1942
+    },
+    {
+      "district_label": "Crewe and Nantwich",
+      "count": 1924
+    },
+    {
+      "district_label": "Ryedale",
+      "count": 1914
+    },
+    {
+      "district_label": "West Devon",
+      "count": 1892
+    },
+    {
+      "district_label": "Rochford",
+      "count": 1888
+    },
+    {
+      "district_label": "Gosport",
+      "count": 1859
+    },
+    {
+      "district_label": "Forest of Dean",
+      "count": 1856
+    },
+    {
+      "district_label": "West Dunbartonshire",
+      "count": 1785
+    },
+    {
+      "district_label": "Wellingborough",
+      "count": 1771
+    },
+    {
+      "district_label": "Hartlepool",
+      "count": 1754
+    },
+    {
+      "district_label": "North Dorset",
+      "count": 1750
+    },
+    {
+      "district_label": "Inverclyde",
+      "count": 1730
+    },
+    {
+      "district_label": "Tamworth",
+      "count": 1727
+    },
+    {
+      "district_label": "Ribble Valley",
+      "count": 1721
+    },
+    {
+      "district_label": "Adur",
+      "count": 1708
+    },
+    {
+      "district_label": "Monmouthshire",
+      "count": 1699
+    },
+    {
+      "district_label": "Barrow-in-Furness",
+      "count": 1696
+    },
+    {
+      "district_label": "Torridge",
+      "count": 1665
+    },
+    {
+      "district_label": "Maldon",
+      "count": 1664
+    },
+    {
+      "district_label": "Restormel",
+      "count": 1648
+    },
+    {
+      "district_label": "Salisbury",
+      "count": 1623
+    },
+    {
+      "district_label": "South Bedfordshire",
+      "count": 1615
+    },
+    {
+      "district_label": "East Northamptonshire",
+      "count": 1595
+    },
+    {
+      "district_label": "North Wiltshire",
+      "count": 1594
+    },
+    {
+      "district_label": "Mid Bedfordshire",
+      "count": 1581
+    },
+    {
+      "district_label": "Weymouth and Portland",
+      "count": 1564
+    },
+    {
+      "district_label": "Redditch",
+      "count": 1558
+    },
+    {
+      "district_label": "Moray",
+      "count": 1558
+    },
+    {
+      "district_label": "North Cornwall",
+      "count": 1556
+    },
+    {
+      "district_label": "Purbeck",
+      "count": 1554
+    },
+    {
+      "district_label": "Harlow",
+      "count": 1519
+    },
+    {
+      "district_label": "East Dunbartonshire",
+      "count": 1506
+    },
+    {
+      "district_label": "Christchurch",
+      "count": 1411
+    },
+    {
+      "district_label": "Isle of Anglesey",
+      "count": 1388
+    },
+    {
+      "district_label": "Carrick",
+      "count": 1375
+    },
+    {
+      "district_label": "Melton",
+      "count": 1372
+    },
+    {
+      "district_label": "Merthyr Tydfil",
+      "count": 1296
+    },
+    {
+      "district_label": "Blaenau Gwent",
+      "count": 1294
+    },
+    {
+      "district_label": "Torfaen",
+      "count": 1255
+    },
+    {
+      "district_label": "Shrewsbury and Atcham",
+      "count": 1244
+    },
+    {
+      "district_label": "Corby",
+      "count": 1227
+    },
+    {
+      "district_label": "Caradon",
+      "count": 1205
+    },
+    {
+      "district_label": "East Renfrewshire",
+      "count": 1203
+    },
+    {
+      "district_label": "West Wiltshire",
+      "count": 1155
+    },
+    {
+      "district_label": "Congleton",
+      "count": 1148
+    },
+    {
+      "district_label": "Kerrier",
+      "count": 1118
+    },
+    {
+      "district_label": "Rutland",
+      "count": 1112
+    },
+    {
+      "district_label": "Durham",
+      "count": 1106
+    },
+    {
+      "district_label": "Oadby and Wigston",
+      "count": 1077
+    },
+    {
+      "district_label": "Blyth Valley",
+      "count": 1036
+    },
+    {
+      "district_label": "Tynedale",
+      "count": 1019
+    },
+    {
+      "district_label": "Easington",
+      "count": 994
+    },
+    {
+      "district_label": "West Somerset",
+      "count": 991
+    },
+    {
+      "district_label": "Sedgefield",
+      "count": 927
+    },
+    {
+      "district_label": "Derwentside",
+      "count": 923
+    },
+    {
+      "district_label": "Kennet",
+      "count": 906
+    },
+    {
+      "district_label": "Penwith",
+      "count": 902
+    },
+    {
+      "district_label": "Ellesmere Port and Neston",
+      "count": 901
+    },
+    {
+      "district_label": "Clackmannanshire",
+      "count": 836
+    },
+    {
+      "district_label": "Wear Valley",
+      "count": 834
+    },
+    {
+      "district_label": "Castle Morpeth",
+      "count": 733
+    },
+    {
+      "district_label": "Bridgnorth",
+      "count": 716
+    },
+    {
+      "district_label": "Wansbeck",
+      "count": 713
+    },
+    {
+      "district_label": "North Shropshire",
+      "count": 712
+    },
+    {
+      "district_label": "Chester-le-Street",
+      "count": 499
+    },
+    {
+      "district_label": "Alnwick",
+      "count": 474
+    },
+    {
+      "district_label": "South Shropshire",
+      "count": 452
+    },
+    {
+      "district_label": "Oswestry",
+      "count": 441
+    },
+    {
+      "district_label": "London Airport (Heathrow)",
+      "count": 439
+    },
+    {
+      "district_label": "Western Isles",
+      "count": 410
+    },
+    {
+      "district_label": "Shetland Islands",
+      "count": 357
+    },
+    {
+      "district_label": "Berwick-upon-Tweed",
+      "count": 337
+    },
+    {
+      "district_label": "Teesdale",
+      "count": 318
+    },
+    {
+      "district_label": "Orkney Islands",
+      "count": 285
+    }
+  ],
+  "meta": {
+    "total_accidents": 1780653,
+    "total_casualties": 2402909,
+    "total_vehicles": 3262270,
+    "year_range": [
+      2005,
+      2015
+    ],
+    "generated_at": "2026-06-09T14:17:07.345882"
+  }
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "road_label": "Single carriageway",
+    "count": 1332384
+  },
+  {
+    "road_label": "Dual carriageway",
+    "count": 262950
+  },
+  {
+    "road_label": "Roundabout",
+    "count": 119472
+  },
+  {
+    "road_label": "One way street",
+    "count": 36755
+  },
+  {
+    "road_label": "Slip road",
+    "count": 18647
+  },
+  {
+    "road_label": "Unknown",
+    "count": 10445
+  }
+]

@@ -1,0 +1,1730 @@
+{
+  "all": {
+    "nodes": [
+      {
+        "name": "Urban-Fatal",
+        "category": 0,
+        "symbolSize": 40,
+        "itemStyle": {
+          "color": "#e53935"
+        }
+      },
+      {
+        "name": "Urban-Serious",
+        "category": 0,
+        "symbolSize": 30,
+        "itemStyle": {
+          "color": "#fb8c00"
+        }
+      },
+      {
+        "name": "Urban-Slight",
+        "category": 0,
+        "symbolSize": 20,
+        "itemStyle": {
+          "color": "#43a047"
+        }
+      },
+      {
+        "name": "Rural-Fatal",
+        "category": 1,
+        "symbolSize": 40,
+        "itemStyle": {
+          "color": "#ef5350"
+        }
+      },
+      {
+        "name": "Rural-Serious",
+        "category": 1,
+        "symbolSize": 30,
+        "itemStyle": {
+          "color": "#ff9800"
+        }
+      },
+      {
+        "name": "Rural-Slight",
+        "category": 1,
+        "symbolSize": 20,
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      }
+    ],
+    "links": [
+      {
+        "source": "Urban-Fatal",
+        "target": "Rural-Fatal",
+        "value": 22998,
+        "lineStyle": {
+          "width": 1.1,
+          "curveness": 0.25,
+          "color": "#90a4ae"
+        }
+      },
+      {
+        "source": "Urban-Serious",
+        "target": "Rural-Serious",
+        "value": 242061,
+        "lineStyle": {
+          "width": 2.0,
+          "curveness": 0.25,
+          "color": "#90a4ae"
+        }
+      },
+      {
+        "source": "Urban-Slight",
+        "target": "Rural-Slight",
+        "value": 1515451,
+        "lineStyle": {
+          "width": 8.0,
+          "curveness": 0.25,
+          "color": "#90a4ae"
+        }
+      },
+      {
+        "source": "Urban-Fatal",
+        "target": "Urban-Serious",
+        "value": 148558,
+        "lineStyle": {
+          "width": 1.2,
+          "curveness": 0.35,
+          "color": "#5b8def"
+        }
+      },
+      {
+        "source": "Urban-Serious",
+        "target": "Urban-Slight",
+        "value": 1138275,
+        "lineStyle": {
+          "width": 4.8,
+          "curveness": 0.35,
+          "color": "#5b8def"
+        }
+      },
+      {
+        "source": "Urban-Fatal",
+        "target": "Urban-Slight",
+        "value": 1006009,
+        "lineStyle": {
+          "width": 4.8,
+          "curveness": 0.35,
+          "color": "#5b8def"
+        }
+      },
+      {
+        "source": "Rural-Fatal",
+        "target": "Rural-Serious",
+        "value": 116501,
+        "lineStyle": {
+          "width": 1.02,
+          "curveness": 0.35,
+          "color": "#ffa726"
+        }
+      },
+      {
+        "source": "Rural-Serious",
+        "target": "Rural-Slight",
+        "value": 619237,
+        "lineStyle": {
+          "width": 2.76,
+          "curveness": 0.35,
+          "color": "#ffa726"
+        }
+      },
+      {
+        "source": "Rural-Fatal",
+        "target": "Rural-Slight",
+        "value": 532440,
+        "lineStyle": {
+          "width": 2.76,
+          "curveness": 0.35,
+          "color": "#ffa726"
+        }
+      }
+    ]
+  },
+  "2005": {
+    "nodes": [
+      {
+        "name": "Urban-Fatal",
+        "category": 0,
+        "symbolSize": 40,
+        "itemStyle": {
+          "color": "#e53935"
+        }
+      },
+      {
+        "name": "Urban-Serious",
+        "category": 0,
+        "symbolSize": 30,
+        "itemStyle": {
+          "color": "#fb8c00"
+        }
+      },
+      {
+        "name": "Urban-Slight",
+        "category": 0,
+        "symbolSize": 20,
+        "itemStyle": {
+          "color": "#43a047"
+        }
+      },
+      {
+        "name": "Rural-Fatal",
+        "category": 1,
+        "symbolSize": 40,
+        "itemStyle": {
+          "color": "#ef5350"
+        }
+      },
+      {
+        "name": "Rural-Serious",
+        "category": 1,
+        "symbolSize": 30,
+        "itemStyle": {
+          "color": "#ff9800"
+        }
+      },
+      {
+        "name": "Rural-Slight",
+        "category": 1,
+        "symbolSize": 20,
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      }
+    ],
+    "links": [
+      {
+        "source": "Urban-Fatal",
+        "target": "Rural-Fatal",
+        "value": 2913,
+        "lineStyle": {
+          "width": 1.1,
+          "curveness": 0.25,
+          "color": "#90a4ae"
+        }
+      },
+      {
+        "source": "Urban-Serious",
+        "target": "Rural-Serious",
+        "value": 25016,
+        "lineStyle": {
+          "width": 1.9,
+          "curveness": 0.25,
+          "color": "#90a4ae"
+        }
+      },
+      {
+        "source": "Urban-Slight",
+        "target": "Rural-Slight",
+        "value": 170716,
+        "lineStyle": {
+          "width": 8.0,
+          "curveness": 0.25,
+          "color": "#90a4ae"
+        }
+      },
+      {
+        "source": "Urban-Fatal",
+        "target": "Urban-Serious",
+        "value": 15247,
+        "lineStyle": {
+          "width": 1.14,
+          "curveness": 0.35,
+          "color": "#5b8def"
+        }
+      },
+      {
+        "source": "Urban-Serious",
+        "target": "Urban-Slight",
+        "value": 125367,
+        "lineStyle": {
+          "width": 4.8,
+          "curveness": 0.35,
+          "color": "#5b8def"
+        }
+      },
+      {
+        "source": "Urban-Fatal",
+        "target": "Urban-Slight",
+        "value": 112142,
+        "lineStyle": {
+          "width": 4.8,
+          "curveness": 0.35,
+          "color": "#5b8def"
+        }
+      },
+      {
+        "source": "Rural-Fatal",
+        "target": "Rural-Serious",
+        "value": 12682,
+        "lineStyle": {
+          "width": 1.02,
+          "curveness": 0.35,
+          "color": "#ffa726"
+        }
+      },
+      {
+        "source": "Rural-Serious",
+        "target": "Rural-Slight",
+        "value": 70365,
+        "lineStyle": {
+          "width": 2.88,
+          "curveness": 0.35,
+          "color": "#ffa726"
+        }
+      },
+      {
+        "source": "Rural-Fatal",
+        "target": "Rural-Slight",
+        "value": 61487,
+        "lineStyle": {
+          "width": 2.88,
+          "curveness": 0.35,
+          "color": "#ffa726"
+        }
+      }
+    ]
+  },
+  "2006": {
+    "nodes": [
+      {
+        "name": "Urban-Fatal",
+        "category": 0,
+        "symbolSize": 40,
+        "itemStyle": {
+          "color": "#e53935"
+        }
+      },
+      {
+        "name": "Urban-Serious",
+        "category": 0,
+        "symbolSize": 30,
+        "itemStyle": {
+          "color": "#fb8c00"
+        }
+      },
+      {
+        "name": "Urban-Slight",
+        "category": 0,
+        "symbolSize": 20,
+        "itemStyle": {
+          "color": "#43a047"
+        }
+      },
+      {
+        "name": "Rural-Fatal",
+        "category": 1,
+        "symbolSize": 40,
+        "itemStyle": {
+          "color": "#ef5350"
+        }
+      },
+      {
+        "name": "Rural-Serious",
+        "category": 1,
+        "symbolSize": 30,
+        "itemStyle": {
+          "color": "#ff9800"
+        }
+      },
+      {
+        "name": "Rural-Slight",
+        "category": 1,
+        "symbolSize": 20,
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      }
+    ],
+    "links": [
+      {
+        "source": "Urban-Fatal",
+        "target": "Rural-Fatal",
+        "value": 2926,
+        "lineStyle": {
+          "width": 1.1,
+          "curveness": 0.25,
+          "color": "#90a4ae"
+        }
+      },
+      {
+        "source": "Urban-Serious",
+        "target": "Rural-Serious",
+        "value": 24943,
+        "lineStyle": {
+          "width": 2.0,
+          "curveness": 0.25,
+          "color": "#90a4ae"
+        }
+      },
+      {
+        "source": "Urban-Slight",
+        "target": "Rural-Slight",
+        "value": 161265,
+        "lineStyle": {
+          "width": 8.0,
+          "curveness": 0.25,
+          "color": "#90a4ae"
+        }
+      },
+      {
+        "source": "Urban-Fatal",
+        "target": "Urban-Serious",
+        "value": 15402,
+        "lineStyle": {
+          "width": 1.2,
+          "curveness": 0.35,
+          "color": "#5b8def"
+        }
+      },
+      {
+        "source": "Urban-Serious",
+        "target": "Urban-Slight",
+        "value": 118795,
+        "lineStyle": {
+          "width": 4.8,
+          "curveness": 0.35,
+          "color": "#5b8def"
+        }
+      },
+      {
+        "source": "Urban-Fatal",
+        "target": "Urban-Slight",
+        "value": 105485,
+        "lineStyle": {
+          "width": 4.8,
+          "curveness": 0.35,
+          "color": "#5b8def"
+        }
+      },
+      {
+        "source": "Rural-Fatal",
+        "target": "Rural-Serious",
+        "value": 12467,
+        "lineStyle": {
+          "width": 1.02,
+          "curveness": 0.35,
+          "color": "#ffa726"
+        }
+      },
+      {
+        "source": "Rural-Serious",
+        "target": "Rural-Slight",
+        "value": 67413,
+        "lineStyle": {
+          "width": 2.88,
+          "curveness": 0.35,
+          "color": "#ffa726"
+        }
+      },
+      {
+        "source": "Rural-Fatal",
+        "target": "Rural-Slight",
+        "value": 58706,
+        "lineStyle": {
+          "width": 2.88,
+          "curveness": 0.35,
+          "color": "#ffa726"
+        }
+      }
+    ]
+  },
+  "2007": {
+    "nodes": [
+      {
+        "name": "Urban-Fatal",
+        "category": 0,
+        "symbolSize": 40,
+        "itemStyle": {
+          "color": "#e53935"
+        }
+      },
+      {
+        "name": "Urban-Serious",
+        "category": 0,
+        "symbolSize": 30,
+        "itemStyle": {
+          "color": "#fb8c00"
+        }
+      },
+      {
+        "name": "Urban-Slight",
+        "category": 0,
+        "symbolSize": 20,
+        "itemStyle": {
+          "color": "#43a047"
+        }
+      },
+      {
+        "name": "Rural-Fatal",
+        "category": 1,
+        "symbolSize": 40,
+        "itemStyle": {
+          "color": "#ef5350"
+        }
+      },
+      {
+        "name": "Rural-Serious",
+        "category": 1,
+        "symbolSize": 30,
+        "itemStyle": {
+          "color": "#ff9800"
+        }
+      },
+      {
+        "name": "Rural-Slight",
+        "category": 1,
+        "symbolSize": 20,
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      }
+    ],
+    "links": [
+      {
+        "source": "Urban-Fatal",
+        "target": "Rural-Fatal",
+        "value": 2714,
+        "lineStyle": {
+          "width": 1.1,
+          "curveness": 0.25,
+          "color": "#90a4ae"
+        }
+      },
+      {
+        "source": "Urban-Serious",
+        "target": "Rural-Serious",
+        "value": 24321,
+        "lineStyle": {
+          "width": 2.0,
+          "curveness": 0.25,
+          "color": "#90a4ae"
+        }
+      },
+      {
+        "source": "Urban-Slight",
+        "target": "Rural-Slight",
+        "value": 155065,
+        "lineStyle": {
+          "width": 8.0,
+          "curveness": 0.25,
+          "color": "#90a4ae"
+        }
+      },
+      {
+        "source": "Urban-Fatal",
+        "target": "Urban-Serious",
+        "value": 14952,
+        "lineStyle": {
+          "width": 1.2,
+          "curveness": 0.35,
+          "color": "#5b8def"
+        }
+      },
+      {
+        "source": "Urban-Serious",
+        "target": "Urban-Slight",
+        "value": 113601,
+        "lineStyle": {
+          "width": 4.8,
+          "curveness": 0.35,
+          "color": "#5b8def"
+        }
+      },
+      {
+        "source": "Urban-Fatal",
+        "target": "Urban-Slight",
+        "value": 100531,
+        "lineStyle": {
+          "width": 4.8,
+          "curveness": 0.35,
+          "color": "#5b8def"
+        }
+      },
+      {
+        "source": "Rural-Fatal",
+        "target": "Rural-Serious",
+        "value": 12083,
+        "lineStyle": {
+          "width": 1.02,
+          "curveness": 0.35,
+          "color": "#ffa726"
+        }
+      },
+      {
+        "source": "Rural-Serious",
+        "target": "Rural-Slight",
+        "value": 65785,
+        "lineStyle": {
+          "width": 2.94,
+          "curveness": 0.35,
+          "color": "#ffa726"
+        }
+      },
+      {
+        "source": "Rural-Fatal",
+        "target": "Rural-Slight",
+        "value": 57248,
+        "lineStyle": {
+          "width": 2.94,
+          "curveness": 0.35,
+          "color": "#ffa726"
+        }
+      }
+    ]
+  },
+  "2008": {
+    "nodes": [
+      {
+        "name": "Urban-Fatal",
+        "category": 0,
+        "symbolSize": 40,
+        "itemStyle": {
+          "color": "#e53935"
+        }
+      },
+      {
+        "name": "Urban-Serious",
+        "category": 0,
+        "symbolSize": 30,
+        "itemStyle": {
+          "color": "#fb8c00"
+        }
+      },
+      {
+        "name": "Urban-Slight",
+        "category": 0,
+        "symbolSize": 20,
+        "itemStyle": {
+          "color": "#43a047"
+        }
+      },
+      {
+        "name": "Rural-Fatal",
+        "category": 1,
+        "symbolSize": 40,
+        "itemStyle": {
+          "color": "#ef5350"
+        }
+      },
+      {
+        "name": "Rural-Serious",
+        "category": 1,
+        "symbolSize": 30,
+        "itemStyle": {
+          "color": "#ff9800"
+        }
+      },
+      {
+        "name": "Rural-Slight",
+        "category": 1,
+        "symbolSize": 20,
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      }
+    ],
+    "links": [
+      {
+        "source": "Urban-Fatal",
+        "target": "Rural-Fatal",
+        "value": 2341,
+        "lineStyle": {
+          "width": 1.1,
+          "curveness": 0.25,
+          "color": "#90a4ae"
+        }
+      },
+      {
+        "source": "Urban-Serious",
+        "target": "Rural-Serious",
+        "value": 23119,
+        "lineStyle": {
+          "width": 2.0,
+          "curveness": 0.25,
+          "color": "#90a4ae"
+        }
+      },
+      {
+        "source": "Urban-Slight",
+        "target": "Rural-Slight",
+        "value": 145120,
+        "lineStyle": {
+          "width": 8.0,
+          "curveness": 0.25,
+          "color": "#90a4ae"
+        }
+      },
+      {
+        "source": "Urban-Fatal",
+        "target": "Urban-Serious",
+        "value": 14191,
+        "lineStyle": {
+          "width": 1.2,
+          "curveness": 0.35,
+          "color": "#5b8def"
+        }
+      },
+      {
+        "source": "Urban-Serious",
+        "target": "Urban-Slight",
+        "value": 107743,
+        "lineStyle": {
+          "width": 4.8,
+          "curveness": 0.35,
+          "color": "#5b8def"
+        }
+      },
+      {
+        "source": "Urban-Fatal",
+        "target": "Urban-Slight",
+        "value": 95244,
+        "lineStyle": {
+          "width": 4.8,
+          "curveness": 0.35,
+          "color": "#5b8def"
+        }
+      },
+      {
+        "source": "Rural-Fatal",
+        "target": "Rural-Serious",
+        "value": 11269,
+        "lineStyle": {
+          "width": 1.02,
+          "curveness": 0.35,
+          "color": "#ffa726"
+        }
+      },
+      {
+        "source": "Rural-Serious",
+        "target": "Rural-Slight",
+        "value": 60496,
+        "lineStyle": {
+          "width": 2.88,
+          "curveness": 0.35,
+          "color": "#ffa726"
+        }
+      },
+      {
+        "source": "Rural-Fatal",
+        "target": "Rural-Slight",
+        "value": 52217,
+        "lineStyle": {
+          "width": 2.88,
+          "curveness": 0.35,
+          "color": "#ffa726"
+        }
+      }
+    ]
+  },
+  "2009": {
+    "nodes": [
+      {
+        "name": "Urban-Fatal",
+        "category": 0,
+        "symbolSize": 40,
+        "itemStyle": {
+          "color": "#e53935"
+        }
+      },
+      {
+        "name": "Urban-Serious",
+        "category": 0,
+        "symbolSize": 30,
+        "itemStyle": {
+          "color": "#fb8c00"
+        }
+      },
+      {
+        "name": "Urban-Slight",
+        "category": 0,
+        "symbolSize": 20,
+        "itemStyle": {
+          "color": "#43a047"
+        }
+      },
+      {
+        "name": "Rural-Fatal",
+        "category": 1,
+        "symbolSize": 40,
+        "itemStyle": {
+          "color": "#ef5350"
+        }
+      },
+      {
+        "name": "Rural-Serious",
+        "category": 1,
+        "symbolSize": 30,
+        "itemStyle": {
+          "color": "#ff9800"
+        }
+      },
+      {
+        "name": "Rural-Slight",
+        "category": 1,
+        "symbolSize": 20,
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      }
+    ],
+    "links": [
+      {
+        "source": "Urban-Fatal",
+        "target": "Rural-Fatal",
+        "value": 2057,
+        "lineStyle": {
+          "width": 1.1,
+          "curveness": 0.25,
+          "color": "#90a4ae"
+        }
+      },
+      {
+        "source": "Urban-Serious",
+        "target": "Rural-Serious",
+        "value": 21997,
+        "lineStyle": {
+          "width": 2.0,
+          "curveness": 0.25,
+          "color": "#90a4ae"
+        }
+      },
+      {
+        "source": "Urban-Slight",
+        "target": "Rural-Slight",
+        "value": 139500,
+        "lineStyle": {
+          "width": 8.0,
+          "curveness": 0.25,
+          "color": "#90a4ae"
+        }
+      },
+      {
+        "source": "Urban-Fatal",
+        "target": "Urban-Serious",
+        "value": 13210,
+        "lineStyle": {
+          "width": 1.2,
+          "curveness": 0.35,
+          "color": "#5b8def"
+        }
+      },
+      {
+        "source": "Urban-Serious",
+        "target": "Urban-Slight",
+        "value": 103804,
+        "lineStyle": {
+          "width": 4.8,
+          "curveness": 0.35,
+          "color": "#5b8def"
+        }
+      },
+      {
+        "source": "Urban-Fatal",
+        "target": "Urban-Slight",
+        "value": 92062,
+        "lineStyle": {
+          "width": 4.8,
+          "curveness": 0.35,
+          "color": "#5b8def"
+        }
+      },
+      {
+        "source": "Rural-Fatal",
+        "target": "Rural-Serious",
+        "value": 10844,
+        "lineStyle": {
+          "width": 1.02,
+          "curveness": 0.35,
+          "color": "#ffa726"
+        }
+      },
+      {
+        "source": "Rural-Serious",
+        "target": "Rural-Slight",
+        "value": 57693,
+        "lineStyle": {
+          "width": 2.82,
+          "curveness": 0.35,
+          "color": "#ffa726"
+        }
+      },
+      {
+        "source": "Rural-Fatal",
+        "target": "Rural-Slight",
+        "value": 49495,
+        "lineStyle": {
+          "width": 2.82,
+          "curveness": 0.35,
+          "color": "#ffa726"
+        }
+      }
+    ]
+  },
+  "2010": {
+    "nodes": [
+      {
+        "name": "Urban-Fatal",
+        "category": 0,
+        "symbolSize": 40,
+        "itemStyle": {
+          "color": "#e53935"
+        }
+      },
+      {
+        "name": "Urban-Serious",
+        "category": 0,
+        "symbolSize": 30,
+        "itemStyle": {
+          "color": "#fb8c00"
+        }
+      },
+      {
+        "name": "Urban-Slight",
+        "category": 0,
+        "symbolSize": 20,
+        "itemStyle": {
+          "color": "#43a047"
+        }
+      },
+      {
+        "name": "Rural-Fatal",
+        "category": 1,
+        "symbolSize": 40,
+        "itemStyle": {
+          "color": "#ef5350"
+        }
+      },
+      {
+        "name": "Rural-Serious",
+        "category": 1,
+        "symbolSize": 30,
+        "itemStyle": {
+          "color": "#ff9800"
+        }
+      },
+      {
+        "name": "Rural-Slight",
+        "category": 1,
+        "symbolSize": 20,
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      }
+    ],
+    "links": [
+      {
+        "source": "Urban-Fatal",
+        "target": "Rural-Fatal",
+        "value": 1731,
+        "lineStyle": {
+          "width": 1.1,
+          "curveness": 0.25,
+          "color": "#90a4ae"
+        }
+      },
+      {
+        "source": "Urban-Serious",
+        "target": "Rural-Serious",
+        "value": 20440,
+        "lineStyle": {
+          "width": 2.0,
+          "curveness": 0.25,
+          "color": "#90a4ae"
+        }
+      },
+      {
+        "source": "Urban-Slight",
+        "target": "Rural-Slight",
+        "value": 132243,
+        "lineStyle": {
+          "width": 8.0,
+          "curveness": 0.25,
+          "color": "#90a4ae"
+        }
+      },
+      {
+        "source": "Urban-Fatal",
+        "target": "Urban-Serious",
+        "value": 12419,
+        "lineStyle": {
+          "width": 1.2,
+          "curveness": 0.35,
+          "color": "#5b8def"
+        }
+      },
+      {
+        "source": "Urban-Serious",
+        "target": "Urban-Slight",
+        "value": 98910,
+        "lineStyle": {
+          "width": 4.8,
+          "curveness": 0.35,
+          "color": "#5b8def"
+        }
+      },
+      {
+        "source": "Urban-Fatal",
+        "target": "Urban-Slight",
+        "value": 87647,
+        "lineStyle": {
+          "width": 4.8,
+          "curveness": 0.35,
+          "color": "#5b8def"
+        }
+      },
+      {
+        "source": "Rural-Fatal",
+        "target": "Rural-Serious",
+        "value": 9752,
+        "lineStyle": {
+          "width": 1.02,
+          "curveness": 0.35,
+          "color": "#ffa726"
+        }
+      },
+      {
+        "source": "Rural-Serious",
+        "target": "Rural-Slight",
+        "value": 53773,
+        "lineStyle": {
+          "width": 2.76,
+          "curveness": 0.35,
+          "color": "#ffa726"
+        }
+      },
+      {
+        "source": "Rural-Fatal",
+        "target": "Rural-Slight",
+        "value": 46327,
+        "lineStyle": {
+          "width": 2.76,
+          "curveness": 0.35,
+          "color": "#ffa726"
+        }
+      }
+    ]
+  },
+  "2011": {
+    "nodes": [
+      {
+        "name": "Urban-Fatal",
+        "category": 0,
+        "symbolSize": 40,
+        "itemStyle": {
+          "color": "#e53935"
+        }
+      },
+      {
+        "name": "Urban-Serious",
+        "category": 0,
+        "symbolSize": 30,
+        "itemStyle": {
+          "color": "#fb8c00"
+        }
+      },
+      {
+        "name": "Urban-Slight",
+        "category": 0,
+        "symbolSize": 20,
+        "itemStyle": {
+          "color": "#43a047"
+        }
+      },
+      {
+        "name": "Rural-Fatal",
+        "category": 1,
+        "symbolSize": 40,
+        "itemStyle": {
+          "color": "#ef5350"
+        }
+      },
+      {
+        "name": "Rural-Serious",
+        "category": 1,
+        "symbolSize": 30,
+        "itemStyle": {
+          "color": "#ff9800"
+        }
+      },
+      {
+        "name": "Rural-Slight",
+        "category": 1,
+        "symbolSize": 20,
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      }
+    ],
+    "links": [
+      {
+        "source": "Urban-Fatal",
+        "target": "Rural-Fatal",
+        "value": 1797,
+        "lineStyle": {
+          "width": 1.1,
+          "curveness": 0.25,
+          "color": "#90a4ae"
+        }
+      },
+      {
+        "source": "Urban-Serious",
+        "target": "Rural-Serious",
+        "value": 20986,
+        "lineStyle": {
+          "width": 2.0,
+          "curveness": 0.25,
+          "color": "#90a4ae"
+        }
+      },
+      {
+        "source": "Urban-Slight",
+        "target": "Rural-Slight",
+        "value": 128691,
+        "lineStyle": {
+          "width": 8.0,
+          "curveness": 0.25,
+          "color": "#90a4ae"
+        }
+      },
+      {
+        "source": "Urban-Fatal",
+        "target": "Urban-Serious",
+        "value": 13090,
+        "lineStyle": {
+          "width": 1.2,
+          "curveness": 0.35,
+          "color": "#5b8def"
+        }
+      },
+      {
+        "source": "Urban-Serious",
+        "target": "Urban-Slight",
+        "value": 98688,
+        "lineStyle": {
+          "width": 4.8,
+          "curveness": 0.35,
+          "color": "#5b8def"
+        }
+      },
+      {
+        "source": "Urban-Fatal",
+        "target": "Urban-Slight",
+        "value": 86870,
+        "lineStyle": {
+          "width": 4.8,
+          "curveness": 0.35,
+          "color": "#5b8def"
+        }
+      },
+      {
+        "source": "Rural-Fatal",
+        "target": "Rural-Serious",
+        "value": 9693,
+        "lineStyle": {
+          "width": 1.02,
+          "curveness": 0.35,
+          "color": "#ffa726"
+        }
+      },
+      {
+        "source": "Rural-Serious",
+        "target": "Rural-Slight",
+        "value": 50989,
+        "lineStyle": {
+          "width": 2.64,
+          "curveness": 0.35,
+          "color": "#ffa726"
+        }
+      },
+      {
+        "source": "Rural-Fatal",
+        "target": "Rural-Slight",
+        "value": 43618,
+        "lineStyle": {
+          "width": 2.64,
+          "curveness": 0.35,
+          "color": "#ffa726"
+        }
+      }
+    ]
+  },
+  "2012": {
+    "nodes": [
+      {
+        "name": "Urban-Fatal",
+        "category": 0,
+        "symbolSize": 40,
+        "itemStyle": {
+          "color": "#e53935"
+        }
+      },
+      {
+        "name": "Urban-Serious",
+        "category": 0,
+        "symbolSize": 30,
+        "itemStyle": {
+          "color": "#fb8c00"
+        }
+      },
+      {
+        "name": "Urban-Slight",
+        "category": 0,
+        "symbolSize": 20,
+        "itemStyle": {
+          "color": "#43a047"
+        }
+      },
+      {
+        "name": "Rural-Fatal",
+        "category": 1,
+        "symbolSize": 40,
+        "itemStyle": {
+          "color": "#ef5350"
+        }
+      },
+      {
+        "name": "Rural-Serious",
+        "category": 1,
+        "symbolSize": 30,
+        "itemStyle": {
+          "color": "#ff9800"
+        }
+      },
+      {
+        "name": "Rural-Slight",
+        "category": 1,
+        "symbolSize": 20,
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      }
+    ],
+    "links": [
+      {
+        "source": "Urban-Fatal",
+        "target": "Rural-Fatal",
+        "value": 1637,
+        "lineStyle": {
+          "width": 1.1,
+          "curveness": 0.25,
+          "color": "#90a4ae"
+        }
+      },
+      {
+        "source": "Urban-Serious",
+        "target": "Rural-Serious",
+        "value": 20901,
+        "lineStyle": {
+          "width": 2.1,
+          "curveness": 0.25,
+          "color": "#90a4ae"
+        }
+      },
+      {
+        "source": "Urban-Slight",
+        "target": "Rural-Slight",
+        "value": 123033,
+        "lineStyle": {
+          "width": 8.0,
+          "curveness": 0.25,
+          "color": "#90a4ae"
+        }
+      },
+      {
+        "source": "Urban-Fatal",
+        "target": "Urban-Serious",
+        "value": 13245,
+        "lineStyle": {
+          "width": 1.26,
+          "curveness": 0.35,
+          "color": "#5b8def"
+        }
+      },
+      {
+        "source": "Urban-Serious",
+        "target": "Urban-Slight",
+        "value": 94727,
+        "lineStyle": {
+          "width": 4.8,
+          "curveness": 0.35,
+          "color": "#5b8def"
+        }
+      },
+      {
+        "source": "Urban-Fatal",
+        "target": "Urban-Slight",
+        "value": 82736,
+        "lineStyle": {
+          "width": 4.8,
+          "curveness": 0.35,
+          "color": "#5b8def"
+        }
+      },
+      {
+        "source": "Rural-Fatal",
+        "target": "Rural-Serious",
+        "value": 9293,
+        "lineStyle": {
+          "width": 1.02,
+          "curveness": 0.35,
+          "color": "#ffa726"
+        }
+      },
+      {
+        "source": "Rural-Serious",
+        "target": "Rural-Slight",
+        "value": 49207,
+        "lineStyle": {
+          "width": 2.6999999999999997,
+          "curveness": 0.35,
+          "color": "#ffa726"
+        }
+      },
+      {
+        "source": "Rural-Fatal",
+        "target": "Rural-Slight",
+        "value": 41934,
+        "lineStyle": {
+          "width": 2.6999999999999997,
+          "curveness": 0.35,
+          "color": "#ffa726"
+        }
+      }
+    ]
+  },
+  "2013": {
+    "nodes": [
+      {
+        "name": "Urban-Fatal",
+        "category": 0,
+        "symbolSize": 40,
+        "itemStyle": {
+          "color": "#e53935"
+        }
+      },
+      {
+        "name": "Urban-Serious",
+        "category": 0,
+        "symbolSize": 30,
+        "itemStyle": {
+          "color": "#fb8c00"
+        }
+      },
+      {
+        "name": "Urban-Slight",
+        "category": 0,
+        "symbolSize": 20,
+        "itemStyle": {
+          "color": "#43a047"
+        }
+      },
+      {
+        "name": "Rural-Fatal",
+        "category": 1,
+        "symbolSize": 40,
+        "itemStyle": {
+          "color": "#ef5350"
+        }
+      },
+      {
+        "name": "Rural-Serious",
+        "category": 1,
+        "symbolSize": 30,
+        "itemStyle": {
+          "color": "#ff9800"
+        }
+      },
+      {
+        "name": "Rural-Slight",
+        "category": 1,
+        "symbolSize": 20,
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      }
+    ],
+    "links": [
+      {
+        "source": "Urban-Fatal",
+        "target": "Rural-Fatal",
+        "value": 1608,
+        "lineStyle": {
+          "width": 1.1,
+          "curveness": 0.25,
+          "color": "#90a4ae"
+        }
+      },
+      {
+        "source": "Urban-Serious",
+        "target": "Rural-Serious",
+        "value": 19624,
+        "lineStyle": {
+          "width": 2.0,
+          "curveness": 0.25,
+          "color": "#90a4ae"
+        }
+      },
+      {
+        "source": "Urban-Slight",
+        "target": "Rural-Slight",
+        "value": 117428,
+        "lineStyle": {
+          "width": 8.0,
+          "curveness": 0.25,
+          "color": "#90a4ae"
+        }
+      },
+      {
+        "source": "Urban-Fatal",
+        "target": "Urban-Serious",
+        "value": 12025,
+        "lineStyle": {
+          "width": 1.2,
+          "curveness": 0.35,
+          "color": "#5b8def"
+        }
+      },
+      {
+        "source": "Urban-Serious",
+        "target": "Urban-Slight",
+        "value": 89471,
+        "lineStyle": {
+          "width": 4.8,
+          "curveness": 0.35,
+          "color": "#5b8def"
+        }
+      },
+      {
+        "source": "Urban-Fatal",
+        "target": "Urban-Slight",
+        "value": 78504,
+        "lineStyle": {
+          "width": 4.8,
+          "curveness": 0.35,
+          "color": "#5b8def"
+        }
+      },
+      {
+        "source": "Rural-Fatal",
+        "target": "Rural-Serious",
+        "value": 9207,
+        "lineStyle": {
+          "width": 1.02,
+          "curveness": 0.35,
+          "color": "#ffa726"
+        }
+      },
+      {
+        "source": "Rural-Serious",
+        "target": "Rural-Slight",
+        "value": 47581,
+        "lineStyle": {
+          "width": 2.6999999999999997,
+          "curveness": 0.35,
+          "color": "#ffa726"
+        }
+      },
+      {
+        "source": "Rural-Fatal",
+        "target": "Rural-Slight",
+        "value": 40532,
+        "lineStyle": {
+          "width": 2.6999999999999997,
+          "curveness": 0.35,
+          "color": "#ffa726"
+        }
+      }
+    ]
+  },
+  "2014": {
+    "nodes": [
+      {
+        "name": "Urban-Fatal",
+        "category": 0,
+        "symbolSize": 40,
+        "itemStyle": {
+          "color": "#e53935"
+        }
+      },
+      {
+        "name": "Urban-Serious",
+        "category": 0,
+        "symbolSize": 30,
+        "itemStyle": {
+          "color": "#fb8c00"
+        }
+      },
+      {
+        "name": "Urban-Slight",
+        "category": 0,
+        "symbolSize": 20,
+        "itemStyle": {
+          "color": "#43a047"
+        }
+      },
+      {
+        "name": "Rural-Fatal",
+        "category": 1,
+        "symbolSize": 40,
+        "itemStyle": {
+          "color": "#ef5350"
+        }
+      },
+      {
+        "name": "Rural-Serious",
+        "category": 1,
+        "symbolSize": 30,
+        "itemStyle": {
+          "color": "#ff9800"
+        }
+      },
+      {
+        "name": "Rural-Slight",
+        "category": 1,
+        "symbolSize": 20,
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      }
+    ],
+    "links": [
+      {
+        "source": "Urban-Fatal",
+        "target": "Rural-Fatal",
+        "value": 1658,
+        "lineStyle": {
+          "width": 1.1,
+          "curveness": 0.25,
+          "color": "#90a4ae"
+        }
+      },
+      {
+        "source": "Urban-Serious",
+        "target": "Rural-Serious",
+        "value": 20676,
+        "lineStyle": {
+          "width": 2.0,
+          "curveness": 0.25,
+          "color": "#90a4ae"
+        }
+      },
+      {
+        "source": "Urban-Slight",
+        "target": "Rural-Slight",
+        "value": 123988,
+        "lineStyle": {
+          "width": 8.0,
+          "curveness": 0.25,
+          "color": "#90a4ae"
+        }
+      },
+      {
+        "source": "Urban-Fatal",
+        "target": "Urban-Serious",
+        "value": 12574,
+        "lineStyle": {
+          "width": 1.2,
+          "curveness": 0.35,
+          "color": "#5b8def"
+        }
+      },
+      {
+        "source": "Urban-Serious",
+        "target": "Urban-Slight",
+        "value": 95681,
+        "lineStyle": {
+          "width": 4.8,
+          "curveness": 0.35,
+          "color": "#5b8def"
+        }
+      },
+      {
+        "source": "Urban-Fatal",
+        "target": "Urban-Slight",
+        "value": 84319,
+        "lineStyle": {
+          "width": 4.8,
+          "curveness": 0.35,
+          "color": "#5b8def"
+        }
+      },
+      {
+        "source": "Rural-Fatal",
+        "target": "Rural-Serious",
+        "value": 9760,
+        "lineStyle": {
+          "width": 1.02,
+          "curveness": 0.35,
+          "color": "#ffa726"
+        }
+      },
+      {
+        "source": "Rural-Serious",
+        "target": "Rural-Slight",
+        "value": 48983,
+        "lineStyle": {
+          "width": 2.64,
+          "curveness": 0.35,
+          "color": "#ffa726"
+        }
+      },
+      {
+        "source": "Rural-Fatal",
+        "target": "Rural-Slight",
+        "value": 41327,
+        "lineStyle": {
+          "width": 2.64,
+          "curveness": 0.35,
+          "color": "#ffa726"
+        }
+      }
+    ]
+  },
+  "2015": {
+    "nodes": [
+      {
+        "name": "Urban-Fatal",
+        "category": 0,
+        "symbolSize": 40,
+        "itemStyle": {
+          "color": "#e53935"
+        }
+      },
+      {
+        "name": "Urban-Serious",
+        "category": 0,
+        "symbolSize": 30,
+        "itemStyle": {
+          "color": "#fb8c00"
+        }
+      },
+      {
+        "name": "Urban-Slight",
+        "category": 0,
+        "symbolSize": 20,
+        "itemStyle": {
+          "color": "#43a047"
+        }
+      },
+      {
+        "name": "Rural-Fatal",
+        "category": 1,
+        "symbolSize": 40,
+        "itemStyle": {
+          "color": "#ef5350"
+        }
+      },
+      {
+        "name": "Rural-Serious",
+        "category": 1,
+        "symbolSize": 30,
+        "itemStyle": {
+          "color": "#ff9800"
+        }
+      },
+      {
+        "name": "Rural-Slight",
+        "category": 1,
+        "symbolSize": 20,
+        "itemStyle": {
+          "color": "#66bb6a"
+        }
+      }
+    ],
+    "links": [
+      {
+        "source": "Urban-Fatal",
+        "target": "Rural-Fatal",
+        "value": 1616,
+        "lineStyle": {
+          "width": 1.1,
+          "curveness": 0.25,
+          "color": "#90a4ae"
+        }
+      },
+      {
+        "source": "Urban-Serious",
+        "target": "Rural-Serious",
+        "value": 20038,
+        "lineStyle": {
+          "width": 2.0,
+          "curveness": 0.25,
+          "color": "#90a4ae"
+        }
+      },
+      {
+        "source": "Urban-Slight",
+        "target": "Rural-Slight",
+        "value": 118402,
+        "lineStyle": {
+          "width": 8.0,
+          "curveness": 0.25,
+          "color": "#90a4ae"
+        }
+      },
+      {
+        "source": "Urban-Fatal",
+        "target": "Urban-Serious",
+        "value": 12203,
+        "lineStyle": {
+          "width": 1.2,
+          "curveness": 0.35,
+          "color": "#5b8def"
+        }
+      },
+      {
+        "source": "Urban-Serious",
+        "target": "Urban-Slight",
+        "value": 91488,
+        "lineStyle": {
+          "width": 4.8,
+          "curveness": 0.35,
+          "color": "#5b8def"
+        }
+      },
+      {
+        "source": "Urban-Fatal",
+        "target": "Urban-Slight",
+        "value": 80469,
+        "lineStyle": {
+          "width": 4.8,
+          "curveness": 0.35,
+          "color": "#5b8def"
+        }
+      },
+      {
+        "source": "Rural-Fatal",
+        "target": "Rural-Serious",
+        "value": 9451,
+        "lineStyle": {
+          "width": 1.02,
+          "curveness": 0.35,
+          "color": "#ffa726"
+        }
+      },
+      {
+        "source": "Rural-Serious",
+        "target": "Rural-Slight",
+        "value": 46952,
+        "lineStyle": {
+          "width": 2.64,
+          "curveness": 0.35,
+          "color": "#ffa726"
+        }
+      },
+      {
+        "source": "Rural-Fatal",
+        "target": "Rural-Slight",
+        "value": 39549,
+        "lineStyle": {
+          "width": 2.64,
+          "curveness": 0.35,
+          "color": "#ffa726"
+        }
+      }
+    ]
+  }
+}

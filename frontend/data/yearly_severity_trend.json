@@ -1,0 +1,167 @@
+[
+  {
+    "year": 2005,
+    "severity_label": "Fatal",
+    "count": 2913
+  },
+  {
+    "year": 2005,
+    "severity_label": "Serious",
+    "count": 25029
+  },
+  {
+    "year": 2005,
+    "severity_label": "Slight",
+    "count": 170793
+  },
+  {
+    "year": 2006,
+    "severity_label": "Fatal",
+    "count": 2926
+  },
+  {
+    "year": 2006,
+    "severity_label": "Serious",
+    "count": 24946
+  },
+  {
+    "year": 2006,
+    "severity_label": "Slight",
+    "count": 161289
+  },
+  {
+    "year": 2007,
+    "severity_label": "Fatal",
+    "count": 2714
+  },
+  {
+    "year": 2007,
+    "severity_label": "Serious",
+    "count": 24322
+  },
+  {
+    "year": 2007,
+    "severity_label": "Slight",
+    "count": 155079
+  },
+  {
+    "year": 2008,
+    "severity_label": "Fatal",
+    "count": 2341
+  },
+  {
+    "year": 2008,
+    "severity_label": "Serious",
+    "count": 23121
+  },
+  {
+    "year": 2008,
+    "severity_label": "Slight",
+    "count": 145129
+  },
+  {
+    "year": 2009,
+    "severity_label": "Fatal",
+    "count": 2057
+  },
+  {
+    "year": 2009,
+    "severity_label": "Serious",
+    "count": 21997
+  },
+  {
+    "year": 2009,
+    "severity_label": "Slight",
+    "count": 139500
+  },
+  {
+    "year": 2010,
+    "severity_label": "Fatal",
+    "count": 1731
+  },
+  {
+    "year": 2010,
+    "severity_label": "Serious",
+    "count": 20440
+  },
+  {
+    "year": 2010,
+    "severity_label": "Slight",
+    "count": 132243
+  },
+  {
+    "year": 2011,
+    "severity_label": "Fatal",
+    "count": 1797
+  },
+  {
+    "year": 2011,
+    "severity_label": "Serious",
+    "count": 20986
+  },
+  {
+    "year": 2011,
+    "severity_label": "Slight",
+    "count": 128691
+  },
+  {
+    "year": 2012,
+    "severity_label": "Fatal",
+    "count": 1637
+  },
+  {
+    "year": 2012,
+    "severity_label": "Serious",
+    "count": 20901
+  },
+  {
+    "year": 2012,
+    "severity_label": "Slight",
+    "count": 123033
+  },
+  {
+    "year": 2013,
+    "severity_label": "Fatal",
+    "count": 1608
+  },
+  {
+    "year": 2013,
+    "severity_label": "Serious",
+    "count": 19624
+  },
+  {
+    "year": 2013,
+    "severity_label": "Slight",
+    "count": 117428
+  },
+  {
+    "year": 2014,
+    "severity_label": "Fatal",
+    "count": 1658
+  },
+  {
+    "year": 2014,
+    "severity_label": "Serious",
+    "count": 20676
+  },
+  {
+    "year": 2014,
+    "severity_label": "Slight",
+    "count": 123988
+  },
+  {
+    "year": 2015,
+    "severity_label": "Fatal",
+    "count": 1616
+  },
+  {
+    "year": 2015,
+    "severity_label": "Serious",
+    "count": 20038
+  },
+  {
+    "year": 2015,
+    "severity_label": "Slight",
+    "count": 118402
+  }
+]

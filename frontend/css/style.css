@@ -1,0 +1,564 @@
+/* ============================================================
+   style.css — UK Car Accidents 可视化大屏
+   设计：明亮主题（默认）+ 暗色可切换 · 一屏固定 · 地图居中 · 不滚动
+   ============================================================ */
+
+/* ============================================================
+   THEME: CSS 变量 — light（默认） / dark
+   ============================================================ */
+:root,
+[data-theme="light"] {
+  --bg-page:        #f5f6f8;
+  --bg-panel:       #ffffff;
+  --bg-header:      #ffffff;
+  --text-primary:   #1a1a2e;
+  --text-secondary: #5a5a7a;
+  --text-muted:     #9999aa;
+  --border:         #e8e8f0;
+  --border-light:   #f0f0f6;
+  --shadow:         0 1px 6px rgba(0,0,0,.06);
+  --shadow-lg:      0 4px 20px rgba(0,0,0,.08);
+  --accent:         #3366cc;
+  --accent-light:   #5b8def;
+  --color-fatal:    #e53935;
+  --color-serious:  #fb8c00;
+  --color-slight:   #43a047;
+  --header-border:  #e0e0ea;
+}
+
+[data-theme="dark"] {
+  --bg-page:        #141926;
+  --bg-panel:       #1c2438;
+  --bg-header:      #1c2438;
+  --text-primary:   #e4ecf2;
+  --text-secondary: #8899bb;
+  --text-muted:     #5a6e8e;
+  --border:         #2a3550;
+  --border-light:   #222d40;
+  --shadow:         0 1px 6px rgba(0,0,0,.3);
+  --shadow-lg:      0 4px 20px rgba(0,0,0,.4);
+  --accent:         #5b8def;
+  --accent-light:   #7ba8ff;
+  --color-fatal:    #ef5350;
+  --color-serious:  #ff9800;
+  --color-slight:   #66bb6a;
+  --header-border:  #2a3550;
+}
+
+/* ============================================================
+   RESET
+   ============================================================ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:15px;overflow:hidden}
+body{
+  font-family:"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  background:var(--bg-page);
+  color:var(--text-primary);
+  width:100vw;height:100vh;
+  overflow:hidden;
+  display:flex;flex-direction:column;
+  transition:background .35s,color .35s;
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.header{
+  flex-shrink:0;
+  display:flex;align-items:center;
+  gap:14px;
+  padding:0 22px 2px;              /* ★ 极简 header：顶部零间距，底部仅 2px 分隔 */
+  background:var(--bg-header);
+  border-bottom:1px solid var(--header-border);
+  box-shadow:var(--shadow);
+  z-index:10;
+  transition:background .35s,border-color .35s;
+}
+.header__left{flex-shrink:0}
+.header__title{
+  font-size:1.05rem;font-weight:700;white-space:nowrap;
+  color:var(--accent);letter-spacing:.3px;
+}
+.header__subtitle{display:none}
+
+/* 筛选控件（紧凑） */
+.header__filters{display:flex;align-items:center;gap:6px;flex-shrink:0}
+.filter-select{
+  background:var(--bg-panel);color:var(--text-primary);
+  border:1px solid var(--border);border-radius:6px;
+  padding:4px 24px 4px 8px;font-size:.72rem;font-family:inherit;
+  cursor:pointer;appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='5'%3E%3Cpath d='M0 0l4 5 4-5z' fill='%23888'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 8px center;
+  transition:border-color .2s;max-width:130px;
+}
+.filter-select:hover,.filter-select:focus{border-color:var(--accent);outline:none}
+
+/* 统计指标卡片 */
+.header__stats{display:flex;align-items:center;gap:6px;flex-shrink:0;margin-left:auto;margin-right:6px;margin-top:-2px}
+.stat-badge{
+  display:flex;flex-direction:column;align-items:center;
+  background:var(--bg-page);border:1px solid var(--border-light);
+  border-radius:6px;padding:0 10px 1px;min-width:56px;
+  transition:border-color .2s,box-shadow .2s;
+}
+.stat-badge:hover{border-color:var(--accent);box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.stat-badge__val{font-size:.88rem;font-weight:700;color:var(--accent);line-height:1.2}
+.stat-badge__lbl{font-size:.58rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.3px}
+
+/* 主题切换按钮 */
+.theme-toggle{
+  background:var(--bg-panel);
+  border:1px solid var(--border);
+  border-radius:20px;
+  width:36px;height:28px;
+  cursor:pointer;font-size:.9rem;
+  display:flex;align-items:center;justify-content:center;
+  transition:all .25s;
+  flex-shrink:0;
+}
+.theme-toggle:hover{border-color:var(--accent);box-shadow:0 0 0 3px rgba(51,102,204,.12)}
+.theme-toggle__icon{line-height:1}
+
+/* ============================================================
+   DASHBOARD — Flexbox 三列自适应布局
+   左 22.5% : 中 55% : 右 22.5% — 一屏固定、不滚动
+   ============================================================ */
+.dashboard{
+  flex:1;
+  display:flex;
+  gap:8px;
+  padding:4px 8px 8px;            /* ★ 缩小 top padding，面板紧贴 header */
+  min-height:0;
+  overflow:hidden;
+}
+
+/* ---- 三列容器 ---- */
+.col{ display:flex; flex-direction:column; gap:8px; min-height:0; }
+.col-left  { width:22.5%; flex-shrink:0; }
+.col-center{ flex:1; min-width:0; }
+.col-right { width:22.5%; flex-shrink:0; }
+
+/* ---- 各面板在列内的高度分配 ---- */
+
+/* 左列 */
+.panel--sankey   { flex:1; }               /* ★ 真实图表，撑满可用空间 */
+.panel--hourly   { flex:1; }
+.panel--calendar { flex:1; }
+
+/* 中列 */
+.panel--map { flex:1; }
+.panel--arc { flex:0 0 120px; }
+
+/* 右列 */
+.panel--severity { flex:1; }
+.panel--radar    { flex:1; }
+.panel--district { flex:0 0 200px; }
+
+/* 日历面板头部（标题 + 年份选择器） */
+.panel__calendar-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:4px 12px 0;              /* ★ 缩小 top padding，标题上移 */
+  flex-shrink:0;
+}
+.calendar__year-select{
+  background:var(--bg-page);
+  color:var(--text-primary);
+  border:1px solid var(--border);
+  border-radius:5px;
+  padding:2px 18px 2px 6px;
+  font-size:.65rem;
+  font-family:inherit;
+  cursor:pointer;
+  appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='5'%3E%3Cpath d='M0 0l4 5 4-5z' fill='%23888'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;
+  background-position:right 5px center;
+}
+
+/* 地图面板头部（标题 + 年份选择器） */
+.panel__map-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:7px 12px 0;
+  flex-shrink:0;
+}
+.map__year-select{
+  background:var(--bg-panel);
+  color:var(--text-primary);
+  border:1px solid var(--border);
+  border-radius:5px;
+  padding:2px 18px 2px 6px;
+  font-size:.65rem;
+  font-family:inherit;
+  cursor:pointer;
+  appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='5'%3E%3Cpath d='M0 0l4 5 4-5z' fill='%23888'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;
+  background-position:right 5px center;
+}
+.map__year-select:hover,.calendar__year-select:hover{
+  border-color:var(--accent);
+  outline:none;
+}
+
+/* ============================================================
+   PANEL 卡片组件
+   ============================================================ */
+.panel{
+  background:var(--bg-panel);
+  border:1px solid var(--border);
+  border-radius:8px;
+  box-shadow:var(--shadow);
+  display:flex;flex-direction:column;
+  overflow:hidden;
+  transition:background .35s,border-color .35s,box-shadow .35s;
+}
+.panel:hover{box-shadow:var(--shadow-lg)}
+
+.panel__title{
+  font-size:.72rem;font-weight:600;
+  color:var(--text-secondary);text-transform:uppercase;
+  letter-spacing:.5px;
+  padding:7px 12px 0;
+  flex-shrink:0;
+}
+
+/* 可点击面板的交互提示 */
+.panel--clickable{
+  cursor:pointer;
+  position:relative;
+  transition:transform .2s ease,box-shadow .25s ease,border-color .2s;
+}
+.panel--clickable:hover{
+  transform:translateY(-2px);
+  box-shadow:0 6px 20px rgba(0,0,0,.1);
+  border-color:var(--accent-light);
+}
+.panel--clickable:active{
+  transform:translateY(0);
+  box-shadow:var(--shadow);
+}
+
+/* 详情入口提示标识 */
+.panel__detail-badge{
+  position:absolute;top:6px;right:10px;
+  font-size:.65rem;color:var(--accent);
+  opacity:0;
+  transition:opacity .3s ease,transform .2s ease;
+  pointer-events:none;
+  background:rgba(51,102,204,.08);
+  padding:2px 9px;border-radius:10px;
+  border:1px solid rgba(51,102,204,.2);
+  letter-spacing:.3px;
+  font-weight:600;
+  transform:scale(0.9);
+}
+.panel--clickable:hover .panel__detail-badge{
+  opacity:1;
+  transform:scale(1);
+}
+
+/* 面板选中高亮状态 */
+.panel--selected{
+  border-color:var(--accent) !important;
+  box-shadow:0 0 0 2px rgba(51,102,204,.15),var(--shadow-lg) !important;
+}
+
+/* 筛选刷新反馈动画 */
+@keyframes pulseGlow {
+  0%{opacity:0.6}
+  50%{opacity:1}
+  100%{opacity:0.6}
+}
+.filter-active{
+  animation:pulseGlow .8s ease-in-out 2;
+  border-color:var(--accent) !important;
+}
+
+/* 统计卡片数值变化高亮 */
+@keyframes flashHighlight {
+  0%{background:var(--accent);color:#fff}
+  100%{background:transparent;color:inherit}
+}
+.stat-badge--flash .stat-badge__val{
+  animation:flashHighlight .5s ease;
+}
+.panel__chart{
+  flex:1;min-height:0;
+  width:100%;position:relative;
+}
+
+/* 地图加载提示 */
+.map-loading{
+  position:absolute;inset:0;z-index:999;
+  display:flex;align-items:center;justify-content:center;
+  font-size:.82rem;color:var(--text-muted);
+  background:var(--bg-panel);pointer-events:none;
+}
+
+/* ---- Leaflet 地图 ---- */
+.panel__chart--map{overflow:hidden;position:relative;}
+#leafletBase{
+  position:absolute;inset:0;
+  z-index:1;
+  background:#f0f0f0;
+}
+/* Leaflet 控件层级 */
+.leaflet-control{z-index:3}
+
+/* 地图区域标签（永久显示在区域中心） */
+.map-region-label{
+  background:transparent !important;
+  border:none !important;
+  font-size:9px;font-weight:600;
+  color:#1a1a2e;
+  text-shadow:0 0 3px rgba(255,255,255,.85),0 0 6px rgba(255,255,255,.6);
+  white-space:nowrap;
+  pointer-events:none;
+  transform:translate(-50%,-50%);
+}
+
+/* Leaflet tooltip（hover 事故数据） */
+.map-tooltip{
+  background:rgba(30,30,50,.92) !important;
+  border:none !important;
+  border-radius:6px !important;
+  color:#fff !important;
+  font-size:12px !important;
+  padding:6px 10px !important;
+  box-shadow:0 2px 12px rgba(0,0,0,.35) !important;
+}
+.map-tooltip::before{border-top-color:rgba(30,30,50,.92) !important}
+
+/* 事故散点 tooltip */
+.map-point-tooltip{
+  background:rgba(30,30,50,.85) !important;
+  border:none !important;
+  border-radius:4px !important;
+  color:#fff !important;
+  font-size:10px !important;
+  padding:3px 8px !important;
+  box-shadow:0 1px 6px rgba(0,0,0,.3) !important;
+  white-space:nowrap;
+}
+.map-point-tooltip::before{border-top-color:rgba(30,30,50,.85) !important}
+
+/* ============================================================
+  事故详情弹窗
+  ============================================================ */
+.accident-popup{
+  width:320px;
+  animation:popupSlideIn .3s ease;
+}
+@keyframes popupSlideIn{
+  from{opacity:0;transform:translateY(-50%) translateX(20px)}
+  to{opacity:1;transform:translateY(-50%) translateX(0)}
+}
+.accident-popup__inner{
+  background:var(--panel-bg,rgba(255,255,255,.97));
+  border-radius:12px;
+  box-shadow:0 8px 32px rgba(0,0,0,.18),0 2px 8px rgba(0,0,0,.1);
+  overflow:hidden;
+  position:relative;
+}
+.accident-popup__close{
+  position:absolute;
+  top:8px;right:10px;
+  background:none;
+  border:none;
+  font-size:20px;
+  color:#999;
+  cursor:pointer;
+  line-height:1;
+  z-index:1;
+}
+.accident-popup__close:hover{color:#333}
+.accident-popup__header{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:14px 16px 10px 16px;
+  border-bottom:1px solid rgba(0,0,0,.06);
+}
+.accident-popup__sev{
+  display:inline-block;
+  padding:2px 10px;
+  border-radius:10px;
+  color:#fff;
+  font-size:11px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+}
+.accident-popup__date{
+  color:#666;
+  font-size:12px;
+  font-weight:500;
+}
+.accident-popup__body{
+  padding:10px 16px 14px;
+}
+.accident-popup__row{
+  display:flex;
+  justify-content:space-between;
+  padding:5px 0;
+  font-size:12px;
+  border-bottom:1px solid rgba(0,0,0,.03);
+}
+.accident-popup__row:last-child{border-bottom:none}
+.accident-popup__label{
+  color:#999;
+  font-weight:500;
+}
+
+@media(prefers-color-scheme:dark){
+  .accident-popup__inner{
+    background:rgba(30,36,56,.97);
+    box-shadow:0 8px 32px rgba(0,0,0,.4);
+  }
+  .accident-popup__close{color:#667}
+  .accident-popup__close:hover{color:#dde}
+  .accident-popup__date{color:#8899bb}
+  .accident-popup__row{border-bottom-color:rgba(255,255,255,.04)}
+  .accident-popup__label{color:#667}
+}
+
+/* ============================================================
+  Tab 切换样式
+  ============================================================ */
+.panel__tabs{
+  display:flex;
+  align-items:center;
+  gap:0;
+  border-bottom:1px solid var(--border,#e0e0f0);
+  margin-bottom:4px;
+}
+.panel__tab{
+  padding:6px 16px;
+  font-size:11px;
+  font-weight:600;
+  color:var(--text-muted,#999);
+  background:none;
+  border:none;
+  border-bottom:2px solid transparent;
+  cursor:pointer;
+  transition:all .2s;
+}
+.panel__tab:hover{color:var(--text,#333)}
+.panel__tab--active{
+  color:var(--accent,#3366cc);
+  border-bottom-color:var(--accent,#3366cc);
+}
+
+/* ============================================================
+  Calendar 指标切换按钮（浮动在 chart 右上角）
+  ============================================================ */
+.panel__chart--calendar{position:relative}
+.calendar__metric-group{position:relative;z-index:10}
+.calendar__metric-btn{
+  padding:2px 8px;
+  font-size:9px;
+  font-weight:600;
+  border:none;
+  border-radius:4px;
+  cursor:pointer;
+  background:transparent;
+  color:var(--text-muted,#888);
+  transition:all .2s;
+}
+.calendar__metric-btn:hover{color:var(--accent,#3366cc)}
+
+/* ============================================================
+   右下角详情下钻面板
+   ============================================================ */
+.detail-panel{
+  position:fixed;bottom:12px;right:12px;
+  width:430px;max-height:460px;
+  background:var(--bg-panel);
+  border:1px solid var(--border);
+  border-radius:10px;
+  box-shadow:0 8px 32px rgba(0,0,0,.18);
+  z-index:500;
+  display:flex;flex-direction:column;
+  overflow:hidden;
+  transform:translateX(480px);
+  opacity:0;
+  pointer-events:none;
+  transition:transform .3s cubic-bezier(.25,.46,.45,.94),
+             opacity .25s ease;
+}
+.detail-panel--open{
+  transform:translateX(0);
+  opacity:1;
+  pointer-events:auto;
+}
+
+.detail-panel__bar{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:10px 16px;
+  border-bottom:1px solid var(--border);
+  flex-shrink:0;
+}
+.detail-panel__title{
+  font-size:.88rem;font-weight:600;
+  color:var(--accent);
+}
+.detail-panel__close{
+  background:transparent;border:1px solid var(--border);
+  border-radius:6px;width:28px;height:28px;
+  font-size:1rem;color:var(--text-muted);
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  transition:all .2s;
+}
+.detail-panel__close:hover{
+  border-color:var(--color-fatal);color:var(--color-fatal);
+  background:rgba(229,57,53,.06);
+}
+
+.detail-panel__body{
+  flex:1;overflow-y:auto;overflow-x:hidden;
+  padding:8px 12px 10px;
+  display:flex;flex-direction:column;gap:8px;
+}
+.detail-panel__row{
+  flex-shrink:0;height:125px;
+  background:var(--bg-page);
+  border-radius:8px;
+  border:1px solid var(--border-light);
+}
+
+/* 小屏时面板缩小 */
+@media(max-width:900px){
+  .detail-panel{width:340px;max-height:380px;bottom:8px;right:8px}
+  .detail-panel__row{height:100px}
+}
+
+/* ============================================================
+   RESPONSIVE — 小屏回退
+   ============================================================ */
+@media(max-width:1100px){
+  .dashboard{
+    flex-direction:column;
+  }
+  .col-left,.col-center,.col-right{
+    width:100%;flex:auto;flex-shrink:1;
+  }
+  .col-left{flex-direction:row;flex:0 0 240px;}
+  .col-left .panel{flex:1;}
+  .col-center{flex:1;}
+  .col-right{flex-direction:row;flex:0 0 200px;}
+  .col-right .panel{flex:1;}
+}
+@media(max-width:600px){
+  .dashboard{
+    flex-direction:column;overflow-y:auto;
+  }
+  .col-left,.col-center,.col-right{
+    width:100%;flex:auto;flex-shrink:1;flex-direction:column;
+  }
+  .header__subtitle{display:none}
+}

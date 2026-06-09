@@ -1,0 +1,17 @@
+[
+  {
+    "urban_rural_label": "Urban",
+    "count": 1146421,
+    "percentage": 64.38
+  },
+  {
+    "urban_rural_label": "Rural",
+    "count": 634089,
+    "percentage": 35.61
+  },
+  {
+    "urban_rural_label": "Unallocated",
+    "count": 143,
+    "percentage": 0.01
+  }
+]
