@@ -81,9 +81,7 @@ function initAllCharts() {
   if (typeof initHourlyChart     === "function") initHourlyChart();
   if (typeof initCalendarChart   === "function") initCalendarChart();
   if (typeof initPolarArcChart   === "function") initPolarArcChart();
-  if (typeof initSeverityChart   === "function") initSeverityChart();
   if (typeof initRadarChart      === "function") initRadarChart();
-  if (typeof initDistrictChart   === "function") initDistrictChart();
   console.log("[main] All chart instances initialized");
 }
 
@@ -94,10 +92,8 @@ function updateAllCharts() {
   if (gSankeyData)           updateSankeyChart(gSankeyData);
   if (gData.hourly)          updateHourlyChart(gData.hourly);
   if (gData.calendar)        updateCalendarChart(gData.calendar);
-  if (gData.arc_flow)            updatePolarArcChart(gData.arc_flow);
-  if (gData.severity)        updateSeverityChart(gData.severity);
+  if (gData.arc_flow)        updatePolarArcChart(gData.arc_flow);
   if (gData.radar)           updateRadarChart(gData.radar);
-  if (gData.district_top10)  updateDistrictChart(gData.district_top10);
   console.log("[main] All charts updated with data");
 }
 
@@ -109,9 +105,7 @@ function disposeAllCharts() {
   if (typeof disposeHourlyChart     === "function") disposeHourlyChart();
   if (typeof disposeCalendarChart   === "function") disposeCalendarChart();
   if (typeof disposePolarArcChart   === "function") disposePolarArcChart();
-  if (typeof disposeSeverityChart   === "function") disposeSeverityChart();
   if (typeof disposeRadarChart      === "function") disposeRadarChart();
-  if (typeof disposeDistrictChart   === "function") disposeDistrictChart();
   if (typeof disposeDetailCharts    === "function") disposeDetailCharts();
   console.log("[main] All chart instances disposed");
 }
@@ -121,7 +115,7 @@ function disposeAllCharts() {
 // ============================================================
 function _collectLiveInstances() {
   var instances = [];
-  var chartIds = ["chartSankey", "chartHourly", "chartCalendar", "chartArc", "chartSeverity", "chartRadar", "chartDistrict"];
+  var chartIds = ["chartSankey", "chartHourly", "chartCalendar", "chartArc", "chartRadar"];
   chartIds.forEach(function(id) {
     var dom = document.getElementById(id);
     if (dom) {
@@ -316,31 +310,21 @@ window.addEventListener("sankeyNodeSelected", function(e) {
   var category = detail.category;
   console.log("[linkage] Selected:", nodeName, "(" + category + ")");
 
-  // 1) 联动地图 — 高亮匹配散点
+  // 联动地图 — 高亮匹配散点
   if (typeof highlightMapPoints === "function") {
     var points = getCurrentMapPoints();
     if (points) {
       highlightMapPoints(points, nodeName, category);
     }
   }
-
-  // 2) 联动 TOP10 — 切换到 district tab + 更新数据
-  if (typeof switchToDistrictTab === "function") {
-    switchToDistrictTab(nodeName, category);
-  }
 });
 
 window.addEventListener("sankeyNodeDeselected", function() {
   console.log("[linkage] Node deselected — restoring defaults");
 
-  // 1) 恢复地图散点
+  // 恢复地图散点
   if (typeof clearMapHighlight === "function") {
     clearMapHighlight();
-  }
-
-  // 2) 恢复 TOP10 到全局默认
-  if (typeof switchToDistrictTab === "function") {
-    switchToDistrictTab(null, null);
   }
 });
 
@@ -352,35 +336,6 @@ function getCurrentMapPoints() {
     return gMapYearly[year].points || null;
   }
   return null;
-}
-
-// ★ 切换到 District TOP10 Tab
-function switchToDistrictTab(nodeName, category) {
-  // 点击 district tab 按钮
-  var districtTab = document.getElementById("tabDistrict");
-  if (!districtTab) return;
-
-  if (nodeName && category) {
-    // 触发切换到 district tab
-    districtTab.click();
-
-    // 更新 TOP10 数据
-    if (window.SankeyLinkage && gData && gData.district_top10) {
-      var points = getCurrentMapPoints();
-      var filtered = window.SankeyLinkage.getFilteredDistrict(gData.district_top10, points, { name: nodeName, category: category });
-      if (filtered && typeof updateDistrictChart === "function") {
-        updateDistrictChart(filtered);
-      }
-    }
-  } else {
-    // 恢复为全局 district_top10
-    // 如果当前 tab 不是 district 则不操作
-    if (districtTab.classList.contains("panel__tab--active")) {
-      if (gData && gData.district_top10 && typeof updateDistrictChart === "function") {
-        updateDistrictChart(gData.district_top10);
-      }
-    }
-  }
 }
 
 console.log("[main] Ready (init-once pattern)");

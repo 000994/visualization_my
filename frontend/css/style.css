@@ -145,14 +145,13 @@ body{
 .panel--sankey   { flex:0 0 65%; }         /* ★ 合并原左上+左中，占据大部分空间 */
 .panel--calendar { flex:0 0 35%; }
 
-/* 中列 */
+/* 中列：地图占满全部空间 */
 .panel--map { flex:1; }
-.panel--arc { flex:0 0 170px; }            /* ★ 直角坐标系双向面积图高度 */
 
-/* 右列：环形图 30%，雷达 32%，选项卡 38% */
-.panel--severity { flex:0 0 30%; }
-.panel--radar    { flex:0 0 32%; }
-.panel--tabs     { flex:0 0 38%; }         /* ★ 新增选项卡容器，原 panel--district 移除 */
+/* 右列：雷达 28%，24小时 32%，Urban/Rural 40% */
+.panel--radar    { flex:0 0 28%; }
+.panel--hourly   { flex:0 0 32%; }
+.panel--arc      { flex:0 0 40%; }
 
 /* 日历面板头部（标题 + 年份选择器） */
 .panel__calendar-header{

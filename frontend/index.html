@@ -71,10 +71,10 @@
       </article>
     </div>
 
-    <!-- ========== 中列 ========== -->
+        <!-- ========== 中列 ========== -->
     <div class="col col-center">
 
-      <!-- 英国地图 -->
+      <!-- 英国地图（扩展占满中列全部空间） -->
       <article class="panel panel--map" id="panelMap">
         <div class="panel__map-header">
           <h2 class="panel__title" style="display:inline">UK Overview Map</h2>
@@ -94,45 +94,29 @@
           <div id="leafletBase" class="map-layer map-layer--base"></div>
         </div>
       </article>
-
-      <!-- 城乡事故趋势极坐标面积图 -->
-      <article class="panel panel--arc" id="panelArc">
-        <h2 class="panel__title">Urban / Rural Trend</h2>
-        <div class="panel__chart" id="chartArc"></div>
-      </article>
     </div>
 
         <!-- ========== 右列 ========== -->
-    <div class="col col-right">
+        <div class="col col-right">
 
-      <!-- 严重程度环形图 -->
-      <article class="panel panel--severity" id="panelSeverity">
-        <h2 class="panel__title">Severity Distribution</h2>
-        <div class="panel__chart" id="chartSeverity"></div>
-      </article>
+          <!-- 多维度雷达图 -->
+          <article class="panel panel--radar" id="panelRadar">
+            <h2 class="panel__title">Multi-Dimension Radar</h2>
+            <div class="panel__chart" id="chartRadar"></div>
+          </article>
 
-      <!-- 多维度雷达图 -->
-      <article class="panel panel--radar" id="panelRadar">
-        <h2 class="panel__title">Multi-Dimension Radar</h2>
-        <div class="panel__chart" id="chartRadar"></div>
-      </article>
+          <!-- 24小时分布柱状图 -->
+          <article class="panel panel--hourly" id="panelHourly">
+            <h2 class="panel__title">24-Hour Distribution</h2>
+            <div class="panel__chart" id="chartHourly"></div>
+          </article>
 
-            <!-- 24小时分布 + Top10 选项卡容器（带下钻入口标识） -->
-      <article class="panel panel--tabs panel--clickable" id="panelTabs">
-        <h2 class="panel__title" style="display:none">Tab Switch</h2>
-        <div class="panel__tabs">
-          <button class="panel__tab panel__tab--active" data-tab="hourly" id="tabHourly">24-Hour Distribution</button>
-          <button class="panel__tab" data-tab="district" id="tabDistrict">District TOP 10</button>
+          <!-- Urban / Rural 同比变化趋势 -->
+          <article class="panel panel--arc" id="panelArc">
+            <h2 class="panel__title">Urban / Rural YoY Change</h2>
+            <div class="panel__chart" id="chartArc"></div>
+          </article>
         </div>
-
-        <div class="panel__tab-content panel__tab-content--active" id="tabContentHourly">
-          <div class="panel__chart" id="chartHourly"></div>
-        </div>
-        <div class="panel__tab-content" id="tabContentDistrict" style="display:none">
-          <div class="panel__chart" id="chartDistrict"></div>
-        </div>
-      </article>
-    </div>
 
   </main>
 
@@ -154,19 +138,15 @@
   <!-- ============================================================ -->
   <!--  JS（严格按依赖顺序加载）                                       -->
   <!-- ============================================================ -->
-  <script src="js/config.js"></script>
+    <script src="js/config.js"></script>
   <script src="js/themeManager.js"></script>
-  <script src="js/charts/severityDonutChart.js"></script>
   <script src="js/charts/hourlyBarChart.js"></script>
   <script src="js/charts/radarChart.js"></script>
-  <script src="js/charts/calendarChart.js"></script>
-  <script src="js/charts/districtBarChart.js"></script>
+    <script src="js/charts/calendarChart.js"></script>
   <script src="js/charts/mapChart.js"></script>
   <script src="js/charts/sankeyChart.js"></script>
-  <script src="js/charts/arcFlowChart.js"></script>
-    <!-- 桑基图联动管理器 -->
   <script src="js/charts/sankeyLinkage.js"></script>
-  <!-- 极坐标面积图（替换 arcTimeChart） -->
+  <!-- 极坐标面积图（Urban / Rural YoY Change） -->
   <script src="js/charts/polarArcChart.js"></script>
   <!-- 下钻详情模块 -->
   <script src="js/charts/details/severityDetail.js"></script>

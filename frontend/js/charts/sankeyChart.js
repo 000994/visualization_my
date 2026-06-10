@@ -89,8 +89,8 @@ function _initSankeyFilters() {
 
   var bar = document.createElement("div");
   bar.className = "sankey__filter-bar";
-  bar.style.cssText =
-    "position:absolute;top:6px;left:58px;z-index:10;" +
+    bar.style.cssText =
+    "position:absolute;top:6px;right:108px;z-index:10;" +
     "display:flex;align-items:center;gap:3px;";
 
   var labels = ["All", "Fatal Only", "Night Only"];
