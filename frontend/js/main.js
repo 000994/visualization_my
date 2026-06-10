@@ -77,10 +77,10 @@ async function loadAllData() {
 // ============================================================
 function initAllCharts() {
   // 每个模块的 init*Chart 内部使用 initChartOnce，重复调用安全
-  if (typeof initSankeyChart     === "function") initSankeyChart();
+    if (typeof initSankeyChart     === "function") initSankeyChart();
   if (typeof initHourlyChart     === "function") initHourlyChart();
   if (typeof initCalendarChart   === "function") initCalendarChart();
-  if (typeof initArcFlowChart    === "function") initArcFlowChart();
+  if (typeof initPolarArcChart   === "function") initPolarArcChart();
   if (typeof initSeverityChart   === "function") initSeverityChart();
   if (typeof initRadarChart      === "function") initRadarChart();
   if (typeof initDistrictChart   === "function") initDistrictChart();
@@ -94,7 +94,7 @@ function updateAllCharts() {
   if (gSankeyData)           updateSankeyChart(gSankeyData);
   if (gData.hourly)          updateHourlyChart(gData.hourly);
   if (gData.calendar)        updateCalendarChart(gData.calendar);
-  if (gArcFlowData)          updateArcFlowChart(gArcFlowData);
+  if (gData.arc_flow)            updatePolarArcChart(gData.arc_flow);
   if (gData.severity)        updateSeverityChart(gData.severity);
   if (gData.radar)           updateRadarChart(gData.radar);
   if (gData.district_top10)  updateDistrictChart(gData.district_top10);
@@ -105,10 +105,10 @@ function updateAllCharts() {
 //  第三阶段：销毁所有图表（仅主题切换时调用）
 // ============================================================
 function disposeAllCharts() {
-  if (typeof disposeSankeyChart     === "function") disposeSankeyChart();
+    if (typeof disposeSankeyChart     === "function") disposeSankeyChart();
   if (typeof disposeHourlyChart     === "function") disposeHourlyChart();
   if (typeof disposeCalendarChart   === "function") disposeCalendarChart();
-  if (typeof disposeArcFlowChart    === "function") disposeArcFlowChart();
+  if (typeof disposePolarArcChart   === "function") disposePolarArcChart();
   if (typeof disposeSeverityChart   === "function") disposeSeverityChart();
   if (typeof disposeRadarChart      === "function") disposeRadarChart();
   if (typeof disposeDistrictChart   === "function") disposeDistrictChart();
@@ -129,6 +129,7 @@ function _collectLiveInstances() {
       if (inst) instances.push(inst);
     }
   });
+  // 隐藏 tab 中的图表（当前 display:none）也收集，echarts 存活的 instance 都在
   // 详情面板图表
   ["detailChart1","detailChart2","detailChart3"].forEach(function(id) {
     var dom = document.getElementById(id);
@@ -151,13 +152,22 @@ async function renderMap(data) {
 }
 
 // ---- 地图年份切换（增量） ----
-function switchMapYear(year) {
+function onMapYearChange(year) {
   var yearData = gMapYearly[year];
   if (!yearData) { console.warn("[main] No map data for year:", year); return; }
-  if (typeof window.switchMapYear === "function") {
+  // ★ 附加年份标签，供 mapChart 显示
+  yearData._yearLabel = year === "all" ? "All Years" : year;
+  // ★ 调用 mapChart.js 的 switchMapYear（已通过 window 暴露）
+  if (typeof window._mapSwitchYear === "function") {
+    window._mapSwitchYear(yearData);
+  } else if (typeof window.switchMapYear === "function") {
+    // mapChart.js 的原始函数
     window.switchMapYear(yearData);
   }
 }
+
+// ★ 暴露给 HTML 内联调用
+window.onMapYearChange = onMapYearChange;
 
 // ============================================================
 //  首次加载入口
@@ -165,6 +175,12 @@ function switchMapYear(year) {
 async function init() {
   try {
     await loadAllData();
+
+    // ★ 初始化全局年份筛选器（在图表初始化之后，确保所有独立选择器已创建）
+    if (typeof window.globalYearFilter !== "undefined") {
+      // 稍后执行，等各图表 init 创建完独立选择器
+      setTimeout(function() { window.globalYearFilter.init(); }, 100);
+    }
 
     // ★ 步骤 1：初始化所有图表实例（仅一次）
     initAllCharts();
@@ -243,7 +259,7 @@ window.addEventListener("themeChanged", function() {
 // ============================================================
 document.addEventListener("change", function(e) {
   if (e.target && e.target.id === "mapYearSelect") {
-    switchMapYear(e.target.value);
+    onMapYearChange(e.target.value);
   }
   if (e.target && e.target.id === "calendarYearSelect") {
     window._calendarSelectedYear = parseInt(e.target.value);
@@ -255,34 +271,116 @@ document.addEventListener("change", function(e) {
 window._calendarSelectedYear = 2005;  // ★ 默认首屏显示 2005（数据范围为 2005-2015）
 
 // ============================================================
-//  详情下钻面板（Tab 切换逻辑，保持不变）
+//  Tab 切换逻辑（统一处理所有 panel 内的选项卡）
 // ============================================================
 document.addEventListener("click", function(e) {
   var tab = e.target.closest(".panel__tab");
-  if (tab) {
-    var parent = tab.closest(".panel");
-    if (!parent) return;
-    parent.querySelectorAll(".panel__tab").forEach(function(t) {
-      t.classList.remove("panel__tab--active");
-    });
-    tab.classList.add("panel__tab--active");
+  if (!tab) return;
 
-    var target = tab.getAttribute("data-tab");
-    parent.querySelectorAll(".panel__chart").forEach(function(el) {
-      el.style.display = "none";
-    });
-    var targetEl = parent.querySelector("#chart" + target.charAt(0).toUpperCase() + target.slice(1));
-    if (targetEl) {
-      targetEl.style.display = "block";
-      setTimeout(function() {
-        if (target === "calendar" && window._lastCalendarData && typeof renderCalendarChart === "function") {
-          renderCalendarChart(window._lastCalendarData);
-        }
-        resizeAll();
-      }, 100);
-    }
-    return;
+  var parent = tab.closest(".panel");
+  if (!parent) return;
+
+  // 切换 tab 高亮
+  parent.querySelectorAll(".panel__tab").forEach(function(t) {
+    t.classList.remove("panel__tab--active");
+  });
+  tab.classList.add("panel__tab--active");
+
+  var target = tab.getAttribute("data-tab");
+  if (!target) return;
+
+  // 切换 tab-content 显示
+  parent.querySelectorAll(".panel__tab-content").forEach(function(el) {
+    el.style.display = "none";
+    el.classList.remove("panel__tab-content--active");
+  });
+  var targetContent = parent.querySelector("#tabContent" + target.charAt(0).toUpperCase() + target.slice(1));
+  if (targetContent) {
+    targetContent.style.display = "flex";
+    targetContent.classList.add("panel__tab-content--active");
+    // 触发 chart resize 以适配新尺寸
+    setTimeout(function() {
+      resizeAll();
+    }, 150);
   }
 });
+
+// ============================================================
+//  ★ 桑基图节点联动事件监听
+// ============================================================
+window.addEventListener("sankeyNodeSelected", function(e) {
+  var detail = e.detail;
+  if (!detail) return;
+
+  var nodeName = detail.name;
+  var category = detail.category;
+  console.log("[linkage] Selected:", nodeName, "(" + category + ")");
+
+  // 1) 联动地图 — 高亮匹配散点
+  if (typeof highlightMapPoints === "function") {
+    var points = getCurrentMapPoints();
+    if (points) {
+      highlightMapPoints(points, nodeName, category);
+    }
+  }
+
+  // 2) 联动 TOP10 — 切换到 district tab + 更新数据
+  if (typeof switchToDistrictTab === "function") {
+    switchToDistrictTab(nodeName, category);
+  }
+});
+
+window.addEventListener("sankeyNodeDeselected", function() {
+  console.log("[linkage] Node deselected — restoring defaults");
+
+  // 1) 恢复地图散点
+  if (typeof clearMapHighlight === "function") {
+    clearMapHighlight();
+  }
+
+  // 2) 恢复 TOP10 到全局默认
+  if (typeof switchToDistrictTab === "function") {
+    switchToDistrictTab(null, null);
+  }
+});
+
+// ★ 获取当前地图散点数据
+function getCurrentMapPoints() {
+  var mapYearSelect = document.getElementById("mapYearSelect");
+  var year = mapYearSelect ? mapYearSelect.value : "all";
+  if (gMapYearly && gMapYearly[year]) {
+    return gMapYearly[year].points || null;
+  }
+  return null;
+}
+
+// ★ 切换到 District TOP10 Tab
+function switchToDistrictTab(nodeName, category) {
+  // 点击 district tab 按钮
+  var districtTab = document.getElementById("tabDistrict");
+  if (!districtTab) return;
+
+  if (nodeName && category) {
+    // 触发切换到 district tab
+    districtTab.click();
+
+    // 更新 TOP10 数据
+    if (window.SankeyLinkage && gData && gData.district_top10) {
+      var points = getCurrentMapPoints();
+      var filtered = window.SankeyLinkage.getFilteredDistrict(gData.district_top10, points, { name: nodeName, category: category });
+      if (filtered && typeof updateDistrictChart === "function") {
+        updateDistrictChart(filtered);
+      }
+    }
+  } else {
+    // 恢复为全局 district_top10
+    // 如果当前 tab 不是 district 则不操作
+    if (districtTab.classList.contains("panel__tab--active")) {
+      if (gData && gData.district_top10 && typeof updateDistrictChart === "function") {
+        updateDistrictChart(gData.district_top10);
+      }
+    }
+  }
+}
 
 console.log("[main] Ready (init-once pattern)");

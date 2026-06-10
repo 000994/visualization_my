@@ -91,10 +91,11 @@
   // ---- 关闭按钮 ----
   if (closeBtn) closeBtn.addEventListener("click", closeDetailPanel);
 
-  // ---- 点击图表卡片触发 ----
+    // ---- 点击图表卡片触发 ----
   var cardMap = {
     panelSeverity: "severity", panelHourly: "hourly",
     panelRadar: "radar", panelDistrict: "district",
+    panelTabs: "district",   // 选项卡面板点击 → 显示 District TOP 10 详情
   };
   Object.keys(cardMap).forEach(function(cardId) {
     var card = document.getElementById(cardId);
@@ -105,15 +106,14 @@
     badge.className = "panel__detail-badge";
     badge.textContent = "🔍 Detail";
     card.appendChild(badge);
-    card.addEventListener("click", function(e) {
-      // 排除所有内部交互元素
-      if (e.target.closest(".panel__tab") || e.target.closest(".panel__tabs") ||
-          e.target.closest("canvas") || e.target.closest("div[id^='chart']") ||
-          e.target.closest(".panel__detail-badge") ||
-          e.target.closest(".calendar__controls") || e.target.closest(".calendar__metric-btn") ||
-          e.target.closest(".calendar__year-select")) {
-        return;
-      }
+        card.addEventListener("click", function(e) {
+          // 排除所有内部交互元素
+          if (e.target.closest(".panel__tab") || e.target.closest(".panel__tabs") ||
+              e.target.closest("canvas") || e.target.closest("div[id^='chart']") ||
+              e.target.closest(".calendar__controls") || e.target.closest(".calendar__metric-btn") ||
+              e.target.closest(".calendar__year-select")) {
+            return;
+          }
 
       var chartType = cardMap[cardId];
       // 移除其他面板的选中状态

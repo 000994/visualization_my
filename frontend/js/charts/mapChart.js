@@ -21,9 +21,15 @@ var _mapReady       = false;   // Leaflet 实例是否已初始化
 // ============================================================
 //  事故详情弹窗（详情字段从散点数据直接读取）
 // ============================================================
+// ★ 重构版：支持连续多次重复点击，无监听器堆积、无弹窗卡死
+var _popupCloseTimer = null;
+var _popupDocHandler = null;
+
 function showAccidentPopup(detail) {
   if (!detail) return;
-  if (_popupEl) { _popupEl.remove(); _popupEl = null; }
+
+  // ★ 1) 彻底关闭上一个弹窗（清理所有 listener + timer）
+  _closeAccidentPopup();
 
   var weatherMap = {"1":"Fine","2":"Raining","3":"Snowing","4":"Fog","5":"Other","6":"Windy","7":"Unknown"};
   var surfaceMap = {"1":"Dry","2":"Wet","3":"Snow","4":"Frost","5":"Flood","6":"Unknown"};
@@ -66,20 +72,40 @@ function showAccidentPopup(detail) {
   _popupEl.style.transform = "translateY(-50%)";
   _popupEl.style.zIndex = "10000";
 
-  _popupEl.querySelector(".accident-popup__close").addEventListener("click", function() {
-    _popupEl.remove();
-    _popupEl = null;
+  // ★ 2) 关闭按钮（阻止冒泡）
+  _popupEl.querySelector(".accident-popup__close").addEventListener("click", function(e) {
+    e.stopPropagation();
+    _closeAccidentPopup();
   });
 
-  setTimeout(function() {
-    document.addEventListener("click", function closePopup(e) {
-      if (_popupEl && !_popupEl.contains(e.target)) {
-        _popupEl.remove();
-        _popupEl = null;
-        document.removeEventListener("click", closePopup);
-      }
-    });
-  }, 100);
+  // ★ 3) 延迟注册 document 级点击（避免吞掉 marker 点击事件）
+  _popupDocHandler = function(e) {
+    if (_popupEl && !_popupEl.contains(e.target)) {
+      _closeAccidentPopup();
+    }
+  };
+  _popupCloseTimer = setTimeout(function() {
+    document.addEventListener("click", _popupDocHandler);
+  }, 50);
+}
+
+// ★ 统一关闭函数：同步清理弹窗 + 所有 timer 和 listener
+function _closeAccidentPopup() {
+  // 清理延迟 timer
+  if (_popupCloseTimer) {
+    clearTimeout(_popupCloseTimer);
+    _popupCloseTimer = null;
+  }
+  // 移除 document 级监听器
+  if (_popupDocHandler) {
+    document.removeEventListener("click", _popupDocHandler);
+    _popupDocHandler = null;
+  }
+  // 移除 DOM
+  if (_popupEl) {
+    try { _popupEl.remove(); } catch(e) {}
+    _popupEl = null;
+  }
 }
 
 // ============================================================
@@ -516,6 +542,70 @@ async function switchMapYear(yearData) {
   }
 
   console.log("[map] Year switched — Leaflet instance reused, no tile flicker");
+
+// ============================================================
+//  ★ 散点高亮/弱化（桑基图节点联动）
+// ============================================================
+function highlightMapPoints(points, nodeName, category) {
+  if (!_pointLayer || !points) return;
+
+  var filterField = null;
+  if (category === "light") filterField = "light_label";
+  else if (category === "severity") filterField = "severity_label";
+  else if (category === "vehicle") filterField = "road_label";
+  else return;
+
+  _pointLayer.eachLayer(function(layer) {
+    var detail = layer.options.detailData || {};
+    var pVal = detail[filterField] || "";
+    var isMatch = false;
+
+    if (category === "vehicle") {
+      isMatch = pVal.toLowerCase().indexOf(nodeName.toLowerCase()) >= 0;
+    } else {
+      isMatch = pVal === nodeName;
+    }
+
+    if (isMatch) {
+      layer.setStyle({
+        radius: layer.getRadius() * 2.2,
+        fillOpacity: 1,
+        color: "#fff",
+        weight: 2,
+        opacity: 1,
+      });
+      try { layer.bringToFront(); } catch(e) {}
+    } else {
+      layer.setStyle({
+        fillOpacity: 0.08,
+        opacity: 0.12,
+        weight: 0.3,
+      });
+    }
+  });
+}
+
+function clearMapHighlight() {
+  if (!_pointLayer) return;
+  _pointLayer.eachLayer(function(layer) {
+    var detail = layer.options.detailData || {};
+    var sev = detail.severity_label || "Slight";
+    var color = sev === "Fatal" ? "#e53935" : (sev === "Serious" ? "#fb8c00" : "#3366cc");
+    var radius = sev === "Fatal" ? 6 : (sev === "Serious" ? 4 : 3);
+    var opacity = sev === "Fatal" ? 0.8 : (sev === "Serious" ? 0.6 : 0.35);
+    layer.setStyle({
+      radius: radius,
+      fillColor: color,
+      color: "rgba(255,255,255,0.3)",
+      weight: 0.5,
+      opacity: 0.6,
+      fillOpacity: opacity,
+    });
+  });
+}
+
+window.highlightMapPoints = highlightMapPoints;
+window.clearMapHighlight = clearMapHighlight;
 }
 
 // ============================================================

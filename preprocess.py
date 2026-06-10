@@ -573,16 +573,8 @@ def build_arc_links(counts_dict):
       - 3 条跨城乡同严重程度连线
       - 3 条 Urban 内部连线
       - 3 条 Rural 内部连线
-    边宽 = sqrt(count) 归一化映射
+    所有线宽由前端动态计算（_calcArcLinkWidths），后端仅输出纯数据。
     """
-    all_vals = list(counts_dict.values())
-    max_val = max(all_vals) if all_vals else 1
-
-    def w(name):
-        """将计数映射为线宽 1-8"""
-        v = counts_dict.get(name, 0)
-        return round(1 + (v / max_val) * 7, 1) if max_val > 0 else 1
-
     links = []
     # 跨城乡同严重程度
     for sev in ["Fatal", "Serious", "Slight"]:
@@ -591,7 +583,7 @@ def build_arc_links(counts_dict):
         links.append({
             "source": u_key, "target": r_key,
             "value": counts_dict.get(u_key, 0) + counts_dict.get(r_key, 0),
-            "lineStyle": {"width": max(w(u_key), w(r_key)), "curveness": 0.25, "color": "#90a4ae"},
+            "lineStyle": {"curveness": 0.25, "color": "#90a4ae"},
         })
 
     # Urban 内部流转
@@ -600,7 +592,7 @@ def build_arc_links(counts_dict):
         links.append({
             "source": ua, "target": ub,
             "value": counts_dict.get(ua, 0) + counts_dict.get(ub, 0),
-            "lineStyle": {"width": max(w(ua), w(ub)) * 0.6, "curveness": 0.35, "color": "#5b8def"},
+            "lineStyle": {"curveness": 0.35, "color": "#5b8def"},
         })
 
     # Rural 内部流转
@@ -609,7 +601,7 @@ def build_arc_links(counts_dict):
         links.append({
             "source": ra, "target": rb,
             "value": counts_dict.get(ra, 0) + counts_dict.get(rb, 0),
-            "lineStyle": {"width": max(w(ra), w(rb)) * 0.6, "curveness": 0.35, "color": "#ffa726"},
+            "lineStyle": {"curveness": 0.35, "color": "#ffa726"},
         })
 
     return links

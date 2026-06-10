@@ -141,19 +141,18 @@ body{
 
 /* ---- 各面板在列内的高度分配 ---- */
 
-/* 左列 */
-.panel--sankey   { flex:1; }               /* ★ 真实图表，撑满可用空间 */
-.panel--hourly   { flex:1; }
-.panel--calendar { flex:1; }
+/* 左列：桑基图占 65%，日历占 35% */
+.panel--sankey   { flex:0 0 65%; }         /* ★ 合并原左上+左中，占据大部分空间 */
+.panel--calendar { flex:0 0 35%; }
 
 /* 中列 */
 .panel--map { flex:1; }
-.panel--arc { flex:0 0 120px; }
+.panel--arc { flex:0 0 170px; }            /* ★ 直角坐标系双向面积图高度 */
 
-/* 右列 */
-.panel--severity { flex:1; }
-.panel--radar    { flex:1; }
-.panel--district { flex:0 0 200px; }
+/* 右列：环形图 30%，雷达 32%，选项卡 38% */
+.panel--severity { flex:0 0 30%; }
+.panel--radar    { flex:0 0 32%; }
+.panel--tabs     { flex:0 0 38%; }         /* ★ 新增选项卡容器，原 panel--district 移除 */
 
 /* 日历面板头部（标题 + 年份选择器） */
 .panel__calendar-header{
@@ -435,11 +434,12 @@ body{
   align-items:center;
   gap:0;
   border-bottom:1px solid var(--border,#e0e0f0);
-  margin-bottom:4px;
+  flex-shrink:0;
 }
 .panel__tab{
-  padding:6px 16px;
-  font-size:11px;
+  flex:1;
+  padding:5px 8px;
+  font-size:10px;
   font-weight:600;
   color:var(--text-muted,#999);
   background:none;
@@ -447,11 +447,49 @@ body{
   border-bottom:2px solid transparent;
   cursor:pointer;
   transition:all .2s;
+  text-align:center;
+  letter-spacing:.3px;
 }
-.panel__tab:hover{color:var(--text,#333)}
+.panel__tab:hover{color:var(--text-primary,#333)}
 .panel__tab--active{
   color:var(--accent,#3366cc);
   border-bottom-color:var(--accent,#3366cc);
+  background:rgba(51,102,204,.04);
+}
+
+/* Tab 内容容器 */
+.panel__tab-content{
+  flex:1;
+  display:none;
+  flex-direction:column;
+  min-height:0;
+}
+.panel__tab-content--active{display:flex !important;}
+.panel__tab-content .panel__chart{flex:1;min-height:0;}
+
+/* Tab 面板右上角详情徽标（固定位置，切换 tab 不消失） */
+.panel--tabs .panel__detail-badge{
+  position:absolute;
+  top:6px;
+  right:10px;
+  z-index:20;
+  font-size:.65rem;
+  color:var(--accent,#3366cc);
+  background:rgba(51,102,204,.08);
+  padding:2px 9px;
+  border-radius:10px;
+  border:1px solid rgba(51,102,204,.2);
+  letter-spacing:.3px;
+  font-weight:600;
+  cursor:pointer;
+  opacity:0;
+  transition:opacity .3s ease,transform .2s ease;
+  pointer-events:auto;
+  transform:scale(0.9);
+}
+.panel--tabs:hover .panel__detail-badge{
+  opacity:1;
+  transform:scale(1);
 }
 
 /* ============================================================

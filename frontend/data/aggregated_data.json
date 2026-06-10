@@ -780,11 +780,11 @@
       "count": 7160
     },
     {
-      "district_label": "Hammersmith and Fulham",
+      "district_label": "Cheshire East",
       "count": 7087
     },
     {
-      "district_label": "Cheshire East",
+      "district_label": "Hammersmith and Fulham",
       "count": 7087
     },
     {
@@ -1004,11 +1004,11 @@
       "count": 4911
     },
     {
-      "district_label": "Blackburn with Darwen",
+      "district_label": "Stafford",
       "count": 4893
     },
     {
-      "district_label": "Stafford",
+      "district_label": "Blackburn with Darwen",
       "count": 4893
     },
     {
@@ -1364,11 +1364,11 @@
       "count": 3588
     },
     {
-      "district_label": "Perth and Kinross",
+      "district_label": "Rugby",
       "count": 3580
     },
     {
-      "district_label": "Rugby",
+      "district_label": "Perth and Kinross",
       "count": 3580
     },
     {
@@ -1420,11 +1420,11 @@
       "count": 3443
     },
     {
-      "district_label": "Middlesbrough",
+      "district_label": "North Warwickshire",
       "count": 3419
     },
     {
-      "district_label": "North Warwickshire",
+      "district_label": "Middlesbrough",
       "count": 3419
     },
     {
@@ -1596,11 +1596,11 @@
       "count": 2961
     },
     {
-      "district_label": "Broxtowe",
+      "district_label": "Blaby",
       "count": 2957
     },
     {
-      "district_label": "Blaby",
+      "district_label": "Broxtowe",
       "count": 2957
     },
     {
@@ -1620,11 +1620,11 @@
       "count": 2923
     },
     {
-      "district_label": "Staffordshire Moorlands",
+      "district_label": "Darlington",
       "count": 2918
     },
     {
-      "district_label": "Darlington",
+      "district_label": "Staffordshire Moorlands",
       "count": 2918
     },
     {
@@ -1720,11 +1720,11 @@
       "count": 2592
     },
     {
-      "district_label": "Wyre Forest",
+      "district_label": "Boston",
       "count": 2562
     },
     {
-      "district_label": "Boston",
+      "district_label": "Wyre Forest",
       "count": 2562
     },
     {
@@ -1792,11 +1792,11 @@
       "count": 2412
     },
     {
-      "district_label": "Broxbourne",
+      "district_label": "Brentwood",
       "count": 2372
     },
     {
-      "district_label": "Brentwood",
+      "district_label": "Broxbourne",
       "count": 2372
     },
     {
@@ -1868,11 +1868,11 @@
       "count": 2143
     },
     {
-      "district_label": "Copeland",
+      "district_label": "Kettering",
       "count": 2118
     },
     {
-      "district_label": "Kettering",
+      "district_label": "Copeland",
       "count": 2118
     },
     {
@@ -2024,11 +2024,11 @@
       "count": 1564
     },
     {
-      "district_label": "Redditch",
+      "district_label": "Moray",
       "count": 1558
     },
     {
-      "district_label": "Moray",
+      "district_label": "Redditch",
       "count": 1558
     },
     {
@@ -2224,6 +2224,6 @@
       2005,
       2015
     ],
-    "generated_at": "2026-06-09T14:17:07.345882"
+    "generated_at": "2026-06-09T18:48:50.998582"
   }
 }
