@@ -91,7 +91,7 @@ function updateRegionLinkedCharts(regionName, year) {
     if (gData.hourly) updateHourlyChart(gData.hourly);
     if (gData.radar) updateRadarChart(gData.radar);
     if (gData.arc_flow) updatePolarArcChart(gData.arc_flow);
-    setRightPanelScope(null, "all");
+    setRightPanelScope(null, year || "all");
     return;
   }
 
@@ -300,12 +300,27 @@ window.addEventListener("themeChanged", function() {
 document.addEventListener("change", function(e) {
   if (e.target && e.target.id === "mapYearSelect") {
     onMapYearChange(e.target.value);
-    if (window.RegionState) window.RegionState.setYear(e.target.value, "map-year");
+    var isGlobalMode = window.globalYearFilter && window.globalYearFilter.getMode() === "global";
+    if (window.RegionState && !isGlobalMode) {
+      window.RegionState.setYear(e.target.value, "map-year");
+    }
   }
 
   if (e.target && e.target.id === "calendarYearSelect") {
     window._calendarSelectedYear = parseInt(e.target.value);
     if (gData.calendar && typeof updateCalendarChart === "function") updateCalendarChart(gData.calendar);
+    var isGlobalMode = window.globalYearFilter && window.globalYearFilter.getMode() === "global";
+    if (window.RegionState && !isGlobalMode) {
+      window.RegionState.setYear(e.target.value, "calendar-year");
+    }
+  }
+
+  if (e.target && e.target.id === "sankeyYearSelector") {
+    if (typeof _applySankeyData === "function") _applySankeyData(e.target.value);
+    var isGlobalMode = window.globalYearFilter && window.globalYearFilter.getMode() === "global";
+    if (window.RegionState && !isGlobalMode) {
+      window.RegionState.setYear(e.target.value, "sankey-year");
+    }
   }
 });
 

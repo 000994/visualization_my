@@ -1,28 +1,21 @@
-/* Optional global year control for charts that still expose their own year select. */
+/* Global year filter — Independent/Global toggle + bidirectional sync.
+   In Global mode, changing any chart's year selector syncs the others.
+   Linked selectors: mapYearSelect, calendarYearSelect, sankeyYearSelector */
 var _globalFilter = (function() {
   var mode = "independent";
-  var globalYear = "all";
   var linkedSelectorIds = ["mapYearSelect", "calendarYearSelect"];
 
   var wrapperEl = null;
-  var selectEl = null;
   var switchEl = null;
   var knobEl = null;
   var labelEl = null;
   var loadingTimer = null;
-
-  function yearsMarkup() {
-    var years = ["all", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015"];
-    return years.map(function(year) {
-      var label = year === "all" ? "All Years" : year;
-      return '<option value="' + year + '">' + label + "</option>";
-    }).join("");
-  }
+  var _isSyncing = false;
+  var _eventsBound = false;
 
   function createUI() {
     if (document.getElementById("globalFilterWrapper")) {
       wrapperEl = document.getElementById("globalFilterWrapper");
-      selectEl = document.getElementById("globalYearSelect");
       switchEl = document.getElementById("globalFilterToggle");
       knobEl = document.getElementById("globalFilterKnob");
       labelEl = document.getElementById("globalFilterToggleLabel");
@@ -59,16 +52,7 @@ var _globalFilter = (function() {
     switchEl.appendChild(knobEl);
     toggleContainer.appendChild(labelEl);
     toggleContainer.appendChild(switchEl);
-
-    selectEl = document.createElement("select");
-    selectEl.id = "globalYearSelect";
-    selectEl.className = "filter-select global-filter__select";
-    selectEl.innerHTML = yearsMarkup();
-    selectEl.style.cssText =
-      "background:var(--bg-panel,#fff);color:var(--text-primary,#333);border:1px solid var(--border,#e0e0f0);border-radius:6px;padding:4px 24px 4px 8px;font-size:.72rem;font-family:inherit;cursor:pointer;appearance:none;max-width:110px;background-image:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='5'%3E%3Cpath d='M0 0l4 5 4-5z' fill='%23888'/%3E%3C/svg%3E\");background-repeat:no-repeat;background-position:right 8px center;";
-
     wrapperEl.appendChild(toggleContainer);
-    wrapperEl.appendChild(selectEl);
 
     var header = document.querySelector(".header");
     var themeBtn = document.getElementById("themeToggle");
@@ -88,12 +72,21 @@ var _globalFilter = (function() {
     return selectors;
   }
 
-  function syncSelectorsToYear(year) {
+  function syncSelectorsToYear(year, sourceId) {
+    if (_isSyncing) return;
+    _isSyncing = true;
+    var syncedAny = false;
     getLinkedSelectors().forEach(function(select) {
+      if (select.id === sourceId) return;
       if (select.value === year) return;
+      var opts = Array.prototype.slice.call(select.options).map(function(o) { return o.value; });
+      if (opts.indexOf(year) === -1) return;
       select.value = year;
+      syncedAny = true;
       select.dispatchEvent(new Event("change", { bubbles: true }));
     });
+    _isSyncing = false;
+    return syncedAny;
   }
 
   function showPulse() {
@@ -107,11 +100,6 @@ var _globalFilter = (function() {
 
   function renderMode() {
     var isGlobal = mode === "global";
-    if (selectEl) {
-      selectEl.disabled = !isGlobal;
-      selectEl.style.opacity = isGlobal ? "1" : "0.4";
-      selectEl.style.pointerEvents = isGlobal ? "auto" : "none";
-    }
     if (labelEl) labelEl.textContent = isGlobal ? "Global" : "Independent";
     if (knobEl) {
       knobEl.style.left = isGlobal ? "16px" : "2px";
@@ -125,27 +113,36 @@ var _globalFilter = (function() {
   function setMode(nextMode) {
     mode = nextMode === "global" ? "global" : "independent";
     renderMode();
-    if (mode === "global") syncSelectorsToYear(globalYear);
+  }
+
+  function handleDocumentChange(e) {
+    if (_isSyncing) return;
+    if (mode !== "global") return;
+    if (!e.target) return;
+    var id = e.target.id;
+    var allIds = ["mapYearSelect", "calendarYearSelect", "sankeyYearSelector"];
+    if (allIds.indexOf(id) === -1) return;
+    showPulse();
+    syncSelectorsToYear(e.target.value, id);
+    // 显式触发 RegionState 年份更新，确保右侧面板（雷达图/24h/弧长图）联动；
+    // 即使 mapYearSelect 值未变化（sync 跳过写入选框），RegionState 仍被通知。
+    if (window.RegionState) {
+      window.RegionState.setYear(e.target.value, "global-filter");
+    }
   }
 
   function bindEvents() {
-    if (selectEl && !selectEl.dataset.globalYearBound) {
-      selectEl.dataset.globalYearBound = "true";
-      selectEl.addEventListener("change", function() {
-        globalYear = selectEl.value || "all";
-        if (mode === "global") {
-          showPulse();
-          syncSelectorsToYear(globalYear);
-        }
-      });
-    }
-
     var toggleContainer = wrapperEl ? wrapperEl.querySelector(".global-filter__toggle") : null;
     if (toggleContainer && !toggleContainer.dataset.globalModeBound) {
       toggleContainer.dataset.globalModeBound = "true";
       toggleContainer.addEventListener("click", function() {
         setMode(mode === "global" ? "independent" : "global");
       });
+    }
+
+    if (!_eventsBound) {
+      _eventsBound = true;
+      document.addEventListener("change", handleDocumentChange);
     }
   }
 
@@ -158,7 +155,6 @@ var _globalFilter = (function() {
   window.globalYearFilter = {
     init: init,
     getMode: function() { return mode; },
-    getGlobalYear: function() { return globalYear; },
     setMode: setMode
   };
 
