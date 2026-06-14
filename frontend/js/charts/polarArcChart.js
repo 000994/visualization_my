@@ -172,9 +172,9 @@ function updatePolarArcChart(chartData) {
     // ---- Grid ----
     grid: {
       left: 50,
-      right: 8,
+      right: 18,            // ★ 增大右侧留白，防止 2015 标签被裁切
       top: 42,
-      bottom: 16,
+      bottom: 20,           // ★ 增大底部留白，确保年份文字完整显示
     },
 
     // ---- 横轴（年份） ----

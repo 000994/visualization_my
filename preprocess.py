@@ -155,6 +155,20 @@ if "Road_Type" in MAPPINGS:
 if "Light_Conditions" in MAPPINGS:
     acc["light_label"] = acc["Light_Conditions"].map(MAPPINGS["Light_Conditions"]).fillna("Unknown")
 
+# 3d2. 天气状况（手动映射，归并为 5 类以对齐 Light/Vehicle 列节点数）
+WEATHER_MAP = {
+    "1": "Fine",
+    "2": "Raining",
+    "3": "Snowing",
+    "4": "Fog",
+    "5": "Other Weather",
+    "6": "Other Weather",      # Windy → 合并
+    "7": "Other Weather",      # Unknown → 合并
+    "8": "Other Weather",
+    "9": "Other Weather",
+}
+acc["weather_label"] = acc["Weather_Conditions"].map(WEATHER_MAP).fillna("Other Weather")
+
 # 3e. 城乡
 if "Urban_Rural" in MAPPINGS:
     acc["urban_rural_label"] = acc["Urban_or_Rural_Area"].map(MAPPINGS["Urban_Rural"]).fillna("Unknown")
@@ -170,6 +184,43 @@ if "Casualty_Severity" in MAPPINGS:
 # 3h. 车辆类型
 if "Vehicle_Type" in MAPPINGS:
     veh["vehicle_label"] = veh["Vehicle_Type"].map(MAPPINGS["Vehicle_Type"]).fillna("Unknown")
+
+# 3i. ★ 车辆大类归并：将 ~20 类零散车型合并为 5 个治理级大类
+VEHICLE_CATEGORY_MAP = {
+    # — 私家乘用车（保持独立，占事故大头）—
+    "Car": "Cars",
+
+    # — 两轮/弱势交通（受光照影响极大）—
+    "Pedal cycle":                    "Two-Wheelers",
+    "Motorcycle over 500cc":          "Two-Wheelers",
+    "Motorcycle 125cc and under":     "Two-Wheelers",
+    "Motorcycle 50cc and under":      "Two-Wheelers",
+    "Motorcycle over 125cc and up to 500cc": "Two-Wheelers",
+    "Motorcycle - unknown cc":        "Two-Wheelers",
+    "Electric motorcycle":            "Two-Wheelers",
+    "Ridden horse":                   "Two-Wheelers",
+    "Mobility scooter":               "Two-Wheelers",
+
+    # — 大型货运车（夜间/疲劳驾驶极易引发 Fatal）—
+    "Van / Goods 3.5 tonnes mgw or under": "Heavy Freight",
+    "Goods 7.5 tonnes mgw and over":       "Heavy Freight",
+    "Goods over 3.5t. and under 7.5t":    "Heavy Freight",
+    "Goods vehicle - unknown weight":      "Heavy Freight",
+
+    # — 公共交通 —
+    "Bus or coach (17 or more pass seats)": "Public Transport",
+    "Taxi/Private hire car":                "Public Transport",
+    "Minibus (8 - 16 passenger seats)":    "Public Transport",
+    "Tram":                                 "Public Transport",
+
+    # — 其他/特种车 —
+    "Other vehicle":            "Others",
+    "Agricultural vehicle":     "Others",
+    "Data missing or out of range": "Others",
+}
+veh["vehicle_category"] = veh["vehicle_label"].map(VEHICLE_CATEGORY_MAP).fillna("Others")
+print(f"  车辆大类归并: {veh['vehicle_category'].nunique()} 类")
+print(f"  各类数量:\n{veh['vehicle_category'].value_counts().to_string()}")
 
 # ============================================================
 # 4. 派生列：年份、小时
@@ -467,22 +518,22 @@ print(f"  [OK] 已保存: {map_yearly_path} ({map_size / 1024:.0f} KB)")
 
 # ============================================================
 # 6c. 文件 3：sankey_data.json — 桑基图聚合
-#     流向：Light → Severity → Vehicle
+#     流向：Weather → Light → Vehicle（三级平衡）
 #     nodes 全量统一，links 按年份拆分
 # ============================================================
-print("  6c. 构建 sankey_data.json（Light → Severity → Vehicle 流转）")
+print("  6c. 构建 sankey_data.json（Weather → Light → Vehicle 流转）")
 
 # 三列节点名称固定（全量去重），确保年份切换时布局不跳动
+weather_nodes   = sorted(acc["weather_label"].dropna().unique().tolist())
 light_nodes     = sorted(acc["light_label"].dropna().unique().tolist())
-severity_nodes  = sorted(acc["severity_label"].dropna().unique().tolist())
-vehicle_nodes   = sorted(veh["vehicle_label"].dropna().unique().tolist())
+vehicle_nodes   = sorted(veh["vehicle_category"].dropna().unique().tolist())
 
 # 为 ECharts sankey 构建全量 node list
 sankey_nodes_all = []
+for wn in weather_nodes:
+    sankey_nodes_all.append({"name": wn, "itemStyle": {"color": "#26a69a"}})
 for ln in light_nodes:
     sankey_nodes_all.append({"name": ln, "itemStyle": {"color": "#5b8def"}})
-for sn in severity_nodes:
-    sankey_nodes_all.append({"name": sn, "itemStyle": {"color": "#ffa726"}})
 for vn in vehicle_nodes:
     sankey_nodes_all.append({"name": vn, "itemStyle": {"color": "#66bb6a"}})
 
@@ -492,29 +543,33 @@ node_name_set = {n["name"] for n in sankey_nodes_all}
 def build_sankey_links(sub_acc, sub_veh):
     """给定子集事故 + 子集车辆，返回 links 列表"""
     links = []
+    sub_indices = sub_acc["Accident_Index"].unique()
+    sub_veh_filtered = sub_veh[sub_veh["Accident_Index"].isin(sub_indices)]
 
-    # Light → Severity
-    ls = sub_acc.groupby(["light_label", "severity_label"]).size().reset_index(name="value")
-    for _, row in ls.iterrows():
-        if row["light_label"] in node_name_set and row["severity_label"] in node_name_set:
+    # ★ Weather → Light（以车辆为计数单位，与 Light→Vehicle 统一基准）
+    #    先 join accidents+vehicles，再按 weather + light 聚合
+    wl = sub_acc[["Accident_Index", "weather_label", "light_label"]].merge(
+        sub_veh_filtered[["Accident_Index"]],
+        on="Accident_Index"
+    ).groupby(["weather_label", "light_label"]).size().reset_index(name="value")
+    for _, row in wl.iterrows():
+        if row["weather_label"] in node_name_set and row["light_label"] in node_name_set:
             links.append({
-                "source": row["light_label"],
-                "target": row["severity_label"],
+                "source": row["weather_label"],
+                "target": row["light_label"],
                 "value": int(row["value"]),
             })
 
-    # Severity → Vehicle（需要关联车辆表）
-    sub_indices = sub_acc["Accident_Index"].unique()
-    sub_veh_filtered = sub_veh[sub_veh["Accident_Index"].isin(sub_indices)]
-    sv = sub_acc[["Accident_Index", "severity_label"]].merge(
-        sub_veh_filtered[["Accident_Index", "vehicle_label"]],
+    # ★ Light → Vehicle（以车辆为计数单位）
+    lv = sub_acc[["Accident_Index", "light_label"]].merge(
+        sub_veh_filtered[["Accident_Index", "vehicle_category"]],
         on="Accident_Index"
-    ).groupby(["severity_label", "vehicle_label"]).size().reset_index(name="value")
-    for _, row in sv.iterrows():
-        if row["severity_label"] in node_name_set and row["vehicle_label"] in node_name_set:
+    ).groupby(["light_label", "vehicle_category"]).size().reset_index(name="value")
+    for _, row in lv.iterrows():
+        if row["light_label"] in node_name_set and row["vehicle_category"] in node_name_set:
             links.append({
-                "source": row["severity_label"],
-                "target": row["vehicle_label"],
+                "source": row["light_label"],
+                "target": row["vehicle_category"],
                 "value": int(row["value"]),
             })
 

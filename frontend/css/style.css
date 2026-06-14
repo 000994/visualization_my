@@ -145,13 +145,19 @@ body{
 .panel--sankey   { flex:0 0 65%; }         /* ★ 合并原左上+左中，占据大部分空间 */
 .panel--calendar { flex:0 0 35%; }
 
+/* 桑基图容器顶部留白，下移图表内容 */
+#chartSankey { padding-top:10px; }
+
 /* 中列：地图占满全部空间 */
 .panel--map { flex:1; }
 
-/* 右列：雷达 28%，24小时 32%，Urban/Rural 40% */
-.panel--radar    { flex:0 0 28%; }
-.panel--hourly   { flex:0 0 32%; }
-.panel--arc      { flex:0 0 40%; }
+/* 右列：雷达 37%，24小时 37%，Urban/Rural 25% */
+.panel--radar    { flex:0 0 37%; }
+.panel--hourly   { flex:0 0 37%; }
+.panel--arc      { flex:0 0 25%; }
+
+/* 弧长连接图底部留白：防止时间轴/坐标标签被裁切 */
+#chartArc { padding-bottom:6px; }
 
 /* 日历面板头部（标题 + 年份选择器） */
 .panel__calendar-header{

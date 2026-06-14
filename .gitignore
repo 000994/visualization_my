@@ -1,4 +1,5 @@
 aggregated_data.json
+data/
 __pycache__/
 .venv/
 .vscode/
