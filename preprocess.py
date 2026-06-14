@@ -263,6 +263,27 @@ hourly = (
     .reset_index(name="count")
     .sort_values("hour")
 )
+hourly_severity = (
+    acc.groupby(["hour", "severity_label"])
+    .size()
+    .unstack(fill_value=0)
+    .reset_index()
+)
+for sev in ["Fatal", "Serious", "Slight"]:
+    if sev not in hourly_severity.columns:
+        hourly_severity[sev] = 0
+hourly_severity = hourly_severity.rename(columns={
+    "Fatal": "fatal",
+    "Serious": "serious",
+    "Slight": "slight",
+})
+hourly = hourly.merge(
+    hourly_severity[["hour", "fatal", "serious", "slight"]],
+    on="hour",
+    how="left",
+).fillna(0)
+for col in ["count", "fatal", "serious", "slight"]:
+    hourly[col] = hourly[col].astype(int)
 
 # --- 5c. 星期分布 ---
 print("  5c. 星期分布")
@@ -462,8 +483,15 @@ def match_region(district_name):
 
 def build_hourly_profile(sub_acc):
     grouped = sub_acc.groupby("hour").size()
+    sev_grouped = sub_acc.groupby(["hour", "severity_label"]).size()
     return [
-        {"hour": float(h), "count": int(grouped.get(float(h), 0))}
+        {
+            "hour": float(h),
+            "count": int(grouped.get(float(h), 0)),
+            "fatal": int(sev_grouped.get((float(h), "Fatal"), 0)),
+            "serious": int(sev_grouped.get((float(h), "Serious"), 0)),
+            "slight": int(sev_grouped.get((float(h), "Slight"), 0)),
+        }
         for h in range(24)
     ]
 

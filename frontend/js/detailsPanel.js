@@ -8,12 +8,10 @@
 
   var DETAIL_CONFIG = {
     hourly: { title: "24-Hour Distribution - Detail", render: "renderRegionHourlyDetail", provider: "getRegionDetailData" },
-    radar: { title: "Region Structure - Detail", render: "renderRegionRadarDetail", provider: "getRegionDetailData" },
     arc: { title: "Urban / Rural Trend - Detail", render: "renderRegionArcDetail", provider: "getRegionDetailData" },
   };
 
   var cardMap = {
-    panelRadar: "radar",
     panelHourly: "hourly",
     panelArc: "arc",
   };

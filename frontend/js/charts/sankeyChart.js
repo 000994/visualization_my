@@ -14,6 +14,11 @@ var _sankeySelectedNodeName = null;
 var _S_NODE_WIDTH       = 22;
 var _S_NODE_GAP         = 6;
 var _S_LAYOUT_ITER      = 40;
+var _S_SANKEY_GRADIENT_COLORS = ["#F8DCD2", "#EF9A84", "#C95A4B"];
+
+function _sankeyNodeColorByIndex(idx) {
+  return _S_SANKEY_GRADIENT_COLORS[Math.min(2, Math.floor(idx / 5))];
+}
 
 // ============================================================
 //  initSankeyChart — 创建实例 + UI 控件
@@ -112,15 +117,10 @@ function _applySankeyData(year) {
   var links = entry.links || [];
   var selectedName = _sankeySelectedNodeName;
 
-  var selectedName = _sankeySelectedNodeName;
-
   // 构建节点数据（三列均 5 节点，nodeAlign: justify 自动等高）
-  var nodes = (entry.nodes || []).map(function(n) {
+  var nodes = (entry.nodes || []).map(function(n, idx) {
     var isSelected = (n.name === selectedName);
-    var itemStyle = {};
-    if (n.itemStyle && n.itemStyle.color) {
-      itemStyle.color = n.itemStyle.color;
-    }
+    var itemStyle = { color: _sankeyNodeColorByIndex(idx) };
     if (isSelected) {
       itemStyle.borderColor = "#ffa726";
       itemStyle.borderWidth = 3;
@@ -174,12 +174,12 @@ function _applySankeyData(year) {
       label: {
         show: true,
         fontSize: 9,
-        color: "auto",
+        color: "#5a5a7a",
         formatter: function(p) {
           return p.name.length > 16 ? p.name.slice(0, 14) + "…" : p.name;
         },
       },
-      lineStyle: { color: "#d3d3d3", curveness: 0.5, opacity: selectedName ? 0.6 : 0.35 },
+      lineStyle: { color: "source", curveness: 0.5, opacity: selectedName ? 0.6 : 0.35 },
       data: nodes,
       links: displayLinks,
     }],

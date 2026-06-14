@@ -19,99 +19,171 @@
   "hourly": [
     {
       "hour": 0.0,
-      "count": 27173
+      "count": 27173,
+      "fatal": 830,
+      "serious": 5101,
+      "slight": 21242
     },
     {
       "hour": 1.0,
-      "count": 19937
+      "count": 19937,
+      "fatal": 651,
+      "serious": 3880,
+      "slight": 15406
     },
     {
       "hour": 2.0,
-      "count": 15991
+      "count": 15991,
+      "fatal": 573,
+      "serious": 3243,
+      "slight": 12175
     },
     {
       "hour": 3.0,
-      "count": 12829
+      "count": 12829,
+      "fatal": 482,
+      "serious": 2569,
+      "slight": 9778
     },
     {
       "hour": 4.0,
-      "count": 9886
+      "count": 9886,
+      "fatal": 384,
+      "serious": 1947,
+      "slight": 7555
     },
     {
       "hour": 5.0,
-      "count": 14374
+      "count": 14374,
+      "fatal": 460,
+      "serious": 2638,
+      "slight": 11276
     },
     {
       "hour": 6.0,
-      "count": 31071
+      "count": 31071,
+      "fatal": 623,
+      "serious": 4891,
+      "slight": 25557
     },
     {
       "hour": 7.0,
-      "count": 74730
+      "count": 74730,
+      "fatal": 879,
+      "serious": 9827,
+      "slight": 64024
     },
     {
       "hour": 8.0,
-      "count": 130305
+      "count": 130305,
+      "fatal": 846,
+      "serious": 13765,
+      "slight": 115694
     },
     {
       "hour": 9.0,
-      "count": 88401
+      "count": 88401,
+      "fatal": 813,
+      "serious": 9765,
+      "slight": 77823
     },
     {
       "hour": 10.0,
-      "count": 80265
+      "count": 80265,
+      "fatal": 1032,
+      "serious": 10060,
+      "slight": 69173
     },
     {
       "hour": 11.0,
-      "count": 92265
+      "count": 92265,
+      "fatal": 1058,
+      "serious": 11403,
+      "slight": 79804
     },
     {
       "hour": 12.0,
-      "count": 105110
+      "count": 105110,
+      "fatal": 1068,
+      "serious": 12952,
+      "slight": 91090
     },
     {
       "hour": 13.0,
-      "count": 107812
+      "count": 107812,
+      "fatal": 1170,
+      "serious": 13460,
+      "slight": 93182
     },
     {
       "hour": 14.0,
-      "count": 108058
+      "count": 108058,
+      "fatal": 1193,
+      "serious": 14151,
+      "slight": 92714
     },
     {
       "hour": 15.0,
-      "count": 137506
+      "count": 137506,
+      "fatal": 1343,
+      "serious": 18305,
+      "slight": 117858
     },
     {
       "hour": 16.0,
-      "count": 144519
+      "count": 144519,
+      "fatal": 1515,
+      "serious": 19504,
+      "slight": 123500
     },
     {
       "hour": 17.0,
-      "count": 158132
+      "count": 158132,
+      "fatal": 1566,
+      "serious": 20881,
+      "slight": 135685
     },
     {
       "hour": 18.0,
-      "count": 123274
+      "count": 123274,
+      "fatal": 1296,
+      "serious": 17037,
+      "slight": 104941
     },
     {
       "hour": 19.0,
-      "count": 92119
+      "count": 92119,
+      "fatal": 1268,
+      "serious": 13300,
+      "slight": 77551
     },
     {
       "hour": 20.0,
-      "count": 67761
+      "count": 67761,
+      "fatal": 1022,
+      "serious": 10352,
+      "slight": 56387
     },
     {
       "hour": 21.0,
-      "count": 54148
+      "count": 54148,
+      "fatal": 989,
+      "serious": 8712,
+      "slight": 44447
     },
     {
       "hour": 22.0,
-      "count": 47199
+      "count": 47199,
+      "fatal": 1023,
+      "serious": 7836,
+      "slight": 38340
     },
     {
       "hour": 23.0,
-      "count": 37637
+      "count": 37637,
+      "fatal": 912,
+      "serious": 6473,
+      "slight": 30252
     }
   ],
   "district_top10": [
@@ -386,11 +458,11 @@
       "count": 7160
     },
     {
-      "district_label": "Hammersmith and Fulham",
+      "district_label": "Cheshire East",
       "count": 7087
     },
     {
-      "district_label": "Cheshire East",
+      "district_label": "Hammersmith and Fulham",
       "count": 7087
     },
     {
@@ -794,11 +866,11 @@
       "count": 4205
     },
     {
-      "district_label": "Stratford-upon-Avon",
+      "district_label": "Winchester",
       "count": 4182
     },
     {
-      "district_label": "Winchester",
+      "district_label": "Stratford-upon-Avon",
       "count": 4182
     },
     {
@@ -910,11 +982,11 @@
       "count": 3704
     },
     {
-      "district_label": "Braintree",
+      "district_label": "Torbay",
       "count": 3701
     },
     {
-      "district_label": "Torbay",
+      "district_label": "Braintree",
       "count": 3701
     },
     {
@@ -970,19 +1042,19 @@
       "count": 3588
     },
     {
-      "district_label": "Perth and Kinross",
-      "count": 3580
-    },
-    {
       "district_label": "Rugby",
       "count": 3580
     },
     {
-      "district_label": "North Hertfordshire",
-      "count": 3547
+      "district_label": "Perth and Kinross",
+      "count": 3580
     },
     {
       "district_label": "Neath Port Talbot",
+      "count": 3547
+    },
+    {
+      "district_label": "North Hertfordshire",
       "count": 3547
     },
     {
@@ -1026,11 +1098,11 @@
       "count": 3443
     },
     {
-      "district_label": "Middlesbrough",
+      "district_label": "North Warwickshire",
       "count": 3419
     },
     {
-      "district_label": "North Warwickshire",
+      "district_label": "Middlesbrough",
       "count": 3419
     },
     {
@@ -1146,11 +1218,11 @@
       "count": 3083
     },
     {
-      "district_label": "Gravesham",
+      "district_label": "Broadland",
       "count": 3079
     },
     {
-      "district_label": "Broadland",
+      "district_label": "Gravesham",
       "count": 3079
     },
     {
@@ -1202,11 +1274,11 @@
       "count": 2961
     },
     {
-      "district_label": "Broxtowe",
+      "district_label": "Blaby",
       "count": 2957
     },
     {
-      "district_label": "Blaby",
+      "district_label": "Broxtowe",
       "count": 2957
     },
     {
@@ -1630,11 +1702,11 @@
       "count": 1564
     },
     {
-      "district_label": "Redditch",
+      "district_label": "Moray",
       "count": 1558
     },
     {
-      "district_label": "Moray",
+      "district_label": "Redditch",
       "count": 1558
     },
     {
@@ -47752,6 +47824,6 @@
       2005,
       2015
     ],
-    "generated_at": "2026-06-14T11:45:37.624589"
+    "generated_at": "2026-06-14T18:32:00.674502"
   }
 }
