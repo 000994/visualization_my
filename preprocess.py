@@ -437,6 +437,60 @@ def build_arc_flow(sub_acc):
     arc_merged["rural_delta"] = arc_merged["rural"].diff().fillna(0).astype(int)
     return arc_merged.to_dict(orient="records")
 
+REGION_KEYWORDS = {
+    "Scotland":["scotland","glasgow","edinburgh","aberdeen","dundee","fife","highland","lothian","strathclyde","tayside","grampian","ayrshire","lanarkshire","renfrewshire","stirling","falkirk","dumfries","borders","moray","angus","perth","clackmannan","dunbarton","inverclyde","midlothian","orkney","shetland","hebrides","western isles","argyll"],
+    "North East":["northumberland","newcastle","durham","tyneside","sunderland","gateshead","hartlepool","stockton","middlesbrough","redcar","darlington","cleveland","berwick","blyth","wansbeck","wear valley","derwentside","chester-le-street","easington","teesdale","sedgefield","alnwick","castle morpeth","tynedale"],
+    "North West":["cumbria","carlisle","lancashire","lancaster","blackpool","blackburn","preston","burnley","chorley","fleetwood","manchester","bolton","bury","oldham","rochdale","salford","stockport","tameside","trafford","wigan","liverpool","knowsley","sefton","wirral","chester","warrington","macclesfield","crewe","cheshire","merseyside","halton","congleton","ellesmere","wyre","south ribble","south lakeland","ribble valley","pendle","hyndburn","rossendale","allerdale","barrow","copeland","eden","furness","fylde","vale royal"],
+    "Yorkshire":["yorkshire","york","leeds","bradford","calderdale","kirklees","wakefield","barnsley","doncaster","rotherham","sheffield","hull","harrogate","scarborough","selby","craven","richmondshire","ryedale","hambleton","humberside","lincolnshire","grimsby","scunthorpe","east riding","north lincoln","north east lincoln"],
+    "West Midlands":["birmingham","coventry","dudley","sandwell","solihull","walsall","wolverhampton","stafford","stoke","telford","shrewsbury","shropshire","worcester","bromsgrove","redditch","malvern","hereford","lichfield","tamworth","burton","nuneaton","rugby","warwick","stratford","cannock","bridgnorth","oswestry","wyre forest","wychavon","newcastle-under-lyme","staffordshire moorlands","south staffordshire","north warwickshire"],
+    "East Midlands":["derbyshire","derby","nottingham","leicester","leicestershire","harborough","rutland","northampton","northamptonshire","kettering","corby","daventry","wellingborough","milton keynes","lincoln","boston","mansfield","ashfield","broxtowe","gedling","newark","rushcliffe","bassetlaw","south holland","north kesteven","south kesteven","west lindsey","east lindsey","amber valley","bolsover","chesterfield","erewash","high peak","melton","oadby","blaby","hinckley","charnwood","south derbyshire","north east derbyshire","derbyshire dales"],
+    "East of England":["cambridge","peterborough","norfolk","norwich","suffolk","ipswich","bedford","luton","hertford","stevenage","watford","st. albans","welwyn","broxbourne","dacorum","essex","chelmsford","colchester","southend","basildon","braintree","brentwood","castle point","epping","harlow","maldon","rochford","tendring","thurrock","uttlesford","fenland","huntingdon","breckland","broadland","great yarmouth","kings lynn","babergh","forest heath","mid suffolk","st. edmundsbury","suffolk coastal","waveney","three rivers","hertsmere","bedfordshire","hertfordshire","cambridgeshire","south cambridgeshire","east cambridgeshire","south bedfordshire","mid bedfordshire","north hertfordshire","east hertfordshire","east northamptonshire","south northamptonshire"],
+    "London":["london","westminster","camden","islington","hackney","tower hamlets","greenwich","lewisham","southwark","lambeth","wandsworth","hammersmith","kensington","chelsea","waltham forest","redbridge","havering","barking","dagenham","newham","bexley","bromley","croydon","sutton","merton","kingston","richmond","hounslow","hillingdon","ealing","brent","harrow","barnet","haringey","enfield","city of london","heathrow"],
+    "South East":["kent","canterbury","dover","maidstone","medway","thanet","ashford","dartford","folkestone","gravesham","sevenoaks","swale","tonbridge","tunbridge","surrey","woking","guildford","elmbridge","epsom","spelthorne","reigate","runnymede","tandridge","waverley","sussex","brighton","eastbourne","hastings","lewes","rother","wealden","crawley","horsham","worthing","adur","arun","chichester","hampshire","portsmouth","southampton","basingstoke","winchester","eastleigh","fareham","gosport","hart","havant","new forest","rushmoor","test valley","east hampshire","buckingham","aylesbury","wycombe","chiltern","oxford","cherwell","vale of white horse","south oxfordshire","west oxfordshire","reading","slough","windsor","maidenhead","bracknell","wokingham","west berkshire","isle of wight","mole valley","south bucks","buckinghamshire","oxfordshire","surrey heath","shepway"],
+    "South West":["devon","exeter","plymouth","torbay","torridge","cornwall","caradon","carrick","kerrier","penwith","restormel","somerset","bristol","bath","mendip","sedgemoor","taunton","gloucester","cheltenham","cotswold","forest of dean","stroud","tewkesbury","wiltshire","swindon","salisbury","kennet","dorset","bournemouth","poole","christchurch","purbeck","weymouth","portland","gloucestershire","south gloucestershire","north somerset","bath and","teignbridge","south hams","mid devon","west devon","east devon","north dorset","west dorset","east dorset","north wiltshire","west wiltshire","south somerset","taunton deane","west somerset","north cornwall"],
+    "Wales":["wales","cardiff","swansea","newport","gwynedd","conwy","denbigh","flint","wrexham","anglesey","blaenau gwent","caerphilly","monmouth","torfaen","bridgend","merthyr","neath port talbot","rhondda","cynon","taff","vale of glamorgan","ceredigion","carmarthen","pembroke","powys","dyfed"],
+    "Northern Ireland":["northern","belfast","antrim","armagh","down","fermanagh","londonderry","tyrone","ulster"],
+}
+
+def match_region(district_name):
+    name = str(district_name or "").lower().strip()
+    for region, keywords in REGION_KEYWORDS.items():
+        for keyword in keywords:
+            if keyword in name:
+                return region
+    return None
+
+def build_hourly_profile(sub_acc):
+    grouped = sub_acc.groupby("hour").size()
+    return [
+        {"hour": float(h), "count": int(grouped.get(float(h), 0))}
+        for h in range(24)
+    ]
+
+def build_region_entry(sub_acc):
+    return {
+        "hourly": build_hourly_profile(sub_acc),
+        "radar": build_radar(sub_acc),
+        "arc_flow": build_arc_flow(sub_acc),
+        "total": int(len(sub_acc)),
+    }
+
+def build_region_profiles(acc_df, years):
+    profiles = {}
+    region_acc = acc_df.copy()
+    region_acc["region_label"] = region_acc["district_label"].apply(match_region)
+    region_acc = region_acc[region_acc["region_label"].notna()]
+
+    for region in sorted(region_acc["region_label"].unique()):
+        sub_region = region_acc[region_acc["region_label"] == region]
+        entry = {"all": build_region_entry(sub_region)}
+        for y in years:
+            y_int = int(y)
+            sub_year = sub_region[sub_region["year"] == y]
+            entry[str(y_int)] = build_region_entry(sub_year)
+        profiles[region] = entry
+    return profiles
+
 # ============================================================
 # 6a. 文件 1：global_charts_data.json（全量聚合，不筛选）
 # ============================================================
@@ -515,6 +569,17 @@ with open(map_yearly_path, "w", encoding="utf-8") as f:
     json.dump(map_yearly, f, ensure_ascii=False, indent=2)
 map_size = os.path.getsize(map_yearly_path)
 print(f"  [OK] 已保存: {map_yearly_path} ({map_size / 1024:.0f} KB)")
+
+# ============================================================
+# 6b2. 文件：region_profiles.json（地图区域联动右侧三图）
+# ============================================================
+print("  6b2. 构建 region_profiles.json（区域画像联动数据）")
+region_profiles = clean_for_json(build_region_profiles(acc, years_list))
+region_profiles_path = os.path.join(OUTPUT_DIR, "region_profiles.json")
+with open(region_profiles_path, "w", encoding="utf-8") as f:
+    json.dump(region_profiles, f, ensure_ascii=False, indent=2)
+region_profiles_size = os.path.getsize(region_profiles_path)
+print(f"  [OK] 已保存: {region_profiles_path} ({region_profiles_size / 1024:.0f} KB)")
 
 # ============================================================
 # 6c. 文件 3：sankey_data.json — 桑基图聚合

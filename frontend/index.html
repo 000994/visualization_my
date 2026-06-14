@@ -3,67 +3,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UK Car Accidents 2005–2015</title>
+  <title>UK Car Accidents 2005-2015</title>
 
-  <!-- 样式 -->
   <link rel="stylesheet" href="css/style.css">
-  <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 
-  <!-- ECharts -->
   <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
-  <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
 <body>
-
-  <!-- ============================================================ -->
-  <!--  HEADER — 标题 + 统计指标 + 主题切换                            -->
-  <!-- ============================================================ -->
   <header class="header">
     <div class="header__left">
-      <h1 class="header__title">UK Car Accidents 2005 – 2015</h1>
+      <h1 class="header__title">UK Car Accidents 2005-2015</h1>
     </div>
 
-    <!-- 统计指标卡片 -->
     <div class="header__stats" id="statCards">
-      <div class="stat-badge" id="statTotal"><span class="stat-badge__val">--</span><span class="stat-badge__lbl">Total</span></div>
-      <div class="stat-badge" id="statFatal"><span class="stat-badge__val">--</span><span class="stat-badge__lbl">Fatal</span></div>
-      <div class="stat-badge" id="statCasualty"><span class="stat-badge__val">--</span><span class="stat-badge__lbl">Casualties</span></div>
-      <div class="stat-badge" id="statPeak"><span class="stat-badge__val">--</span><span class="stat-badge__lbl">Peak Hour</span></div>
+      <div class="stat-badge" id="statTotal">
+        <span class="stat-badge__val">--</span>
+        <span class="stat-badge__lbl">Total</span>
+      </div>
+      <div class="stat-badge" id="statFatal">
+        <span class="stat-badge__val">--</span>
+        <span class="stat-badge__lbl">Fatal</span>
+      </div>
+      <div class="stat-badge" id="statCasualty">
+        <span class="stat-badge__val">--</span>
+        <span class="stat-badge__lbl">Casualties</span>
+      </div>
+      <div class="stat-badge" id="statPeak">
+        <span class="stat-badge__val">--</span>
+        <span class="stat-badge__lbl">Peak Hour</span>
+      </div>
     </div>
 
-    <!-- 主题切换 -->
     <button class="theme-toggle" id="themeToggle" title="Toggle light/dark mode">
-      <span class="theme-toggle__icon" id="themeIcon">🌙</span>
+      <span class="theme-toggle__icon" id="themeIcon">Dark</span>
     </button>
   </header>
 
-  <!-- ============================================================ -->
-  <!--  MAIN — 三列 Flexbox 自适应布局                                 -->
-  <!--  左 22.5% : 中 55% : 右 22.5%                                  -->
-  <!-- ============================================================ -->
   <main class="dashboard">
-
-        <!-- ========== 左列 ========== -->
     <div class="col col-left">
-
-      <!-- 桑基图（合并原左上+左中，占据整列） -->
       <article class="panel panel--sankey" id="panelSankey">
         <h2 class="panel__title">Casualty Flow (Sankey)</h2>
         <div class="panel__chart" id="chartSankey"></div>
       </article>
 
-      <!-- 日历热力图 -->
       <article class="panel panel--calendar" id="panelCalendar">
         <div class="panel__calendar-header">
           <h2 class="panel__title" style="display:inline">Calendar Heatmap</h2>
           <select class="calendar__year-select" id="calendarYearSelect">
-            <option value="2005">2005</option><option value="2006">2006</option>
-            <option value="2007">2007</option><option value="2008">2008</option>
-            <option value="2009">2009</option><option value="2010">2010</option>
-            <option value="2011">2011</option><option value="2012">2012</option>
-            <option value="2013">2013</option><option value="2014">2014</option>
+            <option value="2005">2005</option>
+            <option value="2006">2006</option>
+            <option value="2007">2007</option>
+            <option value="2008">2008</option>
+            <option value="2009">2009</option>
+            <option value="2010">2010</option>
+            <option value="2011">2011</option>
+            <option value="2012">2012</option>
+            <option value="2013">2013</option>
+            <option value="2014">2014</option>
             <option value="2015">2015</option>
           </select>
         </div>
@@ -71,58 +69,59 @@
       </article>
     </div>
 
-        <!-- ========== 中列 ========== -->
     <div class="col col-center">
-
-      <!-- 英国地图（扩展占满中列全部空间） -->
       <article class="panel panel--map" id="panelMap">
         <div class="panel__map-header">
           <h2 class="panel__title" style="display:inline">UK Overview Map</h2>
-          <select class="map__year-select" id="mapYearSelect">
-            <option value="all">All Years</option>
-            <option value="2005">2005</option><option value="2006">2006</option>
-            <option value="2007">2007</option><option value="2008">2008</option>
-            <option value="2009">2009</option><option value="2010">2010</option>
-            <option value="2011">2011</option><option value="2012">2012</option>
-            <option value="2013">2013</option><option value="2014">2014</option>
-            <option value="2015">2015</option>
-          </select>
+          <div class="map-header__controls">
+            <div class="map-status" id="mapStatus">
+              <span class="map-status__label">Region</span>
+              <span class="map-status__value" id="mapStatusRegion">All UK</span>
+              <span class="map-status__sep">/</span>
+              <span class="map-status__value" id="mapStatusYear">All Years</span>
+              <button class="map-status__reset" id="mapResetBtn" type="button" title="Reset selected region">Reset</button>
+            </div>
+            <select class="map__year-select" id="mapYearSelect">
+              <option value="all">All Years</option>
+              <option value="2005">2005</option>
+              <option value="2006">2006</option>
+              <option value="2007">2007</option>
+              <option value="2008">2008</option>
+              <option value="2009">2009</option>
+              <option value="2010">2010</option>
+              <option value="2011">2011</option>
+              <option value="2012">2012</option>
+              <option value="2013">2013</option>
+              <option value="2014">2014</option>
+              <option value="2015">2015</option>
+            </select>
+          </div>
         </div>
         <div class="panel__chart panel__chart--map" id="chartMap">
           <div class="map-loading" id="mapLoading">Loading UK map data...</div>
-          <!-- Leaflet 底图层 -->
           <div id="leafletBase" class="map-layer map-layer--base"></div>
         </div>
       </article>
     </div>
 
-        <!-- ========== 右列 ========== -->
-        <div class="col col-right">
+    <div class="col col-right">
+      <article class="panel panel--radar" id="panelRadar">
+        <h2 class="panel__title">Multi-Dimension Radar</h2>
+        <div class="panel__chart" id="chartRadar"></div>
+      </article>
 
-          <!-- 多维度雷达图 -->
-          <article class="panel panel--radar" id="panelRadar">
-            <h2 class="panel__title">Multi-Dimension Radar</h2>
-            <div class="panel__chart" id="chartRadar"></div>
-          </article>
+      <article class="panel panel--hourly" id="panelHourly">
+        <h2 class="panel__title">24-Hour Distribution</h2>
+        <div class="panel__chart" id="chartHourly"></div>
+      </article>
 
-          <!-- 24小时分布柱状图 -->
-          <article class="panel panel--hourly" id="panelHourly">
-            <h2 class="panel__title">24-Hour Distribution</h2>
-            <div class="panel__chart" id="chartHourly"></div>
-          </article>
-
-          <!-- Urban / Rural 同比变化趋势 -->
-          <article class="panel panel--arc" id="panelArc">
-            <h2 class="panel__title">Urban / Rural YoY Change</h2>
-            <div class="panel__chart" id="chartArc"></div>
-          </article>
-        </div>
-
+      <article class="panel panel--arc" id="panelArc">
+        <h2 class="panel__title">Urban / Rural YoY Change</h2>
+        <div class="panel__chart" id="chartArc"></div>
+      </article>
+    </div>
   </main>
 
-  <!-- ============================================================ -->
-  <!--  右下角详情下钻面板（默认隐藏）                                   -->
-  <!-- ============================================================ -->
   <aside class="detail-panel" id="detailPanel">
     <div class="detail-panel__bar">
       <span class="detail-panel__title" id="detailTitle">Detail View</span>
@@ -135,32 +134,20 @@
     </div>
   </aside>
 
-  <!-- ============================================================ -->
-  <!--  JS（严格按依赖顺序加载）                                       -->
-  <!-- ============================================================ -->
-    <script src="js/config.js"></script>
+  <script src="js/config.js"></script>
   <script src="js/themeManager.js"></script>
+  <script src="js/regionState.js"></script>
   <script src="js/charts/hourlyBarChart.js"></script>
   <script src="js/charts/radarChart.js"></script>
-    <script src="js/charts/calendarChart.js"></script>
+  <script src="js/charts/calendarChart.js"></script>
   <script src="js/charts/mapChart.js"></script>
   <script src="js/charts/sankeyChart.js"></script>
   <script src="js/charts/sankeyLinkage.js"></script>
-  <!-- 极坐标面积图（Urban / Rural YoY Change） -->
   <script src="js/charts/polarArcChart.js"></script>
-  <!-- 下钻详情模块 -->
-  <script src="js/charts/details/severityDetail.js"></script>
-  <script src="js/charts/details/hourlyDetail.js"></script>
-  <script src="js/charts/details/vehicleDetail.js"></script>
-  <script src="js/charts/details/yearDetail.js"></script>
-  <!-- 下钻面板管理器 -->
+  <script src="js/charts/details/regionDetail.js"></script>
   <script src="js/detailsPanel.js"></script>
-  <!-- 统计卡片模块 -->
   <script src="js/filterManager.js"></script>
-    <!-- 全局年份筛选器 -->
   <script src="js/globalYearFilter.js"></script>
-  <!-- 应用入口 -->
   <script src="js/main.js"></script>
-
 </body>
 </html>

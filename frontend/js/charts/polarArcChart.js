@@ -323,10 +323,4 @@ function resizePolarArcChart() {
   try { if (_polarChart) _polarChart.resize(); } catch(e) {}
 }
 
-// ---- 兼容旧引用 ----
-function renderArcTimeChart(chartData) {
-  initPolarArcChart();
-  return updatePolarArcChart(chartData);
-}
-
 console.log("[polarArc] Module loaded — YoY change bidirectional area chart");

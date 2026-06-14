@@ -1,19 +1,14 @@
-/* ============================================================
-   main.js — 应用入口（重构版 v3：init-once + update 模式）
-   职责：
-     1. 加载数据 → 2. init 所有图表（只一次）
-     3. update 注入数据 → 4. 主题切换 dispose 后重新 init+update
-   Leaflet 地图在切换主题时保持存活，仅调整 TileLayer URL
-   ============================================================ */
+/* Application entry: data loading, chart lifecycle, and cross-view coordination. */
 
-// ---- 全局 ----
-var gData        = {};    // global_charts_data.json
-var gMapYearly   = {};    // map_yearly_data.json
-var gSankeyData  = {};    // sankey_data.json（Light→Severity→Vehicle）
-var gArcFlowData = {};    // arc_flow_data.json（Urban/Rural×Severity graph）
-var gMap         = null;  // 地图实例（renderMapChart 返回值）
+var gData = {};
+var gRegionProfiles = {};
+var gSelectedRegion = null;
+var gMapYearly = {};
+var gSankeyData = {};
+var gArcFlowData = {};
+var gMap = null;
+var gRegionStateBound = false;
 
-// ---- 数据加载 ----
 async function loadJSON(path) {
   var r = await fetch(path);
   if (!r.ok) throw new Error("HTTP " + r.status + ": " + path);
@@ -26,210 +21,262 @@ async function loadAllData() {
     loadJSON("data/map_yearly_data.json"),
     loadJSON("data/sankey_data.json"),
     loadJSON("data/arc_flow_data.json"),
+    loadJSON("data/region_profiles.json"),
   ]);
-  gData       = results[0];
-  gMapYearly  = results[1];
-  gSankeyData = results[2];
-  gArcFlowData = results[3];
 
-  console.log("[main] Data loaded — " +
-    (gData.meta ? gData.meta.total_accidents.toLocaleString() : "?") + " accidents");
+  gData = results[0] || {};
+  gMapYearly = results[1] || {};
+  gSankeyData = results[2] || {};
+  gArcFlowData = results[3] || {};
+  gRegionProfiles = results[4] || {};
 
-  // 注入统计指标卡片数据
   if (typeof setStatData === "function" && gData.meta) {
     var m = gData.meta;
     setStatData({
-      total:      m.total_accidents  || 0,
-      fatal:      m.fatal_count      || 0,
+      total: m.total_accidents || 0,
+      fatal: m.fatal_count || 0,
       casualties: m.total_casualties || 0,
-      peakHour:   m.peak_hour        || "--",
+      peakHour: m.peak_hour || "--",
     });
   }
 
-  // 注入下钻详情面板数据（独立小 JSON + gData 中的 district）
-  if (typeof setDetailData === "function") {
-    var detailPaths = ["vehicle_type_distribution", "hourly_distribution", "severity_distribution",
-                       "daily_distribution", "urban_rural_distribution", "yearly_severity_trend",
-                       "light_conditions_distribution", "road_type_distribution"];
-    try {
-      var detailResults = await Promise.all(detailPaths.map(function(p) {
-        return loadJSON("data/" + p + ".json");
-      }));
-      setDetailData({
-        vehicle:       detailResults[0],
-        hourly:        detailResults[1],
-        severity:      detailResults[2],
-        daily:         detailResults[3],
-        urbanRural:    detailResults[4],
-        yearlySeverity: detailResults[5],
-        lightCond:     detailResults[6],
-        roadType:      detailResults[7],
-        district:      gData.district_top10,  // ★ 修复第 3 子图表空白
-      });
-    } catch(e) {
-      console.warn("[main] Detail data load failed (non-critical):", e.message);
-    }
+  console.log("[main] Data loaded");
+}
+
+function initAllCharts() {
+  if (typeof initSankeyChart === "function") initSankeyChart();
+  if (typeof initHourlyChart === "function") initHourlyChart();
+  if (typeof initCalendarChart === "function") initCalendarChart();
+  if (typeof initPolarArcChart === "function") initPolarArcChart();
+  if (typeof initRadarChart === "function") initRadarChart();
+}
+
+function updateAllCharts() {
+  if (gSankeyData && typeof updateSankeyChart === "function") updateSankeyChart(gSankeyData);
+  if (gData.hourly && typeof updateHourlyChart === "function") updateHourlyChart(gData.hourly);
+  if (gData.calendar && typeof updateCalendarChart === "function") updateCalendarChart(gData.calendar);
+  if (gData.arc_flow && typeof updatePolarArcChart === "function") updatePolarArcChart(gData.arc_flow);
+  if (gData.radar && typeof updateRadarChart === "function") updateRadarChart(gData.radar);
+}
+
+function disposeAllCharts() {
+  if (typeof disposeSankeyChart === "function") disposeSankeyChart();
+  if (typeof disposeHourlyChart === "function") disposeHourlyChart();
+  if (typeof disposeCalendarChart === "function") disposeCalendarChart();
+  if (typeof disposePolarArcChart === "function") disposePolarArcChart();
+  if (typeof disposeRadarChart === "function") disposeRadarChart();
+  if (typeof disposeDetailCharts === "function") disposeDetailCharts();
+}
+
+function setRightPanelScope(regionName, year) {
+  var scope = regionName || "All UK";
+  var yearLabel = year && year !== "all" ? year : "All Years";
+  var titleMap = {
+    panelRadar: "Region Radar - " + scope + " (" + yearLabel + ")",
+    panelHourly: "24-Hour Distribution - " + scope + " (" + yearLabel + ")",
+    panelArc: "Urban / Rural YoY Change - " + scope,
+  };
+
+  Object.keys(titleMap).forEach(function(panelId) {
+    var panel = document.getElementById(panelId);
+    var title = panel ? panel.querySelector(".panel__title") : null;
+    if (title) title.textContent = titleMap[panelId];
+  });
+}
+
+function updateRegionLinkedCharts(regionName, year) {
+  gSelectedRegion = regionName || null;
+
+  if (!regionName) {
+    if (gData.hourly) updateHourlyChart(gData.hourly);
+    if (gData.radar) updateRadarChart(gData.radar);
+    if (gData.arc_flow) updatePolarArcChart(gData.arc_flow);
+    setRightPanelScope(null, "all");
+    return;
+  }
+
+  var profile = gRegionProfiles[regionName];
+  if (!profile) {
+    console.warn("[region] No profile for:", regionName);
+    return;
+  }
+
+  var yearKey = year || "all";
+  var yearProfile = profile[yearKey] || profile.all;
+  var trendProfile = profile.all || yearProfile;
+
+  if (yearProfile.hourly) updateHourlyChart(yearProfile.hourly);
+  if (yearProfile.radar) updateRadarChart(yearProfile.radar);
+  if (trendProfile.arc_flow) updatePolarArcChart(trendProfile.arc_flow);
+  setRightPanelScope(regionName, yearKey);
+}
+
+function updateMapStatus(regionName, year) {
+  var regionEl = document.getElementById("mapStatusRegion");
+  var yearEl = document.getElementById("mapStatusYear");
+  var resetBtn = document.getElementById("mapResetBtn");
+  var yearLabel = year && year !== "all" ? year : "All Years";
+
+  if (regionEl) regionEl.textContent = regionName || "All UK";
+  if (yearEl) yearEl.textContent = yearLabel;
+  if (resetBtn) {
+    resetBtn.disabled = !regionName;
+    resetBtn.style.opacity = regionName ? "1" : ".45";
   }
 }
 
-// ============================================================
-//  第一阶段：初始化所有图表实例（只执行一次，initChartOnce）
-// ============================================================
-function initAllCharts() {
-  // 每个模块的 init*Chart 内部使用 initChartOnce，重复调用安全
-    if (typeof initSankeyChart     === "function") initSankeyChart();
-  if (typeof initHourlyChart     === "function") initHourlyChart();
-  if (typeof initCalendarChart   === "function") initCalendarChart();
-  if (typeof initPolarArcChart   === "function") initPolarArcChart();
-  if (typeof initRadarChart      === "function") initRadarChart();
-  console.log("[main] All chart instances initialized");
+function applyRegionState(state) {
+  state = state || {};
+  updateRegionLinkedCharts(state.region || null, state.year || "all");
+  updateMapStatus(state.region || null, state.year || "all");
 }
 
-// ============================================================
-//  第二阶段：注入全量数据（update*Chart，内部调用 setOption）
-// ============================================================
-function updateAllCharts() {
-  if (gSankeyData)           updateSankeyChart(gSankeyData);
-  if (gData.hourly)          updateHourlyChart(gData.hourly);
-  if (gData.calendar)        updateCalendarChart(gData.calendar);
-  if (gData.arc_flow)        updatePolarArcChart(gData.arc_flow);
-  if (gData.radar)           updateRadarChart(gData.radar);
-  console.log("[main] All charts updated with data");
+function bindRegionState() {
+  if (gRegionStateBound || !window.RegionState) return;
+  gRegionStateBound = true;
+  window.RegionState.subscribe(applyRegionState);
 }
 
-// ============================================================
-//  第三阶段：销毁所有图表（仅主题切换时调用）
-// ============================================================
-function disposeAllCharts() {
-    if (typeof disposeSankeyChart     === "function") disposeSankeyChart();
-  if (typeof disposeHourlyChart     === "function") disposeHourlyChart();
-  if (typeof disposeCalendarChart   === "function") disposeCalendarChart();
-  if (typeof disposePolarArcChart   === "function") disposePolarArcChart();
-  if (typeof disposeRadarChart      === "function") disposeRadarChart();
-  if (typeof disposeDetailCharts    === "function") disposeDetailCharts();
-  console.log("[main] All chart instances disposed");
+function objectToRows(obj, labelKey) {
+  return Object.keys(obj || {}).map(function(name) {
+    var row = { count: obj[name] || 0 };
+    row[labelKey] = name;
+    return row;
+  }).sort(function(a, b) { return b.count - a.count; });
 }
 
-// ============================================================
-//  获取当前所有存活的图表实例（供 resize 使用）
-// ============================================================
-function _collectLiveInstances() {
+function buildAllUkDetailProfile() {
+  return {
+    hourly: gData.hourly || [],
+    radar: gData.radar || {},
+    arc_flow: gData.arc_flow || [],
+    total: gData.meta ? gData.meta.total_accidents : 0,
+  };
+}
+
+function getActiveRegionProfile() {
+  var state = window.RegionState ? window.RegionState.get() : { region: gSelectedRegion, year: "all" };
+  var region = state.region || null;
+  var year = state.year || "all";
+
+  if (!region) {
+    return {
+      region: "All UK",
+      year: "all",
+      yearProfile: buildAllUkDetailProfile(),
+      trendProfile: buildAllUkDetailProfile(),
+    };
+  }
+
+  var profile = gRegionProfiles[region];
+  var yearProfile = profile ? (profile[year] || profile.all) : null;
+  var trendProfile = profile ? (profile.all || yearProfile) : null;
+  return {
+    region: region,
+    year: year,
+    yearProfile: yearProfile || buildAllUkDetailProfile(),
+    trendProfile: trendProfile || buildAllUkDetailProfile(),
+  };
+}
+
+window.getRegionDetailData = function(chartType) {
+  var ctx = getActiveRegionProfile();
+  var radar = ctx.yearProfile.radar || {};
+  return {
+    chartType: chartType,
+    region: ctx.region,
+    year: ctx.year,
+    total: ctx.yearProfile.total || 0,
+    trendTotal: ctx.trendProfile.total || 0,
+    hourly: ctx.yearProfile.hourly || [],
+    arcFlow: ctx.trendProfile.arc_flow || [],
+    severity: objectToRows(radar.severity, "severity_label"),
+    roadType: objectToRows(radar.road_type, "road_label"),
+    urbanRural: objectToRows(radar.urban_rural, "urban_rural_label"),
+    light: objectToRows(radar.light, "light_label"),
+  };
+};
+
+function collectLiveInstances() {
   var instances = [];
-  var chartIds = ["chartSankey", "chartHourly", "chartCalendar", "chartArc", "chartRadar"];
-  chartIds.forEach(function(id) {
+  ["chartSankey", "chartHourly", "chartCalendar", "chartArc", "chartRadar", "detailChart1", "detailChart2", "detailChart3"].forEach(function(id) {
     var dom = document.getElementById(id);
-    if (dom) {
-      var inst = echarts.getInstanceByDom(dom);
-      if (inst) instances.push(inst);
-    }
-  });
-  // 隐藏 tab 中的图表（当前 display:none）也收集，echarts 存活的 instance 都在
-  // 详情面板图表
-  ["detailChart1","detailChart2","detailChart3"].forEach(function(id) {
-    var dom = document.getElementById(id);
-    if (dom) {
-      var inst = echarts.getInstanceByDom(dom);
-      if (inst) instances.push(inst);
-    }
+    var inst = dom ? echarts.getInstanceByDom(dom) : null;
+    if (inst) instances.push(inst);
   });
   return instances;
 }
 
-// ---- 渲染地图 ----
 async function renderMap(data) {
   data = data || {};
   gMap = await renderMapChart({
     districtData: data.district_all || null,
-    points:       data.points        || null,
+    points: data.points || null,
   });
-  if (gMap) console.log("[main] Map rendered");
 }
 
-// ---- 地图年份切换（增量） ----
 function onMapYearChange(year) {
   var yearData = gMapYearly[year];
-  if (!yearData) { console.warn("[main] No map data for year:", year); return; }
-  // ★ 附加年份标签，供 mapChart 显示
-  yearData._yearLabel = year === "all" ? "All Years" : year;
-  // ★ 调用 mapChart.js 的 switchMapYear（已通过 window 暴露）
-  if (typeof window._mapSwitchYear === "function") {
-    window._mapSwitchYear(yearData);
-  } else if (typeof window.switchMapYear === "function") {
-    // mapChart.js 的原始函数
-    window.switchMapYear(yearData);
+  if (!yearData) {
+    console.warn("[main] No map data for year:", year);
+    return;
   }
+  yearData._yearLabel = year === "all" ? "All Years" : year;
+  if (typeof window.switchMapYear === "function") window.switchMapYear(yearData);
 }
 
-// ★ 暴露给 HTML 内联调用
 window.onMapYearChange = onMapYearChange;
 
-// ============================================================
-//  首次加载入口
-// ============================================================
 async function init() {
   try {
     await loadAllData();
 
-    // ★ 初始化全局年份筛选器（在图表初始化之后，确保所有独立选择器已创建）
-    if (typeof window.globalYearFilter !== "undefined") {
-      // 稍后执行，等各图表 init 创建完独立选择器
+    initAllCharts();
+    updateAllCharts();
+    await renderMap(gMapYearly.all || {});
+    bindRegionState();
+
+    if (window.globalYearFilter) {
       setTimeout(function() { window.globalYearFilter.init(); }, 100);
     }
 
-    // ★ 步骤 1：初始化所有图表实例（仅一次）
-    initAllCharts();
-
-    // ★ 步骤 2：注入数据
-    updateAllCharts();
-
-    // ★ 步骤 3：渲染地图
-    await renderMap(gMapYearly["all"] || {});
-
-    console.log("[main] Init complete — all charts live with init-once pattern");
+    console.log("[main] Init complete");
   } catch (err) {
     console.error("[main] Init failed:", err);
     var el = document.getElementById("chartMap");
-    if (el) el.innerHTML = "<div style=\"padding:40px;text-align:center;color:#e53935\"><h3>Data Loading Failed</h3><p>" + err.message + "</p><p style=\"font-size:.8rem;color:#999\">Run: python preprocess.py</p></div>";
+    if (el) {
+      el.innerHTML = "<div style=\"padding:40px;text-align:center;color:#e53935\"><h3>Data Loading Failed</h3><p>" +
+        err.message + "</p><p style=\"font-size:.8rem;color:#999\">Run: python preprocess.py</p></div>";
+    }
   }
 }
 
 document.addEventListener("DOMContentLoaded", init);
 
-// ============================================================
-//  resize — 批量 resize 所有存活实例
-// ============================================================
 function resizeAll() {
-  _collectLiveInstances().forEach(function(c) {
+  collectLiveInstances().forEach(function(c) {
     try { c.resize(); } catch(_) {}
   });
   if (gMap) { try { gMap.resize(); } catch(_) {} }
 }
-var _resizeTimer = null;
+
+var resizeTimer = null;
 window.addEventListener("resize", function() {
-  clearTimeout(_resizeTimer);
-  _resizeTimer = setTimeout(resizeAll, 150);
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(resizeAll, 150);
 });
 
-// ============================================================
-//  ★ 主题切换 —— dispose 全部旧实例 → 用新主题重新 init + update
-//     Leaflet 地图保持存活，仅更换 TileLayer URL
-// ============================================================
 window.addEventListener("themeChanged", function() {
-  // 1) 销毁所有 ECharts 实例（它们绑定了旧主题，必须重建）
   disposeAllCharts();
-
-  // 2) 用新主题重新 init + 重新注入数据
   initAllCharts();
   updateAllCharts();
+  applyRegionState(window.RegionState ? window.RegionState.get() : { region: gSelectedRegion, year: "all" });
 
-  // 3) Leaflet 地图：仅更换瓦片 URL（不销毁实例，无闪烁）
   if (window._leafletMap) {
     try {
-      // 移除旧瓦片层
       if (window._mapTileLayer && window._leafletMap.hasLayer(window._mapTileLayer)) {
         window._leafletMap.removeLayer(window._mapTileLayer);
       }
-      // 暗色主题使用 CARTO dark 瓦片，亮色使用标准 OSM
       var isDark = document.documentElement.getAttribute("data-theme") === "dark";
       var tileUrl = isDark
         ? "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
@@ -239,103 +286,56 @@ window.addEventListener("themeChanged", function() {
         : "&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a>";
       window._mapTileLayer = L.tileLayer(tileUrl, {
         attribution: tileAttribution,
-        maxZoom: 18, maxNativeZoom: 18, noWrap: true,
+        maxZoom: 18,
+        maxNativeZoom: 18,
+        noWrap: true,
       }).addTo(window._leafletMap);
       window._leafletMap.invalidateSize();
-    } catch(e) { console.warn("[main] Tile swap failed:", e.message); }
+    } catch(e) {
+      console.warn("[main] Tile swap failed:", e.message);
+    }
   }
-
-  console.log("[main] Theme changed — charts rebuilt, map tiles swapped");
 });
 
-// ============================================================
-//  事件监听：地图 / 日历年份选择器
-// ============================================================
 document.addEventListener("change", function(e) {
   if (e.target && e.target.id === "mapYearSelect") {
     onMapYearChange(e.target.value);
+    if (window.RegionState) window.RegionState.setYear(e.target.value, "map-year");
   }
+
   if (e.target && e.target.id === "calendarYearSelect") {
     window._calendarSelectedYear = parseInt(e.target.value);
-    if (gData.calendar && typeof updateCalendarChart === "function") {
-      updateCalendarChart(gData.calendar);
+    if (gData.calendar && typeof updateCalendarChart === "function") updateCalendarChart(gData.calendar);
+  }
+});
+
+document.addEventListener("click", function(e) {
+  if (e.target && e.target.id === "mapResetBtn") {
+    if (typeof window.clearSelectedRegion === "function") {
+      window.clearSelectedRegion();
+    } else if (window.RegionState) {
+      window.RegionState.clearRegion("status-reset");
     }
   }
 });
-window._calendarSelectedYear = 2005;  // ★ 默认首屏显示 2005（数据范围为 2005-2015）
 
-// ============================================================
-//  Tab 切换逻辑（统一处理所有 panel 内的选项卡）
-// ============================================================
-document.addEventListener("click", function(e) {
-  var tab = e.target.closest(".panel__tab");
-  if (!tab) return;
+window._calendarSelectedYear = 2005;
 
-  var parent = tab.closest(".panel");
-  if (!parent) return;
-
-  // 切换 tab 高亮
-  parent.querySelectorAll(".panel__tab").forEach(function(t) {
-    t.classList.remove("panel__tab--active");
-  });
-  tab.classList.add("panel__tab--active");
-
-  var target = tab.getAttribute("data-tab");
-  if (!target) return;
-
-  // 切换 tab-content 显示
-  parent.querySelectorAll(".panel__tab-content").forEach(function(el) {
-    el.style.display = "none";
-    el.classList.remove("panel__tab-content--active");
-  });
-  var targetContent = parent.querySelector("#tabContent" + target.charAt(0).toUpperCase() + target.slice(1));
-  if (targetContent) {
-    targetContent.style.display = "flex";
-    targetContent.classList.add("panel__tab-content--active");
-    // 触发 chart resize 以适配新尺寸
-    setTimeout(function() {
-      resizeAll();
-    }, 150);
-  }
-});
-
-// ============================================================
-//  ★ 桑基图节点联动事件监听
-// ============================================================
 window.addEventListener("sankeyNodeSelected", function(e) {
   var detail = e.detail;
-  if (!detail) return;
-
-  var nodeName = detail.name;
-  var category = detail.category;
-  console.log("[linkage] Selected:", nodeName, "(" + category + ")");
-
-  // 联动地图 — 高亮匹配散点
-  if (typeof highlightMapPoints === "function") {
-    var points = getCurrentMapPoints();
-    if (points) {
-      highlightMapPoints(points, nodeName, category);
-    }
-  }
+  if (!detail || typeof highlightMapPoints !== "function") return;
+  var points = getCurrentMapPoints();
+  if (points) highlightMapPoints(points, detail.name, detail.category);
 });
 
 window.addEventListener("sankeyNodeDeselected", function() {
-  console.log("[linkage] Node deselected — restoring defaults");
-
-  // 恢复地图散点
-  if (typeof clearMapHighlight === "function") {
-    clearMapHighlight();
-  }
+  if (typeof clearMapHighlight === "function") clearMapHighlight();
 });
 
-// ★ 获取当前地图散点数据
 function getCurrentMapPoints() {
   var mapYearSelect = document.getElementById("mapYearSelect");
   var year = mapYearSelect ? mapYearSelect.value : "all";
-  if (gMapYearly && gMapYearly[year]) {
-    return gMapYearly[year].points || null;
-  }
-  return null;
+  return gMapYearly && gMapYearly[year] ? gMapYearly[year].points || null : null;
 }
 
-console.log("[main] Ready (init-once pattern)");
+console.log("[main] Ready");

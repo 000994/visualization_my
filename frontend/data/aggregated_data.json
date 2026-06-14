@@ -1004,11 +1004,11 @@
       "count": 4911
     },
     {
-      "district_label": "Blackburn with Darwen",
+      "district_label": "Stafford",
       "count": 4893
     },
     {
-      "district_label": "Stafford",
+      "district_label": "Blackburn with Darwen",
       "count": 4893
     },
     {
@@ -1188,11 +1188,11 @@
       "count": 4205
     },
     {
-      "district_label": "Winchester",
+      "district_label": "Stratford-upon-Avon",
       "count": 4182
     },
     {
-      "district_label": "Stratford-upon-Avon",
+      "district_label": "Winchester",
       "count": 4182
     },
     {
@@ -1304,11 +1304,11 @@
       "count": 3704
     },
     {
-      "district_label": "Torbay",
+      "district_label": "Braintree",
       "count": 3701
     },
     {
-      "district_label": "Braintree",
+      "district_label": "Torbay",
       "count": 3701
     },
     {
@@ -1372,11 +1372,11 @@
       "count": 3580
     },
     {
-      "district_label": "Neath Port Talbot",
+      "district_label": "North Hertfordshire",
       "count": 3547
     },
     {
-      "district_label": "North Hertfordshire",
+      "district_label": "Neath Port Talbot",
       "count": 3547
     },
     {
@@ -1540,11 +1540,11 @@
       "count": 3083
     },
     {
-      "district_label": "Broadland",
+      "district_label": "Gravesham",
       "count": 3079
     },
     {
-      "district_label": "Gravesham",
+      "district_label": "Broadland",
       "count": 3079
     },
     {
@@ -1620,11 +1620,11 @@
       "count": 2923
     },
     {
-      "district_label": "Staffordshire Moorlands",
+      "district_label": "Darlington",
       "count": 2918
     },
     {
-      "district_label": "Darlington",
+      "district_label": "Staffordshire Moorlands",
       "count": 2918
     },
     {
@@ -1720,11 +1720,11 @@
       "count": 2592
     },
     {
-      "district_label": "Wyre Forest",
+      "district_label": "Boston",
       "count": 2562
     },
     {
-      "district_label": "Boston",
+      "district_label": "Wyre Forest",
       "count": 2562
     },
     {
@@ -1792,11 +1792,11 @@
       "count": 2412
     },
     {
-      "district_label": "Broxbourne",
+      "district_label": "Brentwood",
       "count": 2372
     },
     {
-      "district_label": "Brentwood",
+      "district_label": "Broxbourne",
       "count": 2372
     },
     {
@@ -1868,11 +1868,11 @@
       "count": 2143
     },
     {
-      "district_label": "Copeland",
+      "district_label": "Kettering",
       "count": 2118
     },
     {
-      "district_label": "Kettering",
+      "district_label": "Copeland",
       "count": 2118
     },
     {
@@ -2224,6 +2224,6 @@
       2005,
       2015
     ],
-    "generated_at": "2026-06-10T16:04:30.990825"
+    "generated_at": "2026-06-14T11:46:22.410541"
   }
 }

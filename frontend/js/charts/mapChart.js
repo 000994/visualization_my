@@ -24,6 +24,7 @@ var _mapReady       = false;   // Leaflet 实例是否已初始化
 // ★ 重构版：支持连续多次重复点击，无监听器堆积、无弹窗卡死
 var _popupCloseTimer = null;
 var _popupDocHandler = null;
+var _selectedRegionName = null;
 
 function showAccidentPopup(detail) {
   if (!detail) return;
@@ -234,21 +235,80 @@ function _makeGetHeatColor(dataMin, dataMax) {
 // ============================================================
 //  GeoJSON 热力层
 // ============================================================
+function _regionBaseStyle(feature, mapData, getHeatColor) {
+  var name = feature.properties.name;
+  var match = null;
+  for (var i = 0; i < mapData.length; i++) {
+    if (mapData[i].name === name) { match = mapData[i]; break; }
+  }
+  return {
+    fillColor: match ? getHeatColor(match.value) : "rgba(200,214,229,0.2)",
+    color: "rgba(255,255,255,0.15)",
+    weight: 1,
+    opacity: 0.3,
+    fillOpacity: 0.55,
+  };
+}
+
+function _regionSelectedStyle() {
+  return {
+    weight: 2.8,
+    color: "#fff",
+    opacity: 0.95,
+    fillOpacity: 0.82,
+  };
+}
+
+function _getCurrentMapYear() {
+  var sel = document.getElementById("mapYearSelect");
+  return sel ? sel.value : "all";
+}
+
+function _emitRegionSelection(regionName) {
+  if (window.RegionState) {
+    window.RegionState.setRegion(regionName, _getCurrentMapYear(), "map");
+  } else {
+    window.dispatchEvent(new CustomEvent("regionStateChanged", {
+      detail: {
+        region: regionName,
+        year: _getCurrentMapYear(),
+        source: "map",
+      }
+    }));
+  }
+}
+
+function clearSelectedRegion() {
+  _selectedRegionName = null;
+  if (_geoJsonLayer) {
+    _geoJsonLayer.eachLayer(function(layer) {
+      try { layer.fire("mouseout"); } catch(e) {}
+    });
+  }
+  if (window.RegionState) {
+    window.RegionState.clearRegion("map-reset");
+  } else {
+    _emitRegionSelection(null);
+  }
+}
+
+function _applyRegionSelectionStyle(mapData, getHeatColor) {
+  if (!_geoJsonLayer) return;
+  _geoJsonLayer.eachLayer(function(l) {
+    var feature = l.feature || {};
+    var name = feature.properties ? feature.properties.name : null;
+    l.setStyle(_regionBaseStyle(feature, mapData, getHeatColor));
+    if (_selectedRegionName && name === _selectedRegionName) {
+      l.setStyle(_regionSelectedStyle());
+      try { l.bringToFront(); } catch(e) {}
+    }
+  });
+}
+
 function _buildGeoJsonLayer(geoJson, mapData, getHeatColor) {
   return L.geoJSON(geoJson, {
     style: function(feature) {
-      var name = feature.properties.name;
-      var match = null;
-      for (var i = 0; i < mapData.length; i++) {
-        if (mapData[i].name === name) { match = mapData[i]; break; }
-      }
-      return {
-        fillColor: match ? getHeatColor(match.value) : "rgba(200,214,229,0.2)",
-        color: "rgba(255,255,255,0.15)",
-        weight: 1,
-        opacity: 0.3,
-        fillOpacity: 0.55,
-      };
+      return _regionBaseStyle(feature, mapData, getHeatColor);
     },
     onEachFeature: function(feature, layer) {
       var name = feature.properties.name;
@@ -266,15 +326,16 @@ function _buildGeoJsonLayer(geoJson, mapData, getHeatColor) {
         layer.setStyle({ weight: 2, color: "rgba(255,255,255,0.6)", opacity: 0.8, fillOpacity: 0.75 });
       });
       layer.on("mouseout", function(){
-        layer.setStyle({ weight: 1, color: "rgba(255,255,255,0.15)", opacity: 0.3, fillOpacity: 0.55 });
+        if (_selectedRegionName === name) {
+          layer.setStyle(_regionSelectedStyle());
+        } else {
+          layer.setStyle(_regionBaseStyle(feature, mapData, getHeatColor));
+        }
       });
       layer.on("click", function(){
-        if (_geoJsonLayer) {
-          _geoJsonLayer.eachLayer(function(l){
-            l.setStyle({ weight: 1, color: "rgba(255,255,255,0.15)", opacity: 0.3, fillOpacity: 0.55 });
-          });
-        }
-        layer.setStyle({ weight: 2.5, color: "#fff", opacity: 0.9, fillOpacity: 0.75 });
+        _selectedRegionName = (_selectedRegionName === name) ? null : name;
+        _applyRegionSelectionStyle(mapData, getHeatColor);
+        _emitRegionSelection(_selectedRegionName);
       });
     },
   });
@@ -422,7 +483,7 @@ async function renderMapChart(opts) {
     throw e;
   }
   if (!geoJson) {
-    if (loadingEl) { loadingEl.textContent = "Map unavailable — run: python gen_map.py"; loadingEl.style.display = "flex"; }
+    if (loadingEl) { loadingEl.textContent = "Map unavailable - run: python gen_map.py"; loadingEl.style.display = "flex"; }
     return null;
   }
 
@@ -447,6 +508,7 @@ async function renderMapChart(opts) {
 
   // 创建热力层
   _geoJsonLayer = _buildGeoJsonLayer(geoJson, mapData, getHeatColor).addTo(_leafletMap);
+  _applyRegionSelectionStyle(mapData, getHeatColor);
 
   // 区域标签
   _addRegionLabels(geoJson);
@@ -502,7 +564,7 @@ async function switchMapYear(yearData) {
       "padding:6px 16px;border-radius:20px;font-size:13px;font-weight:600;" +
       "box-shadow:0 2px 12px rgba(0,0,0,0.2);pointer-events:none;" +
       "transition:opacity .4s ease;";
-    flashEl.textContent = "🔄 Updating...";
+    flashEl.textContent = "Updating...";
     container.appendChild(flashEl);
   }
 
@@ -521,6 +583,7 @@ async function switchMapYear(yearData) {
       try { _leafletMap.removeLayer(_geoJsonLayer); } catch(e) {}
     }
     _geoJsonLayer = _buildGeoJsonLayer(geoJson, mapData, getHeatColor).addTo(_leafletMap);
+    _applyRegionSelectionStyle(mapData, getHeatColor);
 
     // 标签不变（区域名称不变），但图例更新
     _addLegend(dataMin, dataMax);
@@ -546,6 +609,8 @@ async function switchMapYear(yearData) {
 // ============================================================
 //  ★ 散点高亮/弱化（桑基图节点联动）
 // ============================================================
+}
+
 function highlightMapPoints(points, nodeName, category) {
   if (!_pointLayer || !points) return;
 
@@ -606,7 +671,7 @@ function clearMapHighlight() {
 
 window.highlightMapPoints = highlightMapPoints;
 window.clearMapHighlight = clearMapHighlight;
-}
+window.clearSelectedRegion = clearSelectedRegion;
 
 // ============================================================
 //  window API（main.js 调用）
