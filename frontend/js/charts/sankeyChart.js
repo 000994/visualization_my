@@ -147,7 +147,7 @@ function _applySankeyData(year) {
       text: "Casualty Flow: Weather → Light → Vehicle",
       subtext: (year === "all" ? "All Years" : year) +
                (selectedName ? " | " + selectedName : ""),
-      left: "center", top: 6,                                      // ★ 标题下移留出间距
+      left: "center", top: 6,                                 // ★ 标题下移留出间距
       textStyle: { fontSize: 10, fontWeight: "bold", color: "#3366cc" },
       subtextStyle: { fontSize: 9, color: "#999" },
     },
@@ -165,6 +165,7 @@ function _applySankeyData(year) {
     },
     series: [{
       type: "sankey",
+      top: 50,                         // ★ 图表整体下移，避免与标题重合
       emphasis: { focus: "adjacency" },
       nodeAlign: "justify",            // ★ 三列等高对齐，节点高度按流量自动分配
       layoutIterations: _S_LAYOUT_ITER,
@@ -178,7 +179,7 @@ function _applySankeyData(year) {
           return p.name.length > 16 ? p.name.slice(0, 14) + "…" : p.name;
         },
       },
-      lineStyle: { color: "gradient", curveness: 0.5, opacity: selectedName ? 0.6 : 0.35 },
+      lineStyle: { color: "#d3d3d3", curveness: 0.5, opacity: selectedName ? 0.6 : 0.35 },
       data: nodes,
       links: displayLinks,
     }],

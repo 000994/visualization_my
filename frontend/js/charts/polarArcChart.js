@@ -11,16 +11,16 @@ var _polarResizeOff  = null;
 
 // ---- 主题感知颜色 ----
 function _polarUrbanColor() {
-  return document.documentElement.getAttribute("data-theme") === "dark" ? "#5b8def" : "#3366cc";
+  return document.documentElement.getAttribute("data-theme") === "dark" ? "#8bb4c9" : "#AECDD7";
 }
 function _polarRuralColor() {
-  return document.documentElement.getAttribute("data-theme") === "dark" ? "#ffab91" : "#e53935";
+  return document.documentElement.getAttribute("data-theme") === "dark" ? "#d89d7f" : "#F0B79A";
 }
 function _polarUrbanArea() {
-  return document.documentElement.getAttribute("data-theme") === "dark" ? "rgba(91,141,239,0.6)" : "rgba(51,102,204,0.6)";
+  return document.documentElement.getAttribute("data-theme") === "dark" ? "rgba(139,180,201,0.6)" : "rgba(174,205,215,0.6)";
 }
 function _polarRuralArea() {
-  return document.documentElement.getAttribute("data-theme") === "dark" ? "rgba(255,171,145,0.6)" : "rgba(229,57,53,0.6)";
+  return document.documentElement.getAttribute("data-theme") === "dark" ? "rgba(216,157,127,0.6)" : "rgba(240,183,154,0.6)";
 }
 function _polarLabelColor() {
   return document.documentElement.getAttribute("data-theme") === "dark" ? "#8899bb" : "#5a5a7a";

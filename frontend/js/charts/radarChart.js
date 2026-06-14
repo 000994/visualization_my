@@ -143,12 +143,9 @@ function _renderAllDimensions() {
       data: [{
         value: normalizedValues,
         name: "Composite",
-        areaStyle: { color: new echarts.graphic.LinearGradient(0,0,1,1,[
-          {offset:0,color:"rgba(51,102,204,0.35)"},
-          {offset:1,color:"rgba(91,143,239,0.12)"},
-        ])},
-        lineStyle: { color: "#3366cc", width: 2 },
-        itemStyle: { color: _radarColors },
+        areaStyle: { color: "rgba(250,231,217,0.5)" },
+        lineStyle: { color: "#C85D4D", width: 2 },
+        itemStyle: { color: "#FAE7D9" },
       }],
       symbol: "circle",
       symbolSize: 8,
@@ -224,12 +221,9 @@ function _renderSingleDimension(dimKey) {
       data: [{
         value: rawValues,
         name: _radarDimLabels[dimKey] || dimKey,
-        areaStyle: { color: new echarts.graphic.LinearGradient(0,0,1,1,[
-          {offset:0,color:"rgba(38,166,154,0.35)"},
-          {offset:1,color:"rgba(38,166,154,0.1)"},
-        ])},
-        lineStyle: { color: "#26a69a", width: 2 },
-        itemStyle: { color: _radarColors },
+        areaStyle: { color: "rgba(250,231,217,0.5)" },
+        lineStyle: { color: "#C85D4D", width: 2 },
+        itemStyle: { color: "#FAE7D9" },
       }],
       symbol: "circle",
       symbolSize: 6,

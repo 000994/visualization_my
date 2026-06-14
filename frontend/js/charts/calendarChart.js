@@ -125,7 +125,7 @@ function _applyCalendarData() {
     }
   }
 
-  var colors = ["#ebf5ff","#b4d7fa","#64aff0","#3282d2","#1950a0","#e53935"];
+  var colors = ["#619DB8","#AECDD7","#E3EEEF","#FAE7D9","#F0B79A","#C85D4D"];
 
   _calendarChart.setOption({
     animationDuration: 400,

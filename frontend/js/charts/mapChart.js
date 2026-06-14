@@ -39,8 +39,8 @@ function showAccidentPopup(detail) {
   var surface = surfaceMap[detail.Road_Surface_Conditions] || "Code " + detail.Road_Surface_Conditions;
 
   var sevColor = "#3366cc";
-  if (detail.severity_label === "Fatal") sevColor = "#e53935";
-  else if (detail.severity_label === "Serious") sevColor = "#fb8c00";
+  if (detail.severity_label === "Fatal") sevColor = "#C85D4D";
+  else if (detail.severity_label === "Serious") sevColor = "#F0B79A";
 
   _popupEl = document.createElement("div");
   _popupEl.className = "accident-popup";
@@ -121,9 +121,9 @@ function _renderPointLayer(points) {
   if (!points || !points.length) return;
 
   function colorBySeverity(sev) {
-    if (sev === "Fatal") return "#e53935";
-    if (sev === "Serious") return "#fb8c00";
-    return "#3366cc";
+    if (sev === "Fatal") return "#C85D4D";
+    if (sev === "Serious") return "#F0B79A";
+    return "#FAE7D9";
   }
 
   var markers = [];
@@ -655,7 +655,7 @@ function clearMapHighlight() {
   _pointLayer.eachLayer(function(layer) {
     var detail = layer.options.detailData || {};
     var sev = detail.severity_label || "Slight";
-    var color = sev === "Fatal" ? "#e53935" : (sev === "Serious" ? "#fb8c00" : "#3366cc");
+    var color = sev === "Fatal" ? "#C85D4D" : (sev === "Serious" ? "#F0B79A" : "#FAE7D9");
     var radius = sev === "Fatal" ? 6 : (sev === "Serious" ? 4 : 3);
     var opacity = sev === "Fatal" ? 0.8 : (sev === "Serious" ? 0.6 : 0.35);
     layer.setStyle({
